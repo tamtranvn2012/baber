@@ -1,0 +1,144 @@
+.span12{
+border: 1px solid red;
+border-radius: 5px;
+}
+ .span2-img img{
+height: 75px;
+}
+.span{
+padding-top: 25px;
+}
+.span2-img a:hover{
+text-decoration: none;
+}
+.search{
+padding-top: 25px;
+}
+#search{
+background:white url('../images/mail_find.png') left  no-repeat;
+
+}
+.span3-input{
+    padding-top: 25px;
+}
+.bt-add{
+text-align: center;
+padding-left: 72px;
+padding-top: 20px;
+}
+#bt-sub{
+border: 2px #DD17BA solid;
+}
+#add{
+margin-top: 25px;
+}
+.span3-new{
+margin-left: 15px;
+padding-bottom: 10px;
+}
+
+.span3-new p{
+margin: 0;
+padding: 0;
+text-indent: 10px;
+}
+.span3-new img{
+border: 2px solid #ccc;
+}
+.infomation{  
+width:224px;
+margin: 0;
+padding-right:10px;
+border: 2px #ccc solid;
+}
+.span9-nav{
+text-align: center;
+}
+
+.footer{
+   
+}
+.nav ul{
+list-style: none;
+padding: 0;
+}
+.nav ul li{
+text-align: center;
+}
+/*
+registration
+*/
+.span2-name{
+padding-top:10px ;
+}
+
+.span2-pick{
+padding:0;
+background: none;
+margin-top: 10px;
+margin-right: 20px;
+}
+.span7-div-form{
+ border: 1px solid #ccc;
+ padding-bottom: 30px;
+ margin-top: 10px;
+ margin-bottom: 10px; 
+ background: #F5F5F5;
+ border-radius: 5px;
+}
+/*
+head-profile
+*/
+          
+.span9-demo {
+    padding-top: 25px;
+padding-left: 40px;
+margin: 0;
+}
+#nav-top ul{
+margin: 0;
+padding: 0;
+list-style: none;
+}
+#nav-top ul li{
+float: left;
+padding-right: 30px;
+}      
+  .span7-nav-top{
+  padding-top: 25px;
+  text-align: right;
+  } 
+  
+#span7-comment{
+text-align: center;
+
+
+
+ @media (min-width: 980px) and (max-width: 1230px) {
+        .span3-new img{
+            width:180px;
+        }
+       .infomation{
+            width:180px;
+        }
+    }
+     @media (min-width: 177px) and (max-width: 300px) {
+        .span3-new img{
+            width:80px;
+        }
+       .infomation{
+            width:80px;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 979px) {
+        .span3-new img{
+            width:130px;
+        }
+        .infomation{
+            width:130px;
+        }
+    }
+
+     
+    /* Landscape phones and down */
+    @media (max-width: 480px) { ... }

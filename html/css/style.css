@@ -1,0 +1,152 @@
+.span12{
+border: 1px solid red;
+border-radius: 5px;
+}
+ .span2-img img{
+height: 75px;
+}
+.search{
+padding-top: 25px;
+}
+.span{
+padding-top: 25px;
+}
+.span2-img a:hover{
+text-decoration: none;
+}
+#search{
+background:white url('../images/mail_find.png') left  no-repeat;
+}
+.bt-add{
+text-align: center;
+padding-left: 72px;
+padding-top: 20px;
+}
+#bt-sub{
+border: 2px #DD17BA solid;
+}
+#add{
+margin-top: 25px;
+}
+
+
+.span3-new p{
+margin: 0;
+padding: 0;
+text-indent: 10px;
+}
+.span3-new img{
+border: 2px solid #ccc;
+}
+.infomation{  
+margin: 0;
+border: 2px #ccc solid;
+margin-bottom: 10px;
+}
+.span9-nav{
+text-align: center;
+}
+
+.footer{
+   
+}
+.nav ul{
+list-style: none;
+padding: 0;
+}
+.nav ul li{
+text-align: center;
+}
+/*
+registration
+*/
+.span2-name{
+padding-top:10px ;
+}
+
+.span2-pick{
+padding:0;
+background: none;
+margin-top: 10px;
+margin-right: 20px;
+}
+.span7-div-form{
+ border: 1px solid #ccc;
+ padding-bottom: 30px;
+ margin-top: 10px;
+ margin-bottom: 10px; 
+ background: #F5F5F5;
+ border-radius: 5px;
+}
+/*
+head-profile
+*/
+.span5-nav-top{
+    text-align: center;
+    padding-top: 25px;
+}
+.span9-right{
+text-align: center;
+margin-left: -2px;
+padding-top: 40px;
+padding-bottom: 40px;
+}
+.span3-left{
+    padding-top: 40px;
+}
+#span7-comment{
+text-align: center;
+}
+.unstyled{
+    text-align: left;
+}
+.footer{
+text-align: center;
+}
+.o{
+ width: 100px;  
+    
+}
+.o1{
+width: 230px;
+}
+
+ /* Portrait tablet to landscape and desktop */
+ @media (min-width: 980px) and (max-width: 1230px) {
+        .span3-new img{
+            width:180px;
+        }
+       .infomation{
+            width:180px;
+        }
+    }
+     @media (min-width: 177px) and (max-width: 300px) {
+        .span3-new img{
+            width:80px;
+        }
+       .infomation{
+            width:80px;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 979px) {
+        .span3-new img{
+            width:130px;
+        }
+        .infomation{
+            width:130px;
+        }
+    }
+
+    /* Landscape phone to portrait tablet */
+    @media (max-width: 767px) { 
+        
+    }
+     
+    /* Landscape phones and down */
+    @media (max-width: 480px) { ... }
+    
+    
+    @media (min-width: 768px) and (max-width: 2116px) {
+       
+    }
+   

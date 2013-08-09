@@ -1,0 +1,1 @@
+<?php echo anchor('photo/addnew', 'Add New Photo', 'title="New Photo"');?>
