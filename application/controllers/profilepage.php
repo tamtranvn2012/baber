@@ -39,6 +39,5 @@ class Profilepage extends Main_Controller {
 			$this->load->view('notfoundusername');
 			$this->load->view('include/footer');			
 		}
-	}
-	
+	}	
 }
