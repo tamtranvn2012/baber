@@ -32,9 +32,9 @@
 											<p><img src="<?php echo base_url($perphotoobj->photo_img_link);?>" style="width:200px;" /></p>
                                             <div class=" infomation">
                                                 <p><?php echo $perphotoobj->baber_type;?></p>
-                                                <p><?php echo $perphotoobj->photo_tag;?></p>
+                                                <p><?php echo $perphotoobj->tag;?></p>
                                                 <p><?php echo $perphotoobj->baber_name;?></p>
-                                                <p><?php echo $perphotoobj->created;?></p>
+                                                <p><?php echo date('Y-m-d h:m',$perphotoobj->created);?></p>
                                             </div>
                                          </div>
                                  
@@ -55,9 +55,9 @@
 											<p><img src="<?php echo base_url($perphotoobj->photo_img_link);?>" style="width:200px;" /></p>
                                             <div class=" infomation">
                                                 <p><?php echo $perphotoobj->baber_type;?></p>
-                                                <p><?php echo $perphotoobj->photo_tag;?></p>
+                                                <p><?php echo $perphotoobj->tag;?></p>
                                                 <p><?php echo $perphotoobj->baber_name;?></p>
-                                                <p><?php echo $perphotoobj->created;?></p>
+                                                <p><?php echo date('Y-m-d h:m',$perphotoobj->created);?></p>
                                             </div>
                                          </div>
                                  
@@ -78,9 +78,9 @@
 											<p><img src="<?php echo base_url($perphotoobj->photo_img_link);?>" style="width:200px;" /></p>
                                             <div class=" infomation">
                                                 <p><?php echo $perphotoobj->baber_type;?></p>
-                                                <p><?php echo $perphotoobj->photo_tag;?></p>
+                                                <p><?php echo $perphotoobj->tag;?></p>
                                                 <p><?php echo $perphotoobj->baber_name;?></p>
-                                                <p><?php echo $perphotoobj->created;?></p>
+                                                <p><?php echo date('Y-m-d h:m',$perphotoobj->created);?></p>
                                             </div>
                                          </div>
                                  

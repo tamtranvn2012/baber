@@ -11,7 +11,7 @@ class User extends Main_Controller {
 
 	public function add_new(){
 		$this->load->model('user_model');
-		$data['query'] = $this->user_model->add_new_user();	
+		$this->user_model->add_new_user();	
 	}
 
 	public function checklogin(){

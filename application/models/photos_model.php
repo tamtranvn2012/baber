@@ -35,4 +35,14 @@
 			);
 			$this->db->insert('photos', $data); 			
 		}
+
+		//get image name from image id
+		function get_img_name($imgid)
+		{
+			$this->db->select('photo_img_link');
+			$this->db->where('photo_id', $imgid);
+			$query = $this->db->get('photos');
+			return $query->result();		
+		}
+		
 	}
