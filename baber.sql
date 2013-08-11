@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2013-08-10 10:54:09
+Date: 2013-08-11 16:02:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,7 +24,7 @@ CREATE TABLE `approveprofile` (
   `isapproved` tinyint(1) DEFAULT NULL,
   `apid` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`apid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of approveprofile
@@ -32,6 +32,8 @@ CREATE TABLE `approveprofile` (
 INSERT INTO approveprofile VALUES ('1', '2', '1', '1');
 INSERT INTO approveprofile VALUES ('3', '2', '1', '2');
 INSERT INTO approveprofile VALUES ('5', '2', '1', '3');
+INSERT INTO approveprofile VALUES ('1', '2', '1', '4');
+INSERT INTO approveprofile VALUES ('8', '2', '1', '5');
 
 -- ----------------------------
 -- Table structure for `bussinessprofile`
@@ -54,16 +56,19 @@ CREATE TABLE `bussinessprofile` (
   `created` int(11) DEFAULT NULL,
   `slug` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`bpid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of bussinessprofile
 -- ----------------------------
-INSERT INTO bussinessprofile VALUES ('1', '8', '8___2013_08_08___491_beautiful_hair5.jpg', '3 kiet 258 le duan bus', 'Hue', 'Hu', '47000', '0543581097', 'myins', 'myface', 'knife,cutter', '0', 'tamtrantestbbshop', '1376015243', 'rvengine');
+INSERT INTO bussinessprofile VALUES ('1', '8', '8___2013_08_08___491_beautiful_hair5.jpg', '3 kiet 258 le duan bus', 'Hue', 'Hu', '47000', '0543581097', 'myins', 'myface', 'knife,cutter', '0', 'hoanthanh', '1376015243', 'rvengine');
 INSERT INTO bussinessprofile VALUES ('2', '9', '8___2013_08_08___Beautiful_Hair.jpg', '56 kiet 23 dinh tien hoan', 'Hue', 'Hu', 'test zip code', '0543567833', 'cusins', 'cusface', 'knife,cutter,hair', '0', 'thanhhobbshop', '1376015243', 'rvengine1');
 INSERT INTO bussinessprofile VALUES ('3', '10', '8___2013_08_08___thumb_1114_brown_hair_1.jpg', '2 kiet 44 Phan Boi Chau', 'DaNang', 'DN', 'zip danang', '0443333555', 'dncusins', 'dnface', 'cutter,hair,tool', '0', 'songlamshop', '1376015243', 'rvengine2');
 INSERT INTO bussinessprofile VALUES ('4', '11', '8___2013_08_08___red_hair_beauty_smile_look_nice_girl_hair_perfection_33305_1600x1200.jpg', '33 kiet 22 phan dinh phung', 'Ho Chi Minh', 'HCM', '33440', '32456788', 'hcmins', 'hcmface', 'cutter,hair,tool', '0', 'thanhhohcmshop', '1376015243', 'rvengine3');
-INSERT INTO bussinessprofile VALUES ('5', '12', '8___2013_08_09___images_11.jpg', '33 kiet 22 phan dinh phung', 'Phan Ran', 'Pr', '226677 zip', '3256678890', 'Prins', 'Prface', 'cutter h?i', '0', 'congthanhshop', '1376015243', 'rvengine4');
+INSERT INTO bussinessprofile VALUES ('5', '12', '8___2013_08_09___images_11.jpg', '33 kiet 22 phan dinh phung', 'Phan Ran', 'Pr', '226677 zip', '3256678890', 'Prins', 'Prface', 'cutter hair', '0', 'congthanhshop', '1376015243', 'rvengine4');
+INSERT INTO bussinessprofile VALUES ('6', '9', '8___2013_08_09___images_11.jpg', '3 kiet 258 le duan', 'Hue', 'Hu', '47600', '0543581097', 'myinsta1', 'thanhface1', 'cutter hair', '0', 'nhanshop', '1376015243', 'rvengine1');
+INSERT INTO bussinessprofile VALUES ('7', '10', '8___2013_08_09___images_11.jpg', '3 kiet 258 le duan', 'Hoi An', 'Hue', '7800', '0123456789', 'myinsta10', 'thanhface1', 'cutter,hair,tool', '0', 'songlamshop1', '1376015243', 'rvengine2');
+INSERT INTO bussinessprofile VALUES ('8', '8', '8___2013_08_09___images_11.jpg', '3 kiet 258 le duan', 'Hoi An', 'Hue', '89007', '0123456789', 'myinsta10', 'thanhface1', 'cutter,hair,tool', '0', 'songlamshop2', '1376015243', 'rvengine9');
 
 -- ----------------------------
 -- Table structure for `photos`

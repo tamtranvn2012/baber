@@ -40,7 +40,16 @@
 
 $route['default_controller'] = "frontpage";
 $route['404_override'] = '';
+$route['(:any)/manage/requestapprove'] = "profilepage/request_approve";
+$route['(:any)/manage/listapprove/(:any)'] = "profilepage/listing_approved_by_bpid";
+$route['(:any)/manage/approveapid/(:any)/(:any)'] = "profilepage/approved_apid";
+$route['(:any)/manage/unapproveapid/(:any)/(:any)'] = "profilepage/unapproved_apid";
+$route['(:any)/manage'] = "profilepage/profile_manage";
+$route['(:any)/saverequest'] = "profilepage/save_request_approve";
+$route['user/login'] = "user/login";
+$route['user/checklogin'] = "user/checklogin";
 $route['(:any)'] = "profilepage";
+
 
 
 /* End of file routes.php */

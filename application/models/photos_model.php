@@ -36,13 +36,14 @@
 			$this->db->insert('photos', $data); 			
 		}
 
-		//get image name from image id
-		function get_img_name($imgid)
+		//get photo name from photo id
+		function get_img_name($photo_id)
 		{
 			$this->db->select('photo_img_link');
-			$this->db->where('photo_id', $imgid);
+			$this->db->where('photo_id', $photo_id);
 			$query = $this->db->get('photos');
 			return $query->result();		
 		}
+		
 		
 	}
