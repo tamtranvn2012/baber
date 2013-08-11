@@ -26,7 +26,7 @@ class User extends Main_Controller {
 				'expire' => '86400'
 			);
 			$this->input->set_cookie($cookie);
-			redirect('/user/manage/', 'refresh');
+			redirect('/rvengine/manage/listapprove/2', 'refresh');
 		}else{
 			$cookie = array(
 				'name'   => 'userid',
