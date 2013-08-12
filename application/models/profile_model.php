@@ -37,6 +37,20 @@
 			}
 		}
 		
+		//Check profile bpid contant with bussiness profile or not?
+		function check_userid_bpid($userid,$bpid)
+		{
+			$this->db->where('userid', $userid);
+			$this->db->where('bpid', $bpid);
+			$query = $this->db->get('bussinessprofile');
+			$result = $query->result();			
+			if(count($result)){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		
 		//Save request approve result
 		function save_request_approve($upid,$bpid)
 		{

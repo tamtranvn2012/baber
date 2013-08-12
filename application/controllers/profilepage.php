@@ -140,8 +140,6 @@ class Profilepage extends Main_Controller {
 		$data['username'] = $this->uri->segment(1, 0);
 		$bpid = intval($this->uri->segment(4, 0));
 		//Check bpid containt with userid or not
-		//Place $userid=9 for test
-		$userid = 9;
 		if($this->profile_model->check_userid_bpid($userid,$bpid)){
 			$data['listapproved'] = $this->profile_model->get_all_approved($bpid,1);
 			$data['listunapproved'] = $this->profile_model->get_all_approved($bpid,0);
@@ -162,8 +160,6 @@ class Profilepage extends Main_Controller {
 		$this->load->helper('cookie');
 		$userid = 0;
 		$userid = $this->input->cookie('userid', TRUE);		
-		//Place $userid=9 for test
-		$userid = 9;
 		if($this->profile_model->check_userid_bpid($userid,$bpid)){
 			if($this->profile_model->check_apid_bpid($apid,$bpid)){
 				$this->profile_model->approved_apid($apid);
