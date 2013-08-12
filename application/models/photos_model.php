@@ -45,5 +45,12 @@
 			return $query->result();		
 		}
 		
-		
+		//get photo id from photo name
+		function get_img_id($photo_img_link)
+		{
+			$this->db->select('photo_id');
+			$this->db->where('photo_img_link', $photo_img_link);
+			$query = $this->db->get('photos');
+			return $query->result();		
+		}		
 	}

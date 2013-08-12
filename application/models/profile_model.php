@@ -8,27 +8,27 @@
 		}
 		
 		//Get bussiness profile
-		function get_all_bussiness_info($userid)
+		function get_all_invidual_info($userid)
 		{
 			if ($userid == 'all'){
-				$query = $this->db->get('bussinessprofile');
+				$query = $this->db->get('userprofile');
 				$result = $query->result();			
 			}
 			if ($userid != 'all'){
 				$userid = intval($userid);
 				$this->db->where('userid', $userid);
-				$query = $this->db->get('bussinessprofile');
+				$query = $this->db->get('userprofile');
 				$result = $query->result();			
 			}			
 			return $result;
 		}
 		
 		//Check profile id contant with bussiness profile or not?
-		function check_userid_bpid($userid,$bpid)
+		function check_userid_upid($userid,$upid)
 		{
 			$this->db->where('userid', $userid);
-			$this->db->where('bpid', $bpid);
-			$query = $this->db->get('bussinessprofile');
+			$this->db->where('upid', $upid);
+			$query = $this->db->get('userprofile');
 			$result = $query->result();			
 			if(count($result)){
 				return true;
@@ -105,5 +105,38 @@
 						);
 			$this->db->where('apid', $apid);
 			$this->db->update('approveprofile', $data); 			
-		}				
+		}
+
+		//Check userprofile contant with bussisness profile or not
+		function check_upid_bpid($upidrq,$bpid,$userid){
+			$this->db->select('upid');
+			$this->db->where('userid', $userid);
+			$query = $this->db->get('userprofile');
+			$result = $query->result();			
+			$upiddb = 0;
+			$upiddb = $result[0]->upid;
+			if(intval($upiddb) == intval($upidrq)){
+				$this->db->select('upid');
+				$this->db->where('bpid', $bpid);
+				$query1 = $this->db->get('approveprofile');
+				$result1 = $query1->result();
+				if(count($result1)){
+					return true;
+				}else{
+					return false;
+				}	
+			}else{
+				return false;
+			}									
+		}
+		
+		//Get apid from upid and bpid
+		function get_apid($upid,$bpid){
+			$this->db->select('apid');
+			$this->db->where('upid', $upid);
+			$this->db->where('bpid', $bpid);
+			$query = $this->db->get('approveprofile');
+			$result = $query->result();			
+			return $result;
+		}
 	}

@@ -18,6 +18,8 @@ class Upload extends CI_Controller
 		}
 		$this->load->helper(array('form', 'url'));
 		$this->load->helper('date');
+		$this->load->model('post_model');
+		$this->load->model('profile_model');		
 		$os = PHP_OS;
 		switch($os)
 		{
@@ -52,29 +54,13 @@ class Upload extends CI_Controller
 		if (!is_dir($thumbsdir)){
 			mkdir($thumbsdir,777);
 		}
-		
 		$this->setPath_img_upload_folder($useruploaddir);
 		$this->setPath_img_thumb_upload_folder($thumbsdir);
 		//Set url img with Base_url()
 		$this->setPath_url_img_upload_folder(base_url() . 'uploads/'.$yearfolder.'/'.$monthfolder.'/'.$dayfolder.'/'.$useridss.'/');
 		$this->setPath_url_img_thumb_upload_folder(base_url() . 'uploads/'.$yearfolder.'/'.$monthfolder.'/'.$dayfolder.'/'.$useridss.'/thumbnails/');
-
 		//Delete img url
 		$this->setDelete_img_url(base_url() . 'admin/deleteImage/');
-		
-		//End make new folder
-		//Set relative Path with CI Constant
-		/*
-		$this->setPath_img_upload_folder("c:/xampp/htdocs/baber/assets/img/articles/");
-		$this->setPath_img_thumb_upload_folder("c:/xampp/htdocs/baber/assets/img/articles/thumbnails/");
-
-		//Delete img url
-		$this->setDelete_img_url(base_url() . 'admin/deleteImage/');
-
-		//Set url img with Base_url()
-		$this->setPath_url_img_upload_folder(base_url() . "assets/img/articles/");
-		$this->setPath_url_img_thumb_upload_folder(base_url() . "assets/img/articles/thumbnails/");
-		*/
 	}
 
 	public function index()
@@ -85,145 +71,176 @@ class Upload extends CI_Controller
 	// Function called by the form
 	public function upload_img()
 	{
+		if($_FILES['userfile']['name'] == ''){
+			$this->load->helper('cookie');
+			$upid = $_REQUEST['upid'];
+			$bpid = $_REQUEST['bpid'];
+			$userid = $this->input->cookie('userid', TRUE);
+			if($this->profile_model->check_upid_bpid($upid,$bpid,$userid)){
+				$babershopname = $_REQUEST['babershopname'];
+				$baber_type = $_REQUEST['baber_type'];
+				$baber_name = $_REQUEST['babername'];
+				$tags = $_REQUEST['tags'];
+				$resultapid = $this->profile_model->get_apid($upid,$bpid);
+				$apid = $resultapid[0]->apid;
+				$photo_id = $this->input->cookie('photo_img_id', TRUE);
+				$private = 0;
+				$this->post_model->add_new_post($apid,$photo_id,$babershopname,$baber_type,$baber_name,$tags,$private);
+				echo 'Load view complete insert post here';
+			}
+		}
+	
 		//Format the name
-		if (!$_FILES){
-			return;
-		}
-		
-		
-		$name = $_FILES['userfile']['name'];
-		$name = strtr($name, 'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-		$useridss = $this->input->cookie('userid', TRUE);
-		$yearfolder = date('Y');
-		$monthfolder = date('m');
-		$dayfolder = date('d');
-		$fulldate = date('Y-m-d');
-		$timtostr = strtotime(now());
-        //$file->name = $useridss.'___'.$fulldate.'___'.$name;		
-		$baber_name = '';
-		$photo_link = '';
-		$photo_tag = '';
-		$baber_name = $_REQUEST['baber_name'];
-		$baber_type = $_REQUEST['baber_type'];
-		$photo_link = $_REQUEST['photo_link'];
-		$photo_tag = $_REQUEST['photo_tag'];
-        $photo_img_link = $useridss.'___'.$fulldate.'___'.$name;
-        $photo_img_link = str_replace('-','_',$photo_img_link);
-		$isprivate = 0;
-		if (strlen($baber_name)>0 && strlen($photo_link)>0 && strlen($photo_tag)>0){
-			$this->load->model('photos_model');
-			$this->photos_model->add_new_photo($baber_name,$photo_link,$photo_tag,$photo_img_link,$isprivate,$baber_type,$useridss);
-		}else{
-			echo 'Please fill form';exit;
-		}
-		
-		$uploaddir = FCPATH.'uploads';
-		//$uploaddir = FCPATH.'assets'.DS.'img'.DS.'articles';
-		$yearuploaddir = $uploaddir.DS.$yearfolder;
-		if (!is_dir($yearuploaddir)){
-			mkdir($yearuploaddir,777);
-		}
-		$monthuploaddir = $yearuploaddir.DS.$monthfolder;
-		if (!is_dir($monthuploaddir)){
-			mkdir($monthuploaddir,777);
-		}
-		$dayuploaddir = $monthuploaddir.DS.$dayfolder;
-		if (!is_dir($dayuploaddir)){
-			mkdir($dayuploaddir,777);
-		}
-		$useruploaddir = $dayuploaddir.DS.$useridss;
-		if (!is_dir($useruploaddir)){
-			mkdir($useruploaddir,777);
-		}
-		$thumbsdir = $useruploaddir.DS.'thumbnails';
-		if (!is_dir($thumbsdir)){
-			mkdir($thumbsdir,777);
-		}
-		
-		$this->setPath_img_upload_folder($useruploaddir);
-		$this->setPath_img_thumb_upload_folder($thumbsdir);
-		//Set url img with Base_url()
-		$this->setPath_url_img_upload_folder(base_url() . 'uploads/'.$yearfolder.'/'.$monthfolder.'/'.$dayfolder.'/'.$useridss.'/');
-		$this->setPath_url_img_thumb_upload_folder(base_url() . 'uploads/'.$yearfolder.'/'.$monthfolder.'/'.$dayfolder.'/'.$useridss.'/thumbnails/');
-		
-		// replace characters other than letters, numbers and . by _
-		$name = preg_replace('/([^.a-z0-9]+)/i', '_', $name);
-		
-		//Your upload directory, see CI user guide
-		
-		$config['upload_path'] = $this->getPath_img_upload_folder();
-
-		$config['allowed_types'] = 'gif|jpg|png|JPG|GIF|PNG';
-		$config['max_size'] = '2000';
-		$config['file_name'] = $name;
-
-		//Load the upload library
-		$this->load->library('upload', $config);
-
-		if ($this->do_upload())
-		{
-			// Codeigniter Upload class alters name automatically (e.g. periods are escaped with an
-			//underscore) - so use the altered name for thumbnail
-			$data = $this->upload->data();
-			$name = $data['file_name'];
-			//$name = $_FILES['userfile']['name'];
-			//$name = $file->name;
-
-			//If you want to resize 
-			$config['new_image'] = $this->getPath_img_thumb_upload_folder().$name;
-			$config['image_library'] = 'gd2';
-			//$config['source_image'] = $this->getPath_img_upload_folder() . $name;
-			$config['source_image'] = $this->getPath_img_upload_folder() . $name;
-			$config['create_thumb'] = False;
-			$config['maintain_ratio'] = TRUE;
-			$config['width'] = 193;
-			$config['height'] = 94;
-
-			$this->load->library('image_lib', $config);
-
-			$this->image_lib->resize();
-
-			//Get info 
-			$info = new stdClass();
+		if ($_FILES['userfile']['name']){
+			$name = $_FILES['userfile']['name'];
+			$name = strtr($name, 'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+			$useridss = $this->input->cookie('userid', TRUE);
+			$yearfolder = date('Y');
+			$monthfolder = date('m');
+			$dayfolder = date('d');
+			$fulldate = date('Y-m-d');
+			$timtostr = strtotime(now());		
+			$baber_name = '';
+			$photo_link = '';
+			$photo_tag = '';
+			$baber_name = $_REQUEST['baber_name'];
+			$baber_type = $_REQUEST['baber_type'];
+			$photo_link = $_REQUEST['photo_link'];
+			$photo_tag = $_REQUEST['photo_tag'];
+			//$photo_img_link = $useridss.'___'.$fulldate.'___'.$name;
+			//$photo_img_link = str_replace('-','_',$photo_img_link);
+			$isprivate = 0;
 			
-			$info->name = $name;
-			$info->size = $data['file_size'];
-			$info->type = $data['file_type'];
-			//$info->url = $this->getPath_img_upload_folder() . $name;
+			$uploaddir = FCPATH.'uploads';
+			//$uploaddir = FCPATH.'assets'.DS.'img'.DS.'articles';
+			$yearuploaddir = $uploaddir.DS.$yearfolder;
+			if (!is_dir($yearuploaddir)){
+				mkdir($yearuploaddir,777);
+			}
+			$monthuploaddir = $yearuploaddir.DS.$monthfolder;
+			if (!is_dir($monthuploaddir)){
+				mkdir($monthuploaddir,777);
+			}
+			$dayuploaddir = $monthuploaddir.DS.$dayfolder;
+			if (!is_dir($dayuploaddir)){
+				mkdir($dayuploaddir,777);
+			}
+			$useruploaddir = $dayuploaddir.DS.$useridss;
+			if (!is_dir($useruploaddir)){
+				mkdir($useruploaddir,777);
+			}
+			$thumbsdir = $useruploaddir.DS.'thumbnails';
+			if (!is_dir($thumbsdir)){
+				mkdir($thumbsdir,777);
+			}
 			
-			$info->url = $this->getPath_url_img_upload_folder() . $name;
-			//$info->thumbnail_url = $this->getPath_img_thumb_upload_folder() . $name; //I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$name
-			//$info->thumbnail_url = $this->getPath_url_img_thumb_upload_folder() . $name; //I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$name
-			$info->thumbnail_url = $this->getPath_url_img_upload_folder() . $name; //I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$name
-			$info->delete_url = $this->getDelete_img_url() . $name;
-			$info->delete_type = 'DELETE';
+			$this->setPath_img_upload_folder($useruploaddir);
+			$this->setPath_img_thumb_upload_folder($thumbsdir);
+			//Set url img with Base_url()
+			$this->setPath_url_img_upload_folder(base_url() . 'uploads/'.$yearfolder.'/'.$monthfolder.'/'.$dayfolder.'/'.$useridss.'/');
+			$this->setPath_url_img_thumb_upload_folder(base_url() . 'uploads/'.$yearfolder.'/'.$monthfolder.'/'.$dayfolder.'/'.$useridss.'/thumbnails/');
+			
+			// replace characters other than letters, numbers and . by _
+			$name = preg_replace('/([^.a-z0-9]+)/i', '_', $name);
+			
+			//Your upload directory, see CI user guide
+			
+			$config['upload_path'] = $this->getPath_img_upload_folder();
 
+			$config['allowed_types'] = 'gif|jpg|png|JPG|GIF|PNG';
+			$config['max_size'] = '2000';
+			$config['file_name'] = $name;
 
-			//Return JSON data
-			if (IS_AJAX)
-			{   //this is why we put this in the constants to pass only json data
-			echo json_encode(array($info));
-			//this has to be the only the only data returned or you will get an error.
-			//if you don't give this a json array it will give you a Empty file upload result error
-			//it you set this without the if(IS_AJAX)...else... you get ERROR:TRUE (my experience anyway)
+			//Load the upload library
+			$this->load->library('upload', $config);
+
+			if ($this->do_upload())
+			{
+				// Codeigniter Upload class alters name automatically (e.g. periods are escaped with an
+				//underscore) - so use the altered name for thumbnail
+				$data = $this->upload->data();
+				$name = $data['file_name'];
+				//$name = $_FILES['userfile']['name'];
+				//$name = $file->name;
+
+				//If you want to resize 
+				$config['new_image'] = $this->getPath_img_thumb_upload_folder().$name;
+				$config['image_library'] = 'gd2';
+				//$config['source_image'] = $this->getPath_img_upload_folder() . $name;
+				$config['source_image'] = $this->getPath_img_upload_folder() . $name;
+				$config['create_thumb'] = False;
+				$config['maintain_ratio'] = TRUE;
+				$config['width'] = 193;
+				$config['height'] = 94;
+
+				$this->load->library('image_lib', $config);
+
+				$this->image_lib->resize();
+
+				//Get info 
+				$info = new stdClass();
+				
+				$info->name = $name;
+				$info->size = $data['file_size'];
+				$info->type = $data['file_type'];
+				//$info->url = $this->getPath_img_upload_folder() . $name;
+				
+				$info->url = $this->getPath_url_img_upload_folder() . $name;
+				//$info->thumbnail_url = $this->getPath_img_thumb_upload_folder() . $name; //I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$name
+				//$info->thumbnail_url = $this->getPath_url_img_thumb_upload_folder() . $name; //I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$name
+				$info->thumbnail_url = $this->getPath_url_img_upload_folder() . $name; //I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$name
+				$info->delete_url = $this->getDelete_img_url() . $name;
+				$info->delete_type = 'DELETE';
+
+				//upload file
+				$photo_img_link = $useridss.'___'.$fulldate.'___'.$name;
+				$photo_img_link = str_replace('-','_',$photo_img_link);
+				
+				if (strlen($photo_img_link)>0){
+					$this->load->model('photos_model');
+					$this->photos_model->add_new_photo($baber_name,$photo_link,$photo_tag,$photo_img_link,$isprivate,$baber_type,$useridss);
+					$resultphotoid = $this->photos_model->get_img_id($photo_img_link);
+					$photo_id = 0;
+					$photo_id = $resultphotoid[0]->photo_id;
+					$cookie = array(
+						'name'   => 'photo_img_id',
+						'value'  => $photo_id,
+						'expire' => '86400'
+					);
+					$this->input->set_cookie($cookie);				
+				}else{
+					//echo 'Please fill form';exit;
+				}
+
+				//Return JSON data
+				if (IS_AJAX)
+				{   //this is why we put this in the constants to pass only json data
+				echo json_encode(array($info));
+				//this has to be the only the only data returned or you will get an error.
+				//if you don't give this a json array it will give you a Empty file upload result error
+				//it you set this without the if(IS_AJAX)...else... you get ERROR:TRUE (my experience anyway)
+				}
+				else
+				{   // so that this will still work if javascript is not enabled
+					$file_data['upload_data'] = $this->upload->data();
+					echo json_encode(array($info));
+				}
 			}
 			else
-			{   // so that this will still work if javascript is not enabled
-				$file_data['upload_data'] = $this->upload->data();
-				echo json_encode(array($info));
+			{
+
+			// the display_errors() function wraps error messages in <p> by default and these html chars don't parse in
+			// default view on the forum so either set them to blank, or decide how you want them to display.  null is passed.
+			$error = array('error' => $this->upload->display_errors('',''));
+
+			echo json_encode(array($error));
 			}
 		}
-		else
-		{
-
-		// the display_errors() function wraps error messages in <p> by default and these html chars don't parse in
-		// default view on the forum so either set them to blank, or decide how you want them to display.  null is passed.
-		$error = array('error' => $this->upload->display_errors('',''));
-
-		echo json_encode(array($error));
+		/*
+		if($_REQUEST){
+			var_dump($this->input->cookie('photo_img_link', TRUE));
 		}
-
-
+		*/
 	}
 
 	//Function for the upload : return true/false

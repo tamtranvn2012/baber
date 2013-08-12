@@ -7,14 +7,14 @@
    <h3>Login</h3>
    <?php if (!empty($error)): ?>
       <div class="alert alert-error">
-         <b>Error!</b> <?php= $error ?>
+         <b>Error!</b> <?php $error ?>
       </div>
    <?php elseif (!empty($info)): ?>
       <div class="alert alert-info">
-         <b>Info.</b> <?php= $info ?>
+         <b>Info.</b> <?php $info ?>
       </div>
    <?php endif; ?>
-   <form class="well" method="POST">
+   <form class="well" method="POST" action="../user/checklogin">
       <label>Username</label>
       <input type="text" name="username" style="width: 260px;" <?php if (!empty($username)): ?> value="<?php echo $username ?>" <?php endif; ?>>
       <label>Password</label>

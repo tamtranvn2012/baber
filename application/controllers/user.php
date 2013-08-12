@@ -14,29 +14,6 @@ class User extends Main_Controller {
 		$this->user_model->add_new_user();	
 	}
 
-	public function checklogin(){
-		$this->load->model('user_model');
-		$this->load->helper('cookie');
-		$this->load->helper('url');
-		$userinfo = $this->user_model->checklogin('rvengine','h5f9p5h4');
-		if($userinfo){
-			$cookie = array(
-				'name'   => 'userid',
-				'value'  => $userinfo,
-				'expire' => '86400'
-			);
-			$this->input->set_cookie($cookie);
-			redirect('/rvengine/manage/listapprove/2', 'refresh');
-		}else{
-			$cookie = array(
-				'name'   => 'userid',
-				'value'  => 0,
-				'expire' => '86400'
-			);
-			$this->input->set_cookie($cookie);
-			redirect('/user/login/', 'refresh');
-		}
-	}	
 	
 	public function manage(){
 		$this->islogin();
@@ -56,5 +33,34 @@ class User extends Main_Controller {
 		$this->load->view('include/headerbt');
 		$this->load->view('login');
 		$this->load->view('include/footerbt');		
-	}	
+	}
+
+    public function checklogin(){
+        $username=$_REQUEST['username'];
+        $password=$_REQUEST['password'];
+        $this->load->model('user_model');
+        $this->user_model->checklogin($username,$password);
+    }
+
+    public function register(){
+        $this->load->view('include/headerbt');
+        $this->load->view('register_user');
+        $this->load->view('include/footerbt');
+    }
+
+    public function check(){
+        $username=$_REQUEST['username'];
+        $password=$_REQUEST['password'];
+        $this->load->model('user_model');
+        $this->user_model->add_new_user($username,$password);
+    }
+    public function successful(){
+        
+    }
+    public function loginfailed(){
+        echo "login is failed";
+    }
+    public function loginsuccess(){
+        echo "login is success";
+    }
 }
