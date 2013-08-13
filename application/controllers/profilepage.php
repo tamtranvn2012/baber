@@ -5,9 +5,21 @@ if (!defined('BASEPATH'))
 class Profilepage extends Main_Controller {
 	
 	function __construct() {
-		parent::__construct();
+		parent::__construct();		
 		$this->load->database();
 		$this->load->model('user_model');
+		$username = $this->uri->segment(1, 0);
+		$result = $this->user_model->checkusername($username);
+		$this->load->helper('cookie');
+		if($result){
+			$userid = 0;
+			$userid = $this->input->cookie('userid', TRUE);
+			if(!$userid){
+				redirect('/user/login/', 'refresh');
+			}
+		}else{
+			redirect('/user/login/', 'refresh');
+		}
 		$this->load->model('post_model');
 		$this->load->model('profile_model');
 		$this->load->model('photos_model');
@@ -15,38 +27,7 @@ class Profilepage extends Main_Controller {
 	}
 	
 	function index(){
-		$username = $this->uri->segment(1, 0);
-		$result = $this->user_model->checkusername($username);
-		if($result){
-			$userid = intval($result[0]->userid);
-			$bpid = 0;
-			$bpid = intval($this->user_model->getbpid($userid)[0]->bpid);
-			if ($bpid){
-				$apid = 0;
-				$resutlapids = $this->user_model->getapid($bpid);
-			}
-			if(count($resutlapids)>0){
-				$apidarr = array();
-				foreach($resutlapids as $perapid){
-					$apidarr[] = $perapid->apid;
-				}
-			}
-			$postresults = array();
-			$postresults = $this->post_model->get_posts_byapid($apidarr);
-			foreach ($postresults as $perpost){
-				$photo_id = intval($perpost->photo_id);
-				$photoname = $this->photos_model->get_img_name($photo_id)[0]->photo_img_link;
-				$perpost->photo_img_link = $this->get_img_loc($photoname);
-			}
-			$data['postresults'] = $postresults;
-			$this->load->view('include/header');
-			$this->load->view('profilepage',$data);
-			$this->load->view('include/footer');						
-		}else{
-			$this->load->view('include/header');
-			$this->load->view('notfoundusername');
-			$this->load->view('include/footer');			
-		}
+
 	}
 	
 	//get full path for image
@@ -62,31 +43,56 @@ class Profilepage extends Main_Controller {
 	
 	//Baber profile manage page
 	function profile_manage(){
-		$username = $this->uri->segment(1, 0);
-		$result = $this->user_model->checkusername($username);
-		if($result){
-			$this->load->helper('cookie');
-			$userid = 0;
-			$userid = $this->input->cookie('userid', TRUE);
-			if(!$userid){
-				redirect('/user/login/', 'refresh');
+		$data['username'] = $this->uri->segment(1, 0);
+		$userid = $this->input->cookie('userid', TRUE);
+		//data for manage links approve
+		$bpidofuser = $this->profile_model->get_bpid_by_userid($userid);
+		$data['bpidsmanage'] = $bpidofuser;
+		//end data		
+		
+		//data for make new post to approve bussiness profile id
+		$upidarrobj = $this->profile_model->get_upid_userid($userid);
+		$apidsobjs = array();
+		foreach($upidarrobj as $perupidobj){
+			$perupid = $perupidobj->upid;
+			$apidarrobj = $this->profile_model->get_apid_by_upid_allinfo($perupid);
+			foreach($apidarrobj as $perapidobj){
+				$apidsobjs[] = $perapidobj;
 			}
-			$this->load->view('include/header');
-			$this->load->view('profilemanage');
-			$this->load->view('include/footer');						
 		}
+		$data['apidsobjs'] = $apidsobjs;
+		//data
+		$this->load->view('include/header');
+		$this->load->view('profilemanage',$data);
+		$this->load->view('include/footer');						
 	}
+	
 	//Baber request approve on Babershop to work
 	function request_approve(){
 		$username = $this->uri->segment(1, 0);
+		$data['username'] = $username;
 		$result = $this->user_model->checkusername($username);
 		if($result){
-			$this->load->helper('cookie');
+			//data for search bpid by username
+			$useridarr = $this->user_model->get_all_userid();
+			$userinfoarr = array();
+			foreach($useridarr as $peruserid){
+				$peruserinfo = array();
+				$useridofarr = $peruserid->userid;
+				$bpidarr = $this->profile_model->get_bpid_by_userid($useridofarr);
+				foreach($bpidarr as $perbp){
+					$perbpid = $perbp->bpid;
+					$usernamebpid = $this->user_model->get_username_by_userid($useridofarr)[0]->username;
+					$peruserinfo['username'] = $usernamebpid;
+					$peruserinfo['bpid'] = $perbpid;
+					$userinfoarr[] = $peruserinfo;
+				}
+			}
+			$data['userbpids'] = $userinfoarr;
+			//data
+			
 			$userid = 0;
 			$userid = $this->input->cookie('userid', TRUE);
-			if(!$userid){
-				redirect('/user/login/', 'refresh');
-			}
 			$resultbussinessprofiles = $this->profile_model->get_all_invidual_info('all');
 			$resultownbussinessprofiles = $this->profile_model->get_all_invidual_info($userid);
 			$bpownarray = array();
@@ -101,18 +107,16 @@ class Profilepage extends Main_Controller {
 			}
 			$data['bpchoice'] = $bparray;
 			$data['bpownchoice'] = $bpownarray;
+			$data['username'] = $username;
 			$this->load->view('include/header');
 			$this->load->view('request_approve_form',$data);
 			$this->load->view('include/footer');						
 		}
 	}
+	
 	function save_request_approve(){
-		$this->load->helper('cookie');
 		$userid = 0;
 		$userid = $this->input->cookie('userid', TRUE);
-		if(!$userid){
-			redirect('/user/login/', 'refresh');
-		}
 		$yourupid = intval($_REQUEST['yourbpprofile']);
 		if($this->profile_model->check_userid_upid($userid,$yourupid)){
 			//Place code to get bussiness profile id here : get $approvetobpid
@@ -131,12 +135,8 @@ class Profilepage extends Main_Controller {
 	
 	//Listing all approved
 	function listing_approved_by_bpid(){
-		$this->load->helper('cookie');
 		$userid = 0;
 		$userid = $this->input->cookie('userid', TRUE);
-		if(!$userid){
-			redirect('/user/login/', 'refresh');
-		}
 		$data['username'] = $this->uri->segment(1, 0);
 		$bpid = intval($this->uri->segment(4, 0));
 		//Check bpid containt with userid or not
@@ -157,7 +157,6 @@ class Profilepage extends Main_Controller {
 		$username = intval($this->uri->segment(1, 0));
 		$apid = intval($this->uri->segment(5, 0));
 		$bpid = intval($this->uri->segment(4, 0));
-		$this->load->helper('cookie');
 		$userid = 0;
 		$userid = $this->input->cookie('userid', TRUE);		
 		if($this->profile_model->check_userid_bpid($userid,$bpid)){
@@ -220,4 +219,11 @@ class Profilepage extends Main_Controller {
 		}
 	}
 	
+	//Manage post had approve
+	function manage_bp_posts(){
+		$data = array();
+		$this->load->view('include/header');
+		$this->load->view('listbppostapproved',$data);
+		$this->load->view('include/footer');																		
+	}	
 }

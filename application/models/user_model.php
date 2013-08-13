@@ -157,6 +157,21 @@
 			}else{
 				return false;
 			}
-		}		
+		}
+
+		//Get all userid
+		function get_all_userid(){
+			$this->db->select('userid');
+			$query = $this->db->get('user');
+			return $query->result();			
+		}
+		
+		//Get username by userid
+		function get_username_by_userid($userid){
+			$this->db->select('username');
+			$this->db->where('userid', $userid);
+			$query = $this->db->get('user');
+			return $query->result();		
+		}
     }
 ?>

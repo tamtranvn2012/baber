@@ -6,7 +6,10 @@
                         <p><a>TapeUps.com</a></p>
                     </div>
                     <div class="span3 offset2 search" >
-                        <input type="text" name="search" class="input-large" id="search"/>
+						<?php echo form_open_multipart('/search/zipcode', array('id' => 'searchzipcodeform')); ?>
+							<input type="text" name="zipcode" class="input-large" id="searchbyzipcode"/>
+							<input type="submit" value="Search" />
+						<?php echo form_close(); ?>
                         <p>Type in Zip Code to Search for Barber</p>
                     </div>
                     <div class="span4 text-right " id="add">

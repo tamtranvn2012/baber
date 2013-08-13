@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2013-08-12 21:36:05
+Date: 2013-08-13 20:02:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,15 +24,17 @@ CREATE TABLE `approveprofile` (
   `isapproved` tinyint(1) DEFAULT NULL,
   `apid` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`apid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of approveprofile
 -- ----------------------------
 INSERT INTO approveprofile VALUES ('1', '2', '1', '1');
-INSERT INTO approveprofile VALUES ('3', '2', '1', '2');
-INSERT INTO approveprofile VALUES ('5', '2', '1', '3');
+INSERT INTO approveprofile VALUES ('3', '2', '0', '2');
+INSERT INTO approveprofile VALUES ('5', '2', '0', '3');
 INSERT INTO approveprofile VALUES ('1', '3', '1', '6');
+INSERT INTO approveprofile VALUES ('2', '3', '1', '7');
+INSERT INTO approveprofile VALUES ('1', '5', '0', '8');
 
 -- ----------------------------
 -- Table structure for `bussinessprofile`
@@ -84,7 +86,7 @@ CREATE TABLE `photos` (
   `created` int(11) DEFAULT NULL,
   `baber_type` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`photo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of photos
@@ -118,6 +120,10 @@ INSERT INTO photos VALUES ('29', null, null, '8', '0', null, '8___2013_08_12___b
 INSERT INTO photos VALUES ('30', null, null, '8', '0', null, '8___2013_08_12___beautiful_long_hair.jpg', '1376313479', 'hairsalon');
 INSERT INTO photos VALUES ('31', null, null, '8', '0', null, '8___2013_08_12___good_h11.jpg', '1376313683', 'hairsalon');
 INSERT INTO photos VALUES ('32', null, null, '8', '0', null, '8___2013_08_12___Beautiful_Hair1.jpg', '1376313714', 'hairsalon');
+INSERT INTO photos VALUES ('33', null, null, '9', '0', null, '9___2013_08_12___Beautiful_Hair.jpg', '1376324141', 'hairsalon');
+INSERT INTO photos VALUES ('34', null, null, '8', '0', null, '8___2013_08_13___hair_beauty.jpg', '1376365558', 'babershop');
+INSERT INTO photos VALUES ('35', null, null, '8', '0', null, '8___2013_08_13___beautiful_hair.jpg', '1376384224', 'babershop');
+INSERT INTO photos VALUES ('36', null, null, '8', '0', null, '8___2013_08_13___Hair_Makeup1.jpg', '1376384281', 'hairsalon');
 
 -- ----------------------------
 -- Table structure for `photo_tmp`
@@ -148,7 +154,7 @@ CREATE TABLE `postapprovedprofile` (
   `private` tinyint(1) DEFAULT NULL,
   `photo_img_link` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ppid`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of postapprovedprofile
@@ -168,6 +174,10 @@ INSERT INTO postapprovedprofile VALUES ('13', '3', '16', 'test baber shop', 'sty
 INSERT INTO postapprovedprofile VALUES ('14', '1', '30', 'aa', 'hairsalon', 'bb', '1376313635', 'cc,dd,ee,ff', '0', null);
 INSERT INTO postapprovedprofile VALUES ('15', '1', '31', 'aaddddddd', 'hairsalon', 'bbccccdddd', '1376313687', 'cc,dd,ee,ff', '0', null);
 INSERT INTO postapprovedprofile VALUES ('16', '1', '21', 'aadddddddeeee', 'hairsalon', 'bbccccddddeee', '1376313716', 'cc,dd,ee,ff,eee', '0', null);
+INSERT INTO postapprovedprofile VALUES ('17', '7', '33', 'test 2 3', 'hairsalon', 'test 2 3', '1376324151', 'tag 2 3', '0', null);
+INSERT INTO postapprovedprofile VALUES ('18', '1', '34', 'aaaaaaaaa', 'babershop', 'aaaaaaa', '1376365563', 'aa,bb,cc,dd', '0', null);
+INSERT INTO postapprovedprofile VALUES ('19', '1', '35', 'test 1 2', 'babershop', 'test 1 2', '1376384228', 'test , 1,2,3', '0', null);
+INSERT INTO postapprovedprofile VALUES ('20', '6', '36', 'test 1 3', 'hairsalon', 'test 1 3', '1376384286', 'test , 1,2,3', '0', null);
 
 -- ----------------------------
 -- Table structure for `test`
@@ -260,8 +270,8 @@ CREATE TABLE `userprofile` (
 -- ----------------------------
 -- Records of userprofile
 -- ----------------------------
-INSERT INTO userprofile VALUES ('1', '8', '8___2013_08_08___35G1953_v4_copy1.jpg', '3 kiet 258', 'hue', 'hu', '47000', '01689120525', 'thanhhoins', 'thanhhoface', 'knife,cut', '0', '1376015243', null, 'thanh ho babershop');
-INSERT INTO userprofile VALUES ('2', '9', '8___2013_08_08___35G1953_v4_copy1.jpg', '3 kiet 258 uid 9', 'hue', 'hu', '47000', '01689120525', 'thanhhoins9', 'thanhhoface9', 'knife,cut', '0', '1376015243', null, 'duyen babershop');
-INSERT INTO userprofile VALUES ('3', '10', '8___2013_08_08___35G1953_v4_copy1.jpg', '3 kiet 258 uid 10', 'hue', 'hu', '47000', '01689120525', 'thanhhoins10', 'thanhhoface10', 'knife,cut', '0', '1376015243', null, 'thanh babershop');
-INSERT INTO userprofile VALUES ('4', '11', '8___2013_08_08___35G1953_v4_copy1.jpg', '3 kiet 258 uid 10', 'hue', 'hu', '47000', '01689120525', 'thanhhoins11', 'thanhhoface11', 'knife,cut', '0', '1376015243', null, 'nhan babershop');
-INSERT INTO userprofile VALUES ('5', '12', '8___2013_08_08___35G1953_v4_copy1.jpg', '3 kiet 258 uid 10', 'hue', 'hu', '47000', '01689120525', 'thanhhoins12', 'thanhhoface12', 'knife,cut', '0', '1376015243', null, 'hung babershop');
+INSERT INTO userprofile VALUES ('1', '8', '8___2013_08_08___35G1953_v4_copy1.jpg', '3 kiet 258', 'hue', 'hu', '47000 baber1', '01689120525', 'thanhhoins', 'thanhhoface', 'knife,cut', '0', '1376015243', null, 'thanh ho babershop');
+INSERT INTO userprofile VALUES ('2', '9', '8___2013_08_08___35G1953_v4_copy1.jpg', '3 kiet 258 uid 9', 'hue', 'hu', '48000 baber2', '01689120525', 'thanhhoins9', 'thanhhoface9', 'knife,cut', '0', '1376015243', null, 'duyen babershop');
+INSERT INTO userprofile VALUES ('3', '10', '8___2013_08_08___35G1953_v4_copy1.jpg', '3 kiet 258 uid 10', 'hue', 'hu', '49000 baber 3', '01689120525', 'thanhhoins10', 'thanhhoface10', 'knife,cut', '0', '1376015243', null, 'thanh babershop');
+INSERT INTO userprofile VALUES ('4', '11', '8___2013_08_08___35G1953_v4_copy1.jpg', '3 kiet 258 uid 10', 'hue', 'hu', '50000 baber 4', '01689120525', 'thanhhoins11', 'thanhhoface11', 'knife,cut', '0', '1376015243', null, 'nhan babershop');
+INSERT INTO userprofile VALUES ('5', '12', '8___2013_08_08___35G1953_v4_copy1.jpg', '3 kiet 258 uid 10', 'hue', 'hu', '51000 baber5', '01689120525', 'thanhhoins12', 'thanhhoface12', 'knife,cut', '0', '1376015243', null, 'hung babershop');
