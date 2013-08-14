@@ -204,6 +204,23 @@
 			return $query->result();
 		}
 		
+		//Get apid from upid and bpid
+		function get_apid_by_upid_bpid($upid,$bpid){
+			$this->db->select('apid');
+			$this->db->where('isapproved', 1);
+			$this->db->where('upid', $upid);
+			$this->db->where('bpid', $bpid);
+			$query = $this->db->get('approveprofile');
+			return $query->result();
+		}
+		
+		//Get all info of posts by apid
+		function get_all_info_by_apid($apid){
+			$this->db->where('apid', $apid);
+			$query = $this->db->get('postapprovedprofile');
+			return $query->result();
+		}
+		
 		
 		
 		
