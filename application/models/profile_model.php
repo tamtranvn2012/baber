@@ -197,5 +197,14 @@
 			return $query->result();
 		}
 		
+		//Get all approve info from approveprofile by upid
+		function get_all_by_upid_allinfo($upid){
+			$this->db->where('upid', $upid);
+			$query = $this->db->get('approveprofile');
+			return $query->result();
+		}
+		
+		
+		
 		
 	}

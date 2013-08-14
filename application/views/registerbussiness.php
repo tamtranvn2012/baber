@@ -2,6 +2,15 @@
 /**
  * Created by JetBrains PhpStorm.
  * User: Chicken
+ * Date: 8/13/13
+ * Time: 10:55 AM
+ * To change this template use File | Settings | File Templates.
+ */
+?>
+<?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: Chicken
  * Date: 8/8/13
  * Time: 10:39 AM
  * To change this template use File | Settings | File Templates.
@@ -24,9 +33,9 @@
     </script>
 </head>
 <body>
-<?php echo form_open_multipart('/user/check', array('id' => 'check')); ?>
+<?php echo form_open_multipart('/user/checkbussiness', array('id' => 'checkbussiness')); ?>
 
-<h3>Register</h3>
+<h3>Register Bussiness</h3>
 <table>
     <tr>
         <td><label>Username</label></td>
@@ -85,6 +94,10 @@
     <tr>
         <td>Private:</td>
         <td><input type="text" name="private"></td>
+    </tr>
+    <tr>
+        <td>Baber Shop Name:</td>
+        <td><input type="text" name="babershopname"></td>
     </tr>
     <tr>
         <td>Slug:</td>

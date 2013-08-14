@@ -42,6 +42,8 @@ class Frontpage extends Main_Controller {
 		$this->load->view('frontpage',$data);
 		$this->load->view('include/footer');
 	}
+	
+	//Get image loc
 	function get_img_loc($imginfo)
 	{
 		$imageinfo = explode('___',$imginfo);			
