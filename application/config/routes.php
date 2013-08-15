@@ -54,16 +54,15 @@ $route['(:any)/manage/posts/(:any)/(:any)'] = "profilepage/manage_bp_posts";
 $route['(:any)/manage/approvelisting'] = "profilepage/manage_approve_listing_client";
 $route['(:any)/manage/addprofile'] = "manage/addprofile";
 $route['search/zipcode'] = "search/search_by_zipcode";
+$route['(:any)/manage/addbussinessprofile'] = "manage/addbussinessprofile";
 $route['(:any)/manage/profilebussiness'] = "manage/profilebussiness";
 $route['(:any)/manage'] = "profilepage/profile_manage";
 $route['upload/addnew'] = "upload/upload_img";
 $route['upload/registerupload'] = "uploadregister/upload_img";
-<<<<<<< HEAD
-=======
+
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
 $route['upload/registerbussinessphoto'] = "uploadbussinessregister/upload_img";
 
->>>>>>> fdca2df51de4cb73622aad95b3f8dd1062bf39fd
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
 $route['upload/registerbussinessphoto'] = "uploadbussinessregister/upload_img";
 $route['user/login'] = "user/login";
