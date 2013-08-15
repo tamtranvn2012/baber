@@ -58,6 +58,14 @@ class Upload extends CI_Controller
 		$this->setDelete_img_url(base_url() . 'admin/deleteImage/');
 	}
 
+    public function registerbussinessupload()
+    {
+        $this->load->view('include/headerbt');
+        //$this->load->view('register_user');
+        $this->load->view('registerbussinessupload');
+        $this->load->view('include/footerbt');
+    }
+
 	public function index()
 	{
 		$this->load->view('test');

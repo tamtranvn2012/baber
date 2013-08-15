@@ -67,6 +67,15 @@ class User extends Main_Controller
     }
 
     //Register user info
+
+    public function registerbussinessupload()
+    {
+        $this->load->view('include/headerbt');
+        //$this->load->view('register_user');
+        $this->load->view('registerbussinessphoto');
+        $this->load->view('include/footerbt');
+    }
+
     public function register()
     {
         $this->load->view('include/headerbt');
