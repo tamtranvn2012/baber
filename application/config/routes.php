@@ -78,6 +78,6 @@ $route['user/logout'] = "user/logout";
 //test commit
 //test thanh commit 2
 //test xi coomit
-
+//test xi commit1
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
