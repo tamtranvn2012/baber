@@ -36,5 +36,5 @@
 		function delete_post_by_ppid($ppid){
 			$this->db->where('ppid', $ppid);
 			$this->db->delete('postapprovedprofile');
-		}
+		}		
 	}

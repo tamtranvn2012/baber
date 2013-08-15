@@ -371,8 +371,10 @@ class Profilepage extends Main_Controller {
 		$checkppid = $this->profile_model->check_userid_by_ppid($ppid,$userid);
 		if($checkppid){
 			$this->post_model->delete_post_by_ppid($ppid);
+			$username = $this->user_model->get_username_by_userid($userid)[0]->username;
+			redirect('/'.$username.'/manage/controlpost/', 'refresh');
 		}else{
-			echo 'aabbccddeeff';
+			echo 'Load view ppid not containt userid here';
 		}
 		
 	}
