@@ -48,6 +48,7 @@ $route['(:any)/manage/controlapprove'] = "profilepage/control_approve_listing_bu
 $route['(:any)/manage/controlpost'] = "profilepage/control_post_listing_client";
 $route['(:any)/manage/requestapprove'] = "profilepage/request_approve";
 $route['(:any)/manage/saverequest'] = "profilepage/save_request_approve";
+$route['(:any)/manage/posts/delete/(:any)'] = "profilepage/delete_post_by_ppid";
 $route['(:any)/manage/posts/(:any)/(:any)'] = "profilepage/manage_bp_posts";
 //$route['(:any)/manage/posts'] = "profilepage/manage_bp_posts";
 $route['(:any)/manage/approvelisting'] = "profilepage/manage_approve_listing_client";
@@ -57,7 +58,11 @@ $route['(:any)/manage/profilebussiness'] = "manage/profilebussiness";
 $route['(:any)/manage'] = "profilepage/profile_manage";
 $route['upload/addnew'] = "upload/upload_img";
 $route['upload/registerupload'] = "uploadregister/upload_img";
+<<<<<<< HEAD
+$route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
+=======
 $route['upload/registerbussinessphoto'] = "uploadbussinessregister/upload_img";
+>>>>>>> 9ae4418527dba52c9cdd95e5e5be8120618fb33f
 $route['user/login'] = "user/login";
 $route['user/register'] = "user/register";
 $route['user/registerbussinessupload'] = "user/registerbussinessupload";
