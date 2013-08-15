@@ -1,7 +1,7 @@
 <div id="upload-img">
     <h3>Fill New User Info</h3>
     <!-- Upload function on action form -->
-    <?php echo form_open_multipart('/upload/registerbussinessphoto/', array('id' => 'fileupload')); ?>
+    <?php echo form_open_multipart('/upload/addbussinessprofilephoto/', array('id' => 'fileupload')); ?>
     <label>Address</label>
     <input type="text" name="address"/>
     <br/>

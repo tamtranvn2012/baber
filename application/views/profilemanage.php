@@ -20,7 +20,7 @@ foreach($apidsobjs as $perapidobj){
 }
 ?>
 
-<a href="<?php echo base_url($username.'/manage/addprofile');?>">Add New Bussiness Profile</a>
+<a href="<?php echo base_url($username.'/manage/addbussinessprofile');?>">Add New Bussiness Profile</a>
 <?php
  echo '</div>';
 ?>
