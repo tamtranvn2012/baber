@@ -256,7 +256,7 @@ class Profilepage extends Main_Controller {
 				$data['allinfoposts'] = $allinforesutlapid;
 			}else{
 				$data['allinfoposts'] = '';
-			} 
+			}
 			$this->load->view('include/header');
 			$this->load->view('include/menu',$datamenu);
 			$this->load->view('listbppostapproved',$data);
