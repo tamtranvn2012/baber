@@ -2,9 +2,9 @@
 <?php
 foreach($allinfo as $perinfo){
 	echo '<div>';
-	echo 'Bpid:'.$perinfo->bpid;
+	echo 'Bpid:'.$perinfo['bpid'].' , Babershop name: '.$perinfo['babershopname'];
 	
-	if($perinfo->isapproved==1){
+	if($perinfo['isapproved'] == 1){
 		$statusapprove = 'Yes';
 	}else{
 		$statusapprove = 'Waiting';

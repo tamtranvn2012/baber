@@ -83,16 +83,12 @@
         <td><input type="text" name="favorites_tool"></td>
     </tr>
     <tr>
-        <td>Private:</td>
-        <td><input type="text" name="private"></td>
-    </tr>
-    <tr>
-        <td>Slug:</td>
-        <td><input type="text" name="slug"></td>
+        <td>Babershop:</td>
+        <td><input type="text" name="babershopname"></td>
     </tr>
     <tr>
         <td colspan="2" align="center">
-            <button type="submit" class="btn btn-primary" id="register" disabled>Add</button>
+            <button type="submit" class="btn btn-primary" id="register" disabled>Add New User</button>
         </td>
     </tr>
 </table>

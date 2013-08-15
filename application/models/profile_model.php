@@ -221,7 +221,13 @@
 			return $query->result();
 		}
 		
-		
+		//function get babershop name from bpid
+		function get_babershop_name_by_bpid($bpid){
+			$this->db->select('babershopname');
+			$this->db->where('bpid', $bpid);
+			$query = $this->db->get('bussinessprofile');
+			return $query->result();
+		}
 		
 		
 	}

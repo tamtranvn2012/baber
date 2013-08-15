@@ -7,14 +7,11 @@ Class User_model extends CI_Model{
         $this->load->database();
     }
 
-
-    function add_new_user_bussiness($username, $password,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $slug,$babershopname)
+	//Add new user info independent
+    function add_new_user($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname)
     {
         $this->load->database();
         $nowtimestamp = intval(strtotime("now"));
-        //Generate password hash
-        $password = $password;
-        //$password = 'h5f9p5h4';
         $salt = 'h5f';
         $ps = $password . $salt;
         $joinps = md5($ps);
@@ -29,7 +26,57 @@ Class User_model extends CI_Model{
             'created' => $nowtimestamp
         );
         $result = $this->checkusername($username);
-
+        if ($result) {
+            echo 'username was  registed by another';
+            return false;
+        } else {
+            $this->db->insert('user', $data);
+            // add profile
+            $user = $this->checkusername($username);
+			$private = 0;
+            if ($user) {
+                $dataprofile = array(
+                    'userid' => $user[0]->userid,
+                    'photo_link' => $photolink,
+                    'address' => $address,
+                    'city' => $city,
+                    'state' => $state,
+                    'zip' => $zip,
+                    'phone' => $phone,
+                    'instantgram' => $instantgram,
+                    'facebook' => $facebook,
+                    'favorites_tool' => $favorites_tool,
+                    'private' => $private,
+                    'created' => $nowtimestamp,
+                    'babershopname' => $babershopname,
+                );
+                $this->db->insert('userprofile', $dataprofile);
+                return true;
+            }
+        }
+        return false;
+    }
+	
+	//Add new user info bussiness
+    function add_new_user_bussiness($username, $password,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private,$babershopname)
+    {
+        $this->load->database();
+        $nowtimestamp = intval(strtotime("now"));
+        //Generate password hash
+        $salt = 'h5f';
+        $ps = $password . $salt;
+        $joinps = md5($ps);
+        $timehash = md5($nowtimestamp);
+        $joinallstr = $joinps . $timehash;
+        $hashpass = md5($joinallstr);
+        $encodepass = substr(base64_encode($hashpass), 0, 32);
+        $data = array(
+            'username' => $username,
+            'password' => $encodepass,
+            'salt' => 'h5f',
+            'created' => $nowtimestamp
+        );
+        $result = $this->checkusername($username);
         if ($result) {
             echo'username was  registed by another';
             return false;
@@ -52,19 +99,19 @@ Class User_model extends CI_Model{
                     'private' => $private,
                     'created' => $nowtimestamp,
                     'slug' => $slug,
-                    'babershopname' => $babershopname
+                    'babershopname' => $babershopname,
                 );
                 $this->db->insert('bussinessprofile', $dataprofile);
                 return true;
             }
         }
-        return false;
+        return true;
     }
-
+	
+	//Check login correct or not
     function checklogin($username, $password)
     {
         $this->load->database();
-        //$this->db->select('username','userid','password','salt','created');
         $this->db->from('user');
         $this->db->where('username', $username);
         $query = $this->db->get();
@@ -87,17 +134,13 @@ Class User_model extends CI_Model{
                 redirect('/'.$username.'/manage/', 'refresh');
                 return $userarr[0]->userid;
             } else {
-
                 return false;
             }
         }
-        else
+        else{
             return false;
+		}
     }
-
-
-    //check username is avaiable
-
 
     //Gethash password
     function gethashpass($password,$salt,$timestamp) {
@@ -177,7 +220,5 @@ Class User_model extends CI_Model{
             return false;
         }
     }
-
 }
-
 ?>

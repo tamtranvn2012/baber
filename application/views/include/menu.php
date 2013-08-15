@@ -4,6 +4,7 @@
 	$approvelistinglinksurl = '/'.$username.'/manage/approvelisting/';
 	$controlapprovelinksurl = '/'.$username.'/manage/controlapprove/';
 	$controlpostlinksurl = '/'.$username.'/manage/controlpost/';
+	$logoutlinksurl = '/user/logout/';
 	echo '<ul>';
 	echo '<li>';
 	echo '<a href="'.base_url($managelinksurl).'">Manage</a>';
@@ -19,6 +20,9 @@
 	echo '</li>';
 	echo '<li>';
 	echo '<a href="'.base_url($controlpostlinksurl).'">Control Posts - For Client</a>';
+	echo '</li>';
+	echo '<li>';
+	echo '<a href="'.base_url($logoutlinksurl).'">Log out</a>';
 	echo '</li>';
 	echo '</ul>';
 ?>

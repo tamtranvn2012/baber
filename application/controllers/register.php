@@ -31,7 +31,9 @@ class Register extends CI_Controller {
 		if (!$data){
 			$data['user_id_tmp'] = $this->input->cookie('user_tmp_cookie', TRUE);
 		}
-		$this->load->view('register',$data);
+		$this->load->view('include/headerbt');
+		$this->load->view('registeruserphoto',$data);
+		$this->load->view('include/footerbt');
    }
 }
 

@@ -48,14 +48,13 @@ $route['(:any)/manage/controlapprove'] = "profilepage/control_approve_listing_bu
 $route['(:any)/manage/controlpost'] = "profilepage/control_post_listing_client";
 $route['(:any)/manage/requestapprove'] = "profilepage/request_approve";
 $route['(:any)/manage/saverequest'] = "profilepage/save_request_approve";
-//$route['(:any)/manage/posts/(:any)/(:any)'] = "profilepage/manage_post_bpid";
-//$route['(:any)/manage/posts/(:any)/(:any)'] = "profilepage/manage_post_bpid";
 $route['(:any)/manage/posts/(:any)/(:any)'] = "profilepage/manage_bp_posts";
 //$route['(:any)/manage/posts'] = "profilepage/manage_bp_posts";
 $route['(:any)/manage/approvelisting'] = "profilepage/manage_approve_listing_client";
 $route['search/zipcode'] = "search/search_by_zipcode";
 $route['(:any)/manage'] = "profilepage/profile_manage";
 $route['upload/addnew'] = "upload/upload_img";
+$route['upload/registerupload'] = "uploadregister/upload_img";
 $route['user/login'] = "user/login";
 $route['user/register'] = "user/register";
 $route['user/checklogin'] = "user/checklogin";
@@ -65,6 +64,7 @@ $route['user/checkbussiness'] = "user/checkbussiness";
 $route['user/successful'] = "user/successful";
 $route['test'] = "test";
 $route['(:any)'] = "profilefrontpage";
+$route['user/logout'] = "user/logout";
 
 
 

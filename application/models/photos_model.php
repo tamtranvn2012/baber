@@ -17,9 +17,11 @@
 		function add_new_photo($baber_name,$photo_link,$photo_tag,$photo_img_link,$isprivate,$baber_type,$userid)
 		{
 			$this->load->helper('cookie');
+			/*
 			if(!$this->input->cookie('userid', TRUE)){
 				redirect('/user/login/', 'refresh');
 			}
+			*/
 			$this->load->database();
 			$nowtimestamp = intval(strtotime("now"));
 			$data = array(

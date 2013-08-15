@@ -128,16 +128,17 @@ class Profilepage extends Main_Controller {
 	function save_request_approve(){
 		$userid = 0;
 		$userid = $this->input->cookie('userid', TRUE);
+		$username = $this->user_model->get_username_by_userid($userid)[0]->username;
 		$yourupid = intval($_REQUEST['yourbpprofile']);
 		if($this->profile_model->check_userid_upid($userid,$yourupid)){
 			//Place code to get bussiness profile id here : get $approvetobpid
 			$approvetobpid = intval($_REQUEST['bussinessprofileid']);
 			if($this->profile_model->check_existing_approve($yourupid,$approvetobpid)){
-				echo 'You already approve to this bussiness page';
+				redirect('/'.$username.'/manage/approvelisting/', 'refresh');
 			}
 			else{
 				$this->profile_model->save_request_approve($yourupid,$approvetobpid);
-				echo 'Save approved Done';
+				redirect('/'.$username.'/manage/approvelisting/', 'refresh');
 			}
 		}else{
 			echo 'Load view bpid not containt with userid here';
@@ -154,7 +155,10 @@ class Profilepage extends Main_Controller {
 		if($this->profile_model->check_userid_bpid($userid,$bpid)){
 			$data['listapproved'] = $this->profile_model->get_all_approved($bpid,1);
 			$data['listunapproved'] = $this->profile_model->get_all_approved($bpid,0);
+			$username = $this->user_model->get_username_by_userid($userid)[0]->username;
+			$datamenu['username'] = $username;
 			$this->load->view('include/header');
+			$this->load->view('include/menu',$datamenu);
 			$this->load->view('approvelisting',$data);
 			$this->load->view('include/footer');												
 		}else{
@@ -173,7 +177,8 @@ class Profilepage extends Main_Controller {
 		if($this->profile_model->check_userid_bpid($userid,$bpid)){
 			if($this->profile_model->check_apid_bpid($apid,$bpid)){
 				$this->profile_model->approved_apid($apid);
-				echo 'Load view approved apid here or redirect to user/manage page';
+				$username = $this->user_model->get_username_by_userid($userid)[0]->username;
+				redirect('/'.$username.'/manage/listapprove/'.$bpid.'/', 'refresh');
 			}
 			else{
 				echo 'Load view bpid not containt with bpid here';
@@ -195,7 +200,8 @@ class Profilepage extends Main_Controller {
 		if($this->profile_model->check_userid_bpid($userid,$bpid)){
 			if($this->profile_model->check_apid_bpid($apid,$bpid)){
 				$this->profile_model->unapproved_apid($apid);
-				echo 'Load view unapproved apid here or redirect to user/manage page';
+				$username = $this->user_model->get_username_by_userid($userid)[0]->username;
+				redirect('/'.$username.'/manage/listapprove/'.$bpid.'/', 'refresh');
 			}
 			else{
 				echo 'Load view bpid not containt with bpid here';
@@ -290,7 +296,13 @@ class Profilepage extends Main_Controller {
 		$userid = $this->input->cookie('userid', TRUE);
 		$upid = intval($this->profile_model->get_upid_userid($userid)[0]->upid);
 		$allinfo = $this->profile_model->get_all_by_upid_allinfo($upid);
-		$data['allinfo'] = $allinfo;
+		foreach($allinfo as $perinfo){
+			$datainfoarr = array();
+			$datainfoarr['bpid'] = $perinfo->bpid;
+			$datainfoarr['isapproved'] = $perinfo->isapproved;
+			$datainfoarr['babershopname'] = $this->profile_model->get_babershop_name_by_bpid($perinfo->bpid)[0]->babershopname;
+			$data['allinfo'][] = $datainfoarr;
+		}
 		$this->load->view('include/header');
 		$this->load->view('include/menu',$datamenu);
 		$this->load->view('approvelistingall',$data);
@@ -305,7 +317,12 @@ class Profilepage extends Main_Controller {
 		$userid = $this->input->cookie('userid', TRUE);
 		//data for manage links approve
 		$bpidofuser = $this->profile_model->get_bpid_by_userid($userid);
-		$data['bpidsmanage'] = $bpidofuser;
+		foreach($bpidofuser as $perbp){
+			$bpinfo =array();
+			$bpinfo['bpid'] = $perbp->bpid;
+			$bpinfo['babershopname'] = $this->profile_model->get_babershop_name_by_bpid($perbp->bpid)[0]->babershopname;
+			$data['bpidsmanage'][] = $bpinfo;
+		}
 		//end data		
 		
 		$this->load->view('include/header');
@@ -328,9 +345,16 @@ class Profilepage extends Main_Controller {
 			$apidarrobj = $this->profile_model->get_apid_by_upid_allinfo($perupid);
 			foreach($apidarrobj as $perapidobj){
 				$apidsobjs[] = $perapidobj;
+				$allinfoobj = array();
+				$allinfoobj['upid'] = $perapidobj->upid;
+				$allinfoobj['apid'] = $perapidobj->apid;
+				$allinfoobj['bpid'] = $perapidobj->bpid;
+				$allinfoobj['isapproved'] = $perapidobj->isapproved;
+				$allinfoobj['babershopname'] = $this->profile_model->get_babershop_name_by_bpid($perapidobj->bpid)[0]->babershopname;
+				$data['apidsobjs'][] = $allinfoobj;
 			}
 		}
-		$data['apidsobjs'] = $apidsobjs;
+		//$data['apidsobjs'] = $apidsobjs;
 		//data
 		
 		$this->load->view('include/header');
