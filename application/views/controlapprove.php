@@ -4,3 +4,4 @@
 		echo '<p><a href="'.$approveurl.'">Manage approve of profile id='.$perbpidinfo['bpid'].',Babershopname: '.$perbpidinfo['babershopname'].'</a></p>';
 	}
 ?>
+
