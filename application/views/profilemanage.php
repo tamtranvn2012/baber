@@ -1,11 +1,16 @@
-<?php echo '<div class="span3">';
-?>
+<?php echo '<div class="span3 slider-bar">';?>
+<?php echo '<ul>';?>
+<?php echo '<li class="list" >';?>
 <a href="<?php echo base_url($username.'/manage/requestapprove/');?>"  target="_blank">Request Post approve on other baber bussiness page</a>
-<?php
 
+<?php echo '</li>';?>
+
+<?php
 foreach($bpidsmanage as $perbpidobj){
     $approveurl =  base_url($username.'/manage/listapprove/'.$perbpidobj->bpid);
-    echo '<p><a href="'.$approveurl.'">Manage approve of profile id='.$perbpidobj->bpid.'</a></p>';
+    echo '<li class="list">';
+    echo '<a href="'.$approveurl.'">Manage approve of profile id='.$perbpidobj->bpid.'</a>';
+     echo '</li>';
 }
 
 ?>
@@ -16,13 +21,23 @@ foreach($apidsobjs as $perapidobj){
     $upid = $perapidobj->upid;
     $bpid = $perapidobj->bpid;
     $makeposturl =  base_url($username.'/manage/addnewpost/'.$upid.'/'.$bpid);
-    echo '<p><a href="'.$makeposturl.'">Make new Post on Bussiness profile Id='.$bpid.'</a></p>';
+    echo '<li class="list">';
+    echo '<a href="'.$makeposturl.'">Make new Post on Bussiness profile Id='.$bpid.'</a>';
+     echo '</li>';
 }
 ?>
+
 
 <a href="<?php echo base_url($username.'/manage/addbussinessprofile');?>">Add New Bussiness Profile</a>
 <?php
  echo '</div>';
 ?>
+
+<?php echo '<li class="list">';?>
+<a href="<?php echo base_url($username.'/manage/addprofile');?>">Add New Bussiness Profile</a>
+<?php echo '</li>';?>
+<?php echo '</ul>';?>
+<?php echo '</div>';?>
+
 
 
