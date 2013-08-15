@@ -34,6 +34,6 @@
 		
 		//Delete post with ppid
 		function delete_post_by_ppid($ppid){
-			
+			echo 'aabbccdd';
 		}
 	}
