@@ -76,7 +76,7 @@ $route['test'] = "test";
 $route['(:any)'] = "profilefrontpage";
 $route['user/logout'] = "user/logout";
 //test commit
-
+//test xi coomit
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
