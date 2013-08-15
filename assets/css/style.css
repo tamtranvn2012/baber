@@ -78,7 +78,7 @@ margin-right: 20px;
  padding-bottom: 30px;
  margin-top: 10px;
  margin-bottom: 10px; 
- background: #F5F5F5;
+ background: #fff;
  border-radius: 5px;
 }
 /*
@@ -144,7 +144,9 @@ width: 230px;
     @media (max-width: 767px) { 
         
     }
-     
+     @media (min-width: 1200px) { 
+        
+     }
     /* Landscape phones and down */
     @media (max-width: 480px) { ... }
     
@@ -152,4 +154,64 @@ width: 230px;
     @media (min-width: 768px) and (max-width: 2116px) {
        
     }
+	.menu_header{
+width: 100%;
+float: left;
+height:42px;
+background: #16BDE7;
+box-shadow: 2px 3px 8px 5px #04a0ddinset;
+padding-left:137px;
+
+}
+.menu_header ul li{
+float:left;
+margin-top:10px;
+}
+.menu_header li{
+padding: 0 9px;
+border-right: 1px solid rgba(34, 86, 165, 0.68);
+padding-right: 26px !important;
+
+
+}
+.menu_header ul li a{
+font-size: 12px;
+padding-top: 10px;
+padding-bottom: 10px;
+line-height: 20px;
+color:#fff;
+}
+.menu_header ul li a:hover{
+text-decoration:none;
+color:red;
+width:200px;
+font-weight:bold;
+}
+#upload-img{
+margin:0 auto;
+width:100%;
+}
+   #upload-img h2{
+   text-align: center;
+	color: #E46327;
+   }
    
+   #fileupload{
+  margin-left: 200px;
+width: 900px;
+padding: 78px;
+border: 2px solid rgb(214, 209, 209);
+
+   } 
+   .baber{
+	margin-top:-40px;
+	font-size: 16px;
+	color: #944646;
+	}
+	.babername{
+	width: 400px;
+height: 35px;
+border: 1px solid #E5C397;
+border-radius: 4px;
+	}
+	nhikieuod2012@gmail.com
