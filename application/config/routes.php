@@ -58,11 +58,11 @@ $route['(:any)/manage/profilebussiness'] = "manage/profilebussiness";
 $route['(:any)/manage'] = "profilepage/profile_manage";
 $route['upload/addnew'] = "upload/upload_img";
 $route['upload/registerupload'] = "uploadregister/upload_img";
-<<<<<<< HEAD
+
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
-=======
+
 $route['upload/registerbussinessphoto'] = "uploadbussinessregister/upload_img";
->>>>>>> 9ae4418527dba52c9cdd95e5e5be8120618fb33f
+
 $route['user/login'] = "user/login";
 $route['user/register'] = "user/register";
 $route['user/registerbussinessupload'] = "user/registerbussinessupload";
