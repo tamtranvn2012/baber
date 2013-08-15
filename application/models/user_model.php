@@ -57,7 +57,7 @@ Class User_model extends CI_Model{
         return false;
     }
 	//Add new user info bussiness
-    function add_new_user_bussiness($username, $password,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private,$babershopname)
+    function add_new_user_bussiness($username, $password,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private,$babershopname,$slug)
     {
         $this->load->database();
         $nowtimestamp = intval(strtotime("now"));
@@ -161,6 +161,7 @@ Class User_model extends CI_Model{
             return false;
         }
     }
+
     //Get bussiness profile id
     function getbpid($userid){
         $this->db->select('bpid');
@@ -173,6 +174,7 @@ Class User_model extends CI_Model{
             return false;
         }
     }
+
     //Get approved id of bussiness profile id
     function getapid($bpid){
         $this->db->select('apid');
@@ -186,12 +188,14 @@ Class User_model extends CI_Model{
             return false;
         }
     }
+
     //Get all userid
     function get_all_userid(){
         $this->db->select('userid');
         $query = $this->db->get('user');
         return $query->result();
     }
+
     //Get username by userid
     function get_username_by_userid($userid){
         $this->db->select('username');
@@ -199,6 +203,7 @@ Class User_model extends CI_Model{
         $query = $this->db->get('user');
         return $query->result();
     }
+
     //Check username containt with userid or not
     function check_username_userid($username,$userid){
         $this->db->select('userid');
@@ -211,38 +216,5 @@ Class User_model extends CI_Model{
             return false;
         }
     }
-    //
-    function add_profile_bus( $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $slug,$babershopname){
-        $this->load->database();
-        $nowtimestamp = intval(strtotime("now"));
-        $this->load->helper('cookie');
-        $this->load->helper('url');
-        $userid=$this->input->cookie('userid');
-        $this->load->model('user_model');
-        $username=$this->user_model->get_username_by_userid($userid);
-        //var_dump($username);exit;
-        $user = $this->checkusername($username[0]->username);
-        if ($user) {
-            $dataprofile = array(
-                'userid' => $user[0]->userid,
-                'photo_link' => $photolink,
-                'address' => $address,
-                'city' => $city,
-                'state' => $state,
-                'zip' => $zip,
-                'phone' => $phone,
-                'instantgram' => $instantgram,
-                'facebook' => $facebook,
-                'favorites_tool' => $favorites_tool,
-                'private' => $private,
-                'created' => $nowtimestamp,
-                'slug' => $slug,
-                'babershopname' => $babershopname
-            );
-            $this->db->insert('bussinessprofile', $dataprofile);
-            return true;
-        }
-    }
-
 }
 ?>
