@@ -78,7 +78,7 @@ margin-right: 20px;
  padding-bottom: 30px;
  margin-top: 10px;
  margin-bottom: 10px; 
- background: #fff;
+ background: #F5F5F5;
  border-radius: 5px;
 }
 /*
@@ -159,7 +159,7 @@ width: 100%;
 float: left;
 height:42px;
 background: #16BDE7;
-box-shadow: 2px 3px 8px 5px #04a0ddinset;
+box-shadow: 2px 3px 8px 5px #04a0dd inset;
 padding-left:137px;
 
 }
@@ -197,26 +197,37 @@ width:100%;
    }
    
    #fileupload{
-  margin-left: 200px;
+ margin-left: 200px;
 width: 900px;
 padding: 78px;
 border: 2px solid rgb(214, 209, 209);
 
-   } 
-   .baber{
-	margin-top:-40px;
-	font-size: 16px;
-	color: #944646;
-	}
-	.babername{
-	width: 400px;
+} 
+.baber{
+margin-top:-40px;
+font-size: 16px;
+color: #944646;
+}
+.babername{
+width: 400px;
 height: 35px;
 border: 1px solid #E5C397;
 border-radius: 4px;
-	}
-    .slider-bar ul{
-    background: #ccc repeat-x;
-    }
+}
+.content{
+padding-left: 30px;
+}
+.slider-bar {
+background: #F5F5F5;
+border: 1px solid #ccc;
+box-shadow: 0 0 1px 6px  #F5F5F5 inset ;
+}
+.slider-bar ul{
+}
 li.list{
 padding-bottom: 20px;
+}
+li.list a:hover{
+color: red;
+text-decoration: none;
 }

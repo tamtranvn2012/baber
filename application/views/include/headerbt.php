@@ -1,6 +1,7 @@
 <html>
 <head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.css');?>">
 <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css');?>">
 <!-- Generic page styles -->
 <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css');?>">
