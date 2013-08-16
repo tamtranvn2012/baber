@@ -214,4 +214,9 @@ height: 35px;
 border: 1px solid #E5C397;
 border-radius: 4px;
 	}
-	nhikieuod2012@gmail.com
+    .slider-bar ul{
+    background: #ccc repeat-x;
+    }
+li.list{
+padding-bottom: 20px;
+}
