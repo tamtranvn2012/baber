@@ -15,6 +15,7 @@
                     <div class="span4 text-right " id="add">
 						<a href="<?php echo base_url('/user/login');?>"><input type="button" value="Login to your account" class="btn-danger" /></a>
 						<a href="<?php echo base_url('/user/register');?>"><input type="button" value="Add your Barber Shop" class="btn-danger" /></a>
+
                     </div>
                 </div>
                 <!--end banner-->
