@@ -370,9 +370,9 @@ class Profilepage extends Main_Controller {
 		$userid = $this->input->cookie('userid', TRUE);
 		$checkppid = $this->profile_model->check_userid_by_ppid($ppid,$userid);
 		if($checkppid){
-			
+			$this->post_model->delete_post_by_ppid($ppid);
 		}else{
-			
+			echo 'aabbccddeeff';
 		}
 		
 	}
