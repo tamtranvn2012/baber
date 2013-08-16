@@ -31,4 +31,9 @@
 			);
 			$this->db->insert('postapprovedprofile',$datapost);		
 		}
+		
+		//Delete post with ppid
+		function delete_post_by_ppid($ppid){
+			
+		}
 	}

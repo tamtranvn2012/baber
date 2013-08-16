@@ -364,10 +364,17 @@ class Profilepage extends Main_Controller {
 	}
 	
 	//Delete post by apid
-	function delete_post_by_apid(){
+	function delete_post_by_ppid(){
 		$username = $this->uri->segment(1, 0);
-		$apid = $this->uri->segment(4, 0);
-		var_dump($apid);exit;
+		$ppid = $this->uri->segment(5, 0);
+		$userid = $this->input->cookie('userid', TRUE);
+		$checkppid = $this->profile_model->check_userid_by_ppid($ppid,$userid);
+		if($checkppid){
+			
+		}else{
+			
+		}
+		
 	}
 	
 }
