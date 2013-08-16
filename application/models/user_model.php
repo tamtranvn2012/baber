@@ -216,5 +216,37 @@ Class User_model extends CI_Model{
             return false;
         }
     }
+    function add_profile_bus( $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $slug,$babershopname){
+        $this->load->database();
+        $nowtimestamp = intval(strtotime("now"));
+        $this->load->helper('cookie');
+        $this->load->helper('url');
+        $userid=$this->input->cookie('userid');
+        $this->load->model('user_model');
+        $username=$this->user_model->get_username_by_userid($userid);
+        //var_dump($username);exit;
+        $user = $this->checkusername($username[0]->username);
+        if ($user) {
+            $dataprofile = array(
+                'userid' => $user[0]->userid,
+                'photo_link' => $photolink,
+                'address' => $address,
+                'city' => $city,
+                'state' => $state,
+                'zip' => $zip,
+                'phone' => $phone,
+                'instantgram' => $instantgram,
+                'facebook' => $facebook,
+                'favorites_tool' => $favorites_tool,
+                'private' => $private,
+                'created' => $nowtimestamp,
+                'slug' => $slug,
+                'babershopname' => $babershopname
+            );
+            $this->db->insert('bussinessprofile', $dataprofile);
+            return true;
+			//test
+        }
+    }
 }
 ?>

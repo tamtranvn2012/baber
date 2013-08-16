@@ -29,6 +29,19 @@ class Manage extends CI_Controller
             $this->load->view('include/footerbt');
         }
     }
+    function addbussinessprofile()
+    {
+        $this->load->helper('cookie');
+        $this->load->helper('url');
+        $userid = $this->input->cookie('userid');
+        if (intval($userid) == 0) {
+            redirect('/user/login', 'refresh');
+        } else {
+            $this->load->view('include/headerbt');
+            $this->load->view('addbussinessprofile');
+            $this->load->view('include/footerbt');
+        }
+    }
 
     public function profilebussiness()
     {
