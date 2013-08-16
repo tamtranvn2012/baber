@@ -49,6 +49,7 @@ $route['(:any)/manage/controlpost'] = "profilepage/control_post_listing_client";
 $route['(:any)/manage/requestapprove'] = "profilepage/request_approve";
 $route['(:any)/manage/saverequest'] = "profilepage/save_request_approve";
 $route['(:any)/manage/posts/(:any)/(:any)'] = "profilepage/manage_bp_posts";
+$route['(:any)/manage/posts/delete/(:any)'] = "profilepage/manage_bp_posts";
 //$route['(:any)/manage/posts'] = "profilepage/manage_bp_posts";
 $route['(:any)/manage/approvelisting'] = "profilepage/manage_approve_listing_client";
 $route['(:any)/manage/addprofile'] = "manage/addprofile";

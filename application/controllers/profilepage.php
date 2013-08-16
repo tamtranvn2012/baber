@@ -363,4 +363,11 @@ class Profilepage extends Main_Controller {
 		$this->load->view('include/footer');																					
 	}
 	
+	//Delete post by apid
+	function delete_post_by_apid(){
+		$username = $this->uri->segment(1, 0);
+		$apid = $this->uri->segment(4, 0);
+		var_dump($apid);exit;
+	}
+	
 }
