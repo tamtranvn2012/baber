@@ -88,9 +88,11 @@ class Uploadbussinessregister extends CI_Controller
             //Insert to database user info if user fill all info
             if ($_REQUEST['submitnew']){
                 $this->load->model('user_model');
-                $this->user_model->add_new_user_bussiness($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname);
-                $useridobj = $this->user_model->checkusername($username);
+                $this->user_model->add_new_user_bussiness($photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname);                $this->load->helper('cookie');
+                $this->load->helper('url');
+                $useridobj = $this->input->cookie('userid');
                 $userid = $useridobj[0]->userid;
+                $username=$this->user_model->get_username_by_userid($userid);
                 $cookie = array(
                     'name'   => 'userid',
                     'value'  => $userid,
