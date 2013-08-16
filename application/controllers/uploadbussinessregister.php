@@ -92,7 +92,10 @@ class Uploadbussinessregister extends CI_Controller
                 $this->load->helper('url');
                 $useridobj = $this->input->cookie('userid');
                 $userid = $useridobj[0]->userid;
-                $username=$this->user_model->get_username_by_userid($userid);
+				//var_dump($userid);exit;
+				$username = $this->uri->segment(1, 0);
+				$this->user_model->checkusername($username);
+				//var_dump($username);exit;
                 $cookie = array(
                     'name'   => 'userid',
                     'value'  => $userid,

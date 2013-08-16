@@ -28,10 +28,19 @@ foreach($apidsobjs as $perapidobj){
 }
 ?>
 <?php echo '<li class="span3 list">';?>
+
+
+<a href="<?php echo base_url($username.'/manage/addbussinessprofile');?>">Add New Bussiness Profile</a>
+<?php
+ echo '</div>';
+?>
+
+<?php echo '<li class="list">';?>
 <a href="<?php echo base_url($username.'/manage/addprofile');?>">Add New Bussiness Profile</a>
 <?php echo '</li>';?>
 <?php echo '</ul>';?>
 <?php echo '</div>';?>
 <?php echo '</div>';?>
+
 
 

@@ -245,7 +245,6 @@ Class User_model extends CI_Model{
             );
             $this->db->insert('bussinessprofile', $dataprofile);
             return true;
-			//test
         }
     }
 }

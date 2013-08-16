@@ -1,7 +1,9 @@
 <div id="upload-img">
     <h3>Fill New User Info</h3>
     <!-- Upload function on action form -->
-    <?php echo form_open_multipart('/upload/registerbussinessphoto/', array('id' => 'fileupload')); ?>
+    <?php 
+	$username = $this->uri->segment(1, 0);
+	echo form_open_multipart('/'.$username.'/upload/addbussinessprofilephoto/', array('id' => 'fileupload')); ?>
     <label>Address</label>
     <input type="text" name="address"/>
     <br/>

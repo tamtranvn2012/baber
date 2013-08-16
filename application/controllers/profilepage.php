@@ -353,10 +353,7 @@ class Profilepage extends Main_Controller {
 				$allinfoobj['babershopname'] = $this->profile_model->get_babershop_name_by_bpid($perapidobj->bpid)[0]->babershopname;
 				$data['apidsobjs'][] = $allinfoobj;
 			}
-		}
-		//$data['apidsobjs'] = $apidsobjs;
-		//data
-		
+		}		
 		$this->load->view('include/header');
 		$this->load->view('include/menu',$datamenu);
 		$this->load->view('controlpost',$data);
@@ -370,9 +367,11 @@ class Profilepage extends Main_Controller {
 		$userid = $this->input->cookie('userid', TRUE);
 		$checkppid = $this->profile_model->check_userid_by_ppid($ppid,$userid);
 		if($checkppid){
-			
+			$this->post_model->delete_post_by_ppid($ppid);
+			$username = $this->user_model->get_username_by_userid($userid)[0]->username;
+			redirect('/'.$username.'/manage/controlpost/', 'refresh');
 		}else{
-			
+			echo 'Load view ppid not containt userid here';
 		}
 		
 	}
