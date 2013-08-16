@@ -12,63 +12,31 @@
 <?php
 $username = $this->uri->segment(1, 0);
 echo form_open_multipart('/'.$username.'/manage/profilebussiness', array('id' => 'profilebussiness')) ?>
-
-<tr>
-    <td><h3>Your Bussiness Profile</h3></td>
-</tr>
-<tr>
-    <td> Photo Link:</td>
-    <td><input type="text" name="photolink" class="required"></td>
-</tr>
-<tr>
-    <td> Address:</td>
-    <td><input type="text" name="address" class="required"></td>
-</tr>
-<tr>
-    <td>City:</td>
-    <td><input type="text" name="city" class="required"></td>
-</tr>
-<tr>
-    <td>State:</td>
-    <td><input type="text" name="state" class="required"></td>
-</tr>
-<tr>
-    <td>Zip:</td>
-    <td><input type="text" name="zip" class="required"></td>
-</tr>
-<tr>
-    <td>Phone:</td>
-    <td><input type="text" name="phone" class="required"></td>
-</tr>
-<tr>
-    <td>Instant Gram:</td>
-    <td><input type="text" name="instantgram" class="required"></td>
-</tr>
-<tr>
-    <td>Facebook:</td>
-    <td><input type="text" name="facebook" class="required"></td>
-</tr>
-<tr>
-    <td>Favorites Tool:</td>
-    <td><input type="text" name="favorites_tool" class="required"></td>
-</tr>
-<tr>
-    <td>Private:</td>
-    <td><input type="text" name="private" class="required"></td>
-</tr>
-<tr>
-    <td>Slug:</td>
-    <td><input type="text" name="slug" class="required"></td>
-<tr>
-    <td>Baber Shop Name:</td>
-    <td><input type="text" name="babershopname" class="required"></td>
-</tr>
-</tr>
-<tr>
-    <td colspan="2" align="center">
-        <button type="submit" class="btn btn-primary" id="register">Add</button>
-    </td>
-</tr>
-</table>
+<h3>Your Profile</h3>
+<label>Photo Link</label>
+<input type="text" name="photolink"></br>
+<label>Address</label>
+<input type="text" name="address"></br>
+<label>City</label>
+<input type="text" name="city"></br>
+<label>State</label>
+<input type="text" name="state"></br>
+<label>Zip</label>
+<input type="text" name="zip"></br>
+<label>Phone</label>
+<input type="text" name="phone"></br>
+<label>Instant Gram</label>
+<input type="text" name="instantgram"></br>
+<label>Facebook</label>
+<input type="text" name="facebook"></br>
+<label>Favorites Tool</label>
+<input type="text" name="favorites_tool"></br>
+<label>Private</label>
+<input type="text" name="private"></br>
+<label>Baber Shop Name</label>
+<input type="text" name="babershopname"></br>
+<label>Slug</label>
+<input type="text" name="slug"></br>
+<button type="submit" class="btn btn-primary" id="register" >Add</button>
 <?php echo form_close(); ?>
 

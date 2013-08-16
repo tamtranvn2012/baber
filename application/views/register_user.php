@@ -27,70 +27,41 @@
 <?php echo form_open_multipart('/user/check', array('id' => 'check')); ?>
 
 <h3>Register</h3>
-<table>
-    <tr>
-        <td><label>Username</label></td>
-        <td><input type="text" name="username" style="width: 260px;" id="username" onfocus="checkEnableSubmit()"
-                   onblur="checkEnableSubmit()"></td>
-    </tr>
-    <tr>
-        <td><label>Password</label></td>
-        <td><input type="password" name="password" style="width: 260px;" id="password"></td>
-    </tr>
-    <!--
-    add profile of user
-    -->
-    <tr>
-        <td><p></p></td>
-    </tr>
-    <tr>
-        <td><h3>Your Profile</h3></td>
-    </tr>
-    <tr>
-        <td> Photo Link:</td>
-        <td><input type="text" name="photolink"></td>
-    </tr>
-    <tr>
-        <td> Address:</td>
-        <td><input type="text" name="address"></td>
-    </tr>
-    <tr>
-        <td>City:</td>
-        <td><input type="text" name="city"></td>
-    </tr>
-    <tr>
-        <td>State:</td>
-        <td><input type="text" name="state"></td>
-    </tr>
-    <tr>
-        <td>Zip:</td>
-        <td><input type="text" name="zip"></td>
-    </tr>
-    <tr>
-        <td>Phone:</td>
-        <td><input type="text" name="phone"></td>
-    </tr>
-    <tr>
-        <td>Instant Gram:</td>
-        <td><input type="text" name="instantgram"></td>
-    </tr>
-    <tr>
-        <td>Facebook:</td>
-        <td><input type="text" name="facebook"></td>
-    </tr>
-    <tr>
-        <td>Favorites Tool:</td>
-        <td><input type="text" name="favorites_tool"></td>
-    </tr>
-    <tr>
-        <td>Babershop:</td>
-        <td><input type="text" name="babershopname"></td>
-    </tr>
-    <tr>
-        <td colspan="2" align="center">
-            <button type="submit" class="btn btn-primary" id="register" disabled>Add New User</button>
-        </td>
-    </tr>
-</table>
+<label>Username</label>
+<input type="text" name="username" style="width: 260px;" id="username"></br>
+
+<label>Password</label>
+<input type="password" name="password" style="width: 260px;" id="password">
+
+<!--
+add profile of user
+-->
+<h3>Your Profile</h3>
+<label>Photo Link</label>
+<input type="text" name="photolink"></br>
+<label>Address</label>
+<input type="text" name="address"></br>
+<label>City</label>
+<input type="text" name="city"></br>
+<label>State</label>
+<input type="text" name="state"></br>
+<label>Zip</label>
+<input type="text" name="zip"></br>
+<label>Phone</label>
+<input type="text" name="phone"></br>
+<label>Instant Gram</label>
+<input type="text" name="instantgram"></br>
+<label>Facebook</label>
+<input type="text" name="facebook"></br>
+<label>Favorites Tool</label>
+<input type="text" name="favorites_tool"></br>
+<label>Private</label>
+<input type="text" name="private"></br>
+<label>Baber Shop Name</label>
+<input type="text" name="babershopname"></br>
+<label>Slug</label>
+<input type="text" name="slug"></br>
+<button type="submit" class="btn btn-primary" id="register" >Add</button>
+
 <?php echo form_close(); ?>
 </body>
