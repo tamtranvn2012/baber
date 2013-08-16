@@ -8,12 +8,10 @@ foreach($bpidsmanage as $perbpidobj){
     echo '<p><a href="'.$approveurl.'">Manage approve of profile id='.$perbpidobj->bpid.'</a></p>';
 }
 
-<<<<<<< HEAD
-=======
 ?>
 
 <?php
->>>>>>> e9f0cf58f4f2ee8f70a49349309cd9b667b6c562
+
 foreach($apidsobjs as $perapidobj){
     $upid = $perapidobj->upid;
     $bpid = $perapidobj->bpid;
@@ -21,10 +19,10 @@ foreach($apidsobjs as $perapidobj){
     echo '<p><a href="'.$makeposturl.'">Make new Post on Bussiness profile Id='.$bpid.'</a></p>';
 }
 ?>
-<<<<<<< HEAD
+
 <a href="<?php echo base_url($username.'/manage/addprofile');?>">Add New Bussiness Profile</a>
 <?php
  echo '</div>';
 ?>
-=======
->>>>>>> e9f0cf58f4f2ee8f70a49349309cd9b667b6c562
+
+
