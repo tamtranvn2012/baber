@@ -353,10 +353,7 @@ class Profilepage extends Main_Controller {
 				$allinfoobj['babershopname'] = $this->profile_model->get_babershop_name_by_bpid($perapidobj->bpid)[0]->babershopname;
 				$data['apidsobjs'][] = $allinfoobj;
 			}
-		}
-		//$data['apidsobjs'] = $apidsobjs;
-		//data
-		
+		}		
 		$this->load->view('include/header');
 		$this->load->view('include/menu',$datamenu);
 		$this->load->view('controlpost',$data);
