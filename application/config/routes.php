@@ -57,6 +57,7 @@ $route['(:any)/manage/profilebussiness'] = "manage/profilebussiness";
 $route['(:any)/manage'] = "profilepage/profile_manage";
 $route['upload/addnew'] = "upload/upload_img";
 $route['upload/registerupload'] = "uploadregister/upload_img";
+$route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
 $route['user/login'] = "user/login";
 $route['user/register'] = "user/register";
 $route['user/checklogin'] = "user/checklogin";
