@@ -72,7 +72,7 @@ $route['user/successful'] = "user/successful";
 $route['test'] = "test";
 $route['(:any)'] = "profilefrontpage";
 $route['user/logout'] = "user/logout";
-
+//test commit
 
 
 /* End of file routes.php */
