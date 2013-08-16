@@ -229,5 +229,26 @@
 			return $query->result();
 		}
 		
+		//Check approveid containt with userid or not
+		function check_userid_by_ppid($ppid,$userid){
+			$this->db->select('apid');
+			$this->db->where('ppid', $ppid);
+			$query = $this->db->get('postapprovedprofile');
+			$apid = $query->result()[0]->apid;
+			$this->db->select('upid');
+			$this->db->where('apid', $apid);
+			$query = $this->db->get('approveprofile');
+			$upid = $query->result()[0]->upid;			
+			$this->db->select('userid');
+			$this->db->where('upid', $upid);
+			$query = $this->db->get('userprofile');
+			$useriddb = $query->result()[0]->userid;
+			if ($useriddb == $userid){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		
 		
 	}
