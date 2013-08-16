@@ -215,6 +215,7 @@ class Profilepage extends Main_Controller {
 	function add_new_post(){
 		$username = $this->uri->segment(1, 0);
 		$data['username'] = $username;
+		$datamenu['username'] = $username;
 		$userid = 0;
 		$userid = $this->input->cookie('userid', TRUE);
 		if(!$this->user_model->check_username_userid($username,$userid)){
@@ -226,6 +227,7 @@ class Profilepage extends Main_Controller {
 			$data['upid'] = $upid;
 			$data['bpid'] = $bpid;
 			$this->load->view('include/headerbt');
+			$this->load->view('include/menu',$datamenu);
 			$this->load->view('addnewpost',$data);
 			$this->load->view('include/footerbt');																
 		}else{
