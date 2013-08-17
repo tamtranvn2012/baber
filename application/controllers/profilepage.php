@@ -375,7 +375,35 @@ class Profilepage extends Main_Controller {
 		}else{
 			echo 'Load view ppid not containt userid here';
 		}
-		
+	}
+	
+	//Edit Post
+	function edit_post_by_ppid(){
+		$ppid = $this->uri->segment(5, 0);
+		$userid = $this->input->cookie('userid', TRUE);
+		$username = $this->user_model->get_username_by_userid($userid)[0]->username;
+		$checkppid = $this->profile_model->check_userid_by_ppid($ppid,$userid);
+		if($checkppid){
+			$data = array();
+			$postinfo = $this->post_model->get_post_info_by_ppid($ppid);
+			$imagenameobj = $this->photos_model->get_img_name($postinfo->photo_id)[0]->photo_img_link;
+			$imageurl = $this->get_img_loc($imagenameobj);
+			//set cookie photo_id
+			$cookie = array(
+				'name'   => 'photo_img_id',
+				'value'  => $postinfo->photo_id,
+				'expire' => '86400'
+			);
+			$this->input->set_cookie($cookie);				
+			//set cookie
+			$postinfo->photo_id = $imageurl;
+			$datamenu['username'] = $username;
+			$data['postinfo'] = $postinfo;
+			$this->load->view('include/headerbt');
+			$this->load->view('include/menu',$datamenu);
+			$this->load->view('editpost',$data);
+			$this->load->view('include/footerbt');																					
+		}
 	}
 	
 }

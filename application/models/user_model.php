@@ -8,7 +8,7 @@ Class User_model extends CI_Model{
     }
 
 	//Add new user info independent
-    function add_new_user($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname)
+    function add_new_user($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $isprivate, $babershopname)
     {
         $this->load->database();
         $nowtimestamp = intval(strtotime("now"));
@@ -33,7 +33,7 @@ Class User_model extends CI_Model{
             $this->db->insert('user', $data);
             // add profile
             $user = $this->checkusername($username);
-			$private = 0;
+			$isprivate = 0;
             if ($user) {
                 $dataprofile = array(
                     'userid' => $user[0]->userid,
@@ -46,7 +46,7 @@ Class User_model extends CI_Model{
                     'instantgram' => $instantgram,
                     'facebook' => $facebook,
                     'favorites_tool' => $favorites_tool,
-                    'private' => $private,
+                    'isprivate' => $isprivate,
                     'created' => $nowtimestamp,
                     'babershopname' => $babershopname,
                 );
@@ -57,7 +57,7 @@ Class User_model extends CI_Model{
         return false;
     }
 	//Add new user info bussiness
-    function add_new_user_bussiness($username, $password,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private,$babershopname,$slug)
+    function add_new_user_bussiness($username, $password,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $isprivate,$babershopname,$slug)
     {
         $this->load->database();
         $nowtimestamp = intval(strtotime("now"));
@@ -95,7 +95,7 @@ Class User_model extends CI_Model{
                     'instantgram' => $instantgram,
                     'facebook' => $facebook,
                     'favorites_tool' => $favorites_tool,
-                    'private' => $private,
+                    'isprivate' => $isprivate,
                     'created' => $nowtimestamp,
                     'slug' => $slug,
                     'babershopname' => $babershopname,
@@ -216,14 +216,14 @@ Class User_model extends CI_Model{
             return false;
         }
     }
-    function add_profile_bus( $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $slug,$babershopname){
+    function add_profile_bus( $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $isprivate, $slug,$babershopname){
         $this->load->database();
         $nowtimestamp = intval(strtotime("now"));
         $this->load->helper('cookie');
         $this->load->helper('url');
         $userid=$this->input->cookie('userid');
         $this->load->model('user_model');
-        $username=$this->user_model->get_username_by_userid($userid);
+        $username = $this->user_model->get_username_by_userid($userid);
         //var_dump($username);exit;
         $user = $this->checkusername($username[0]->username);
         if ($user) {
@@ -238,7 +238,7 @@ Class User_model extends CI_Model{
                 'instantgram' => $instantgram,
                 'facebook' => $facebook,
                 'favorites_tool' => $favorites_tool,
-                'private' => $private,
+                'isprivate' => $isprivate,
                 'created' => $nowtimestamp,
                 'slug' => $slug,
                 'babershopname' => $babershopname
