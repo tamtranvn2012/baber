@@ -6,7 +6,21 @@
 			parent::__construct();
 			$this->load->database();
 		}
-		
+
+        function get_all_bussiness_info($userid)
+        {
+            if ($userid == 'all'){
+                $query = $this->db->get('bussinessprofile');
+                $result = $query->result();
+            }
+            if ($userid != 'all'){
+                $userid = intval($userid);
+                $this->db->where('userid', $userid);
+                $query = $this->db->get('bussinessprofile');
+                $result = $query->result();
+            }
+            return $result;
+        }
 		//Get user profile by userid - all info
 		function get_all_invidual_info($userid)
 		{
@@ -249,6 +263,26 @@
 				return false;
 			}
 		}
+        function update_bussiness_profile($bpid,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname)
+        {
+            $dataprofile = array(
+                'photo_link' => $photolink,
+                'address' => $address,
+                'city' => $city,
+                'state' => $state,
+                'zip' => $zip,
+                'phone' => $phone,
+                'instantgram' => $instantgram,
+                'facebook' => $facebook,
+                'favorites_tool' => $favorites_tool,
+                'isprivate' => $private,
+                'babershopname' => $babershopname,
+            );
+            $this->load->helper('url');
+            $this->db->where('bpid',$bpid);
+            $this->db->update('bussinessprofile', $dataprofile);
+
+        }
 		
 		
 	}

@@ -44,6 +44,7 @@ $route['(:any)/manage/approveapid/(:any)/(:any)'] = "profilepage/approved_apid";
 $route['(:any)/manage/unapproveapid/(:any)/(:any)'] = "profilepage/unapproved_apid";
 $route['(:any)/manage/listapprove/(:any)'] = "profilepage/listing_approved_by_bpid";
 $route['(:any)/manage/addnewpost/(:any)/(:any)'] = "profilepage/add_new_post";
+$route['(:any)/manage/editbussiness/(:any)'] = "profilepage/editbussiness";
 $route['(:any)/manage/controlapprove'] = "profilepage/control_approve_listing_bussiness";
 $route['(:any)/manage/controlpost'] = "profilepage/control_post_listing_client";
 $route['(:any)/manage/requestapprove'] = "profilepage/request_approve";
@@ -56,11 +57,17 @@ $route['(:any)/manage/approvelisting'] = "profilepage/manage_approve_listing_cli
 $route['(:any)/manage/addprofile'] = "manage/addprofile";
 $route['search/zipcode'] = "search/search_by_zipcode";
 $route['(:any)/upload/addbussinessprofilephoto'] = "uploadbussinessregister/upload_img_bussiness";
+$route['(:any)upload/registerupload'] = "uploadregister/upload_img";
 $route['(:any)/manage/addbussinessprofile'] = "manage/addbussinessprofile";
 $route['(:any)/manage/profilebussiness'] = "manage/profilebussiness";
 $route['(:any)/manage'] = "profilepage/profile_manage";
+
+$route['(:any)/manage/displaybussiness'] = "profilepage/displaybussiness";
+
+$route['upload/uploadindependent'] = "uploadindependent/upload_img";
 $route['upload/addnew'] = "upload/upload_img";
 $route['upload/registerupload'] = "uploadregister/upload_img";
+
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
 $route['upload/registerbussinessphoto'] = "uploadbussinessregister/upload_img";
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
@@ -69,9 +76,13 @@ $route['upload/uploadeditpost'] = "uploadeditpost/upload_img";
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
 $route['upload/registerbussinessphoto'] = "uploadbussinessregister/upload_img";
 $route['upload/addbussinessprofilephoto'] = "uploadbussinessregister/upload_img";
+
+$route['upload/uploadregister'] = "uploadregister/upload_img";
 $route['user/login'] = "user/login";
+$route['user/registerindependent'] = "user/registerindependent";
 $route['user/register'] = "user/register";
 $route['user/registerbussinessprofile'] = "user/registerbussinessupload";
+
 $route['user/checklogin'] = "user/checklogin";
 $route['user/check'] = "user/check";
 $route['user/checkbussiness'] = "user/checkbussiness";

@@ -405,5 +405,26 @@ class Profilepage extends Main_Controller {
 			$this->load->view('include/footerbt');																					
 		}
 	}
+    function displaybussiness(){
+        $this->load->helper('cookie');
+        $this->load->helper('url');
+        $userid=$this->input->cookie('userid');
+        $this->load->model('profile_model');
+        $data['listBusiness']=$this->profile_model->get_all_bussiness_info($userid);
+        //var_dump($data);exit;
+
+        $this->load->view('include/headerbt');
+        $this->load->view('displaybussinessprofile',$data);
+        $this->load->view('include/footerbt');
+    }
+
+    function editbussiness()
+    {
+        $bpid= $this->uri->segment(4, 0);
+        $this->db->where('bpid',$bpid);
+        $query = $this->db->get('bussinessprofile');
+        $data['bprofile']= $query->result();
+        $this->load->view('editbussiness',$data);
+    }
 	
 }

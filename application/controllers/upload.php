@@ -59,10 +59,19 @@ class Upload extends CI_Controller
 	}
 
     public function registerbussinessupload()
+{
+    $this->load->view('include/headerbt');
+    //$this->load->view('register_user');
+    $this->load->view('registerbussinessupload');
+    $this->load->view('include/footerbt');
+}
+
+
+    public function registerindependent()
     {
         $this->load->view('include/headerbt');
         //$this->load->view('register_user');
-        $this->load->view('registerbussinessupload');
+        $this->load->view('registerindependent');
         $this->load->view('include/footerbt');
     }
 

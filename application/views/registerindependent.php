@@ -1,7 +1,7 @@
 <div id="upload-img">
     <h3>Fill New User Info</h3>
     <!-- Upload function on action form -->
-    <?php echo form_open_multipart('/upload/registerbussinessphoto/', array('id' => 'fileupload')); ?>
+    <?php echo form_open_multipart('/upload/uploadindependent/', array('id' => 'fileupload')); ?>
     <label>Username</label>
     <input type="text" name="username"/>
     <br/>
@@ -32,8 +32,6 @@
     <label>Favorite tool</label>
     <input type="text" name="favorites_tool"/>
     <br/>
-    <label>Slug</label>
-    <input type="text" name="slug"></br>
     <label>Babershop Name</label>
     <input type="text" name="babershopname"/>
     <br/>

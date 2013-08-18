@@ -158,5 +158,11 @@ class User extends Main_Controller
         $this->load->view('login');
         $this->load->view('include/footer');
     }
+    function registerindependent(){
+        $this->load->view('include/headerbt');
+        //$this->load->view('register_user');
+        $this->load->view('registerindependent');
+        $this->load->view('include/footerbt');
+    }
 
 }

@@ -1,42 +1,50 @@
+
+<?php         $this->load->view('include/headerbt');
+?>
 <div id="upload-img">
-    <h3>Fill New User Info</h3>
+    <h3>Edit</h3>
     <!-- Upload function on action form -->
-    <?php echo form_open_multipart('/upload/registerbussinessphoto/', array('id' => 'fileupload')); ?>
-    <label>Username</label>
-    <input type="text" name="username"/>
-    <br/>
-    <label>Password</label>
-    <input type="password" name="password"/>
-    <br/>
-    <label>Address</label>
-    <input type="text" name="address"/>
-    <br/>
-    <label>City</label>
-    <input type="text" name="city"/>
-    <br/>
-    <label>State</label>
-    <input type="text" name="state"/>
-    <br/>
-    <label>Zipcode</label>
-    <input type="text" name="zip"/>
-    <br/>
-    <label>Phone</label>
-    <input type="text" name="phone"/>
-    <br/>
-    <label>Instantgram</label>
-    <input type="text" name="instantgram"/>
-    <br/>
-    <label>Facebook</label>
-    <input type="text" name="facebook"/>
-    <br/>
-    <label>Favorite tool</label>
-    <input type="text" name="favorites_tool"/>
-    <br/>
-    <label>Slug</label>
-    <input type="text" name="slug"></br>
-    <label>Babershop Name</label>
-    <input type="text" name="babershopname"/>
-    <br/>
+    <?php
+    $bpid= $this->uri->segment(4, 0);
+    $username = $this->uri->segment(1, 0);
+
+    echo form_open_multipart('/'.$username.'/upload/registerupload/', array('id' => 'fileupload'));
+    echo'<input type="hidden" name="bpid" value='.$bpid.'>';
+    ?>
+    <?php
+    foreach ($bprofile as $bp) {
+        echo'<label>Address</label>';
+        echo"<input type='text' name='address' value='$bp->address'/>
+    <br/>";
+        echo'<label>City</label>';
+        echo"<input type='text' name='city' value='$bp->city'/>
+    <br/>";
+        echo '<label>State</label>';
+        echo "<input type='text' name='state' value='$bp->state'/>
+    <br/>";
+        echo '<label>Zipcode</label>';
+        echo "<input type='text' name='zip' value='$bp->zip'/>
+    <br/>";
+        echo '<label>Phone</label>';
+        echo "<input type='text' name='phone' value='$bp->phone'/>
+    <br/>";
+        echo '<label>Instantgram</label>';
+        echo "<input type='text' name='instantgram' value='$bp->instantgram'/>
+    <br/>";
+        echo '<label>Facebook</label>';
+        echo "<input type='text' name='facebook' value='$bp->facebook'/>
+    <br/>";
+        echo '<label>Favorite tool</label>';
+        echo "<input type='text' name='favorites_tool' value='$bp->favorites_tool'/>
+    <br/>";
+        echo '<label>Slug</label>';
+        echo "<input type='text' name='slug' value='$bp->slug'/>
+    <br/>";
+        echo '<label>Babershop Name</label>';
+        echo "<input type='text' name='babershopname' value='$bp->babershopname'/>
+    <br/>";
+    }
+    ?>
     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
     <label>User Photo:</label>
     <div class="row fileupload-buttonbar">
@@ -77,10 +85,13 @@
     <br>
     <!-- The table listing the files available for upload/download -->
     <table class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
-    <input class="btn btn-success" name="submitnew" type="submit" value="Submit" />
+    <input class="btn btn-success" name="submitnew" type="submit" value="Edit" />
     <?php echo form_close(); ?>
 
+
 </div>
+<?php
+$this->load->view('include/footerbt');?>
 <!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">
     {% for (var i=0, file; file=o.files[i]; i++) { %}

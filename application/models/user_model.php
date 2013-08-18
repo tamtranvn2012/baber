@@ -247,5 +247,55 @@ Class User_model extends CI_Model{
             return true;
         }
     }
+    function add_new_user_independent($username, $password,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $isprivate,$babershopname,$slug)
+    {
+        $this->load->database();
+        $nowtimestamp = intval(strtotime("now"));
+        //Generate password hash
+        $salt = 'h5f';
+        $ps = $password . $salt;
+        $joinps = md5($ps);
+        $timehash = md5($nowtimestamp);
+        $joinallstr = $joinps . $timehash;
+        $hashpass = md5($joinallstr);
+        $encodepass = substr(base64_encode($hashpass), 0, 32);
+        $data = array(
+            'username' => $username,
+            'password' => $encodepass,
+            'salt' => 'h5f',
+            'created' => $nowtimestamp
+        );
+        $result = $this->checkusername($username);
+        if ($result) {
+            echo'username was  registed by another';
+            return false;
+        } else {
+            $this->db->insert('user', $data);
+            // add profile
+            $user = $this->checkusername($username);
+
+            if($user){
+                $dataprofile = array(
+                    'userid' => $user[0]->userid,
+                    'photo_link' =>$photolink,
+                    'address' => $address,
+                    'city' => $city,
+                    'state' => $state,
+                    'zip' => $zip,
+                    'phone' => $phone,
+                    'instantgram' => $instantgram,
+                    'facebook' => $facebook,
+                    'favorites_tool' => $favorites_tool,
+                    'isprivate' => $isprivate,
+                    'created' => $nowtimestamp,
+                    'slug' => $slug,
+                    'babershopname' => $babershopname,
+                );
+                $this->db->insert('baberindependent', $dataprofile);
+                return true;
+            }
+        }
+        return true;
+    }
 }
 ?>

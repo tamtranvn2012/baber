@@ -32,6 +32,8 @@
 		<label>Favorite tool</label>
 		<input type="text" name="favorites_tool"/>		
 		<br/>
+    <label>Slug</label>
+    <input type="text" name="slug"></br>
 		<label>Babershop Name</label>
 		<input type="text" name="babershopname"/>		
 		<br/>

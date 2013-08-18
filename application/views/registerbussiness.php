@@ -35,6 +35,9 @@
 		<label>Babershop Name</label>
 		<input type="text" name="babershopname"/>		
 		<br/>
+    <label>Slug</label>
+    <input type="text" name="slug"/>
+    <br/>
 	<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
 	<label>User Photo:</label>
 	<div class="row fileupload-buttonbar">
