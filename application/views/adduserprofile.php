@@ -1,9 +1,9 @@
 <div id="upload-img">
-    <h3>Fill New Business Profile Info</h3>
+    <h3>Fill New User Profile Info</h3>
     <!-- Upload function on action form -->
-    <?php 
-	$username = $this->uri->segment(1, 0);
-	echo form_open_multipart('/'.$username.'/upload/addbussinessprofile/', array('id' => 'fileupload')); ?>
+    <?php
+    $username = $this->uri->segment(1, 0);
+    echo form_open_multipart('/'.$username.'/upload/adduserprofile/', array('id' => 'fileupload')); ?>
     <label>Address</label>
     <input type="text" name="address"/>
     <br/>

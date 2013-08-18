@@ -45,6 +45,7 @@ $route['(:any)/manage/unapproveapid/(:any)/(:any)'] = "profilepage/unapproved_ap
 $route['(:any)/manage/listapprove/(:any)'] = "profilepage/listing_approved_by_bpid";
 $route['(:any)/manage/addnewpost/(:any)/(:any)'] = "profilepage/add_new_post";
 $route['(:any)/manage/editbussiness/(:any)'] = "profilepage/editbussiness";
+
 $route['(:any)/manage/controlapprove'] = "profilepage/control_approve_listing_bussiness";
 $route['(:any)/manage/controlpost'] = "profilepage/control_post_listing_client";
 $route['(:any)/manage/requestapprove'] = "profilepage/request_approve";
@@ -56,14 +57,18 @@ $route['(:any)/manage/posts/(:any)/(:any)'] = "profilepage/manage_bp_posts";
 $route['(:any)/manage/approvelisting'] = "profilepage/manage_approve_listing_client";
 $route['(:any)/manage/addprofile'] = "manage/addprofile";
 $route['search/zipcode'] = "search/search_by_zipcode";
-$route['(:any)/upload/addbussinessprofilephoto'] = "uploadbussinessregister/upload_img_bussiness";
-$route['(:any)upload/registerupload'] = "uploadregister/upload_img";
-$route['(:any)/manage/addbussinessprofile'] = "manage/addbussinessprofile";
+$route['(:any)/upload/addbussinessprofile'] = "uploadbussinessregister/upload_img_bussiness";
+$route['(:any)/upload/addindependentprofile'] = "addindependent/upload_img_independent";
+$route['(:any)/upload/adduserprofile'] = "adduserprofile/upload_img_userprofile";
+$route['(:any)/upload/registerupload'] = "uploadregister/upload_img";
+$route['(:any)/manage/addbussinessprofile'] = "profilepage/addbussinessprofile";
+$route['(:any)/manage/adduserprofile'] = "profilepage/adduserprofile";
+$route['(:any)/manage/addindependentprofile'] = "profilepage/addindependentprofile";
 $route['(:any)/manage/profilebussiness'] = "manage/profilebussiness";
 $route['(:any)/manage'] = "profilepage/profile_manage";
 
 $route['(:any)/manage/displaybussiness'] = "profilepage/displaybussiness";
-
+//$route['(:any)/manage/adduserprofile'] = "profilepage/adduserprofile";
 $route['upload/uploadindependent'] = "uploadindependent/upload_img";
 $route['upload/addnew'] = "upload/upload_img";
 $route['upload/registerupload'] = "uploadregister/upload_img";

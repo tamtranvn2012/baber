@@ -426,5 +426,42 @@ class Profilepage extends Main_Controller {
         $data['bprofile']= $query->result();
         $this->load->view('editbussiness',$data);
     }
-	
+    function adduserprofile(){
+        $this->load->helper('cookie');
+        $this->load->helper('url');
+        $userid = $this->input->cookie('userid');
+        if (intval($userid) == 0) {
+            redirect('/user/login', 'refresh');
+        } else {
+            $this->load->view('include/headerbt');
+            $this->load->view('adduserprofile');
+            $this->load->view('include/footerbt');
+        }
+    }
+    function addbussinessprofile()
+    {
+        $this->load->helper('cookie');
+        $this->load->helper('url');
+        $userid = $this->input->cookie('userid');
+        if (intval($userid) == 0) {
+            redirect('/user/login', 'refresh');
+        } else {
+            $this->load->view('include/headerbt');
+            $this->load->view('addbussinessprofile');
+            $this->load->view('include/footerbt');
+        }
+    }
+    function addindependentprofile()
+    {
+        $this->load->helper('cookie');
+        $this->load->helper('url');
+        $userid = $this->input->cookie('userid');
+        if (intval($userid) == 0) {
+            redirect('/user/login', 'refresh');
+        } else {
+            $this->load->view('include/headerbt');
+            $this->load->view('addindependentprofile');
+            $this->load->view('include/footerbt');
+        }
+    }
 }

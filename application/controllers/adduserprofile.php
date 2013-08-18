@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
-class Uploadbussinessregister extends CI_Controller
+class Adduserprofile extends CI_Controller
 {
     protected $path_img_upload_folder;
     protected $path_img_thumb_upload_folder;
@@ -64,13 +64,13 @@ class Uploadbussinessregister extends CI_Controller
     }
 
     // Function called by the form
-    public function upload_img_bussiness()
+    public function upload_img_userprofile()
     {
         if($_FILES['userfile']['name'] == ''){
             $photolink = 0;
             $photolink = $this->input->cookie('photo_img_id', TRUE);
-        //   $username = $_REQUEST['username'];
-        //    $password = $_REQUEST['password'];
+            //   $username = $_REQUEST['username'];
+            //    $password = $_REQUEST['password'];
             //$photolink = $_REQUEST['photolink'];
             $address = $_REQUEST['address'];
             $city = $_REQUEST['city'];
@@ -88,20 +88,20 @@ class Uploadbussinessregister extends CI_Controller
             //Insert to database user info if user fill all info
             if ($_REQUEST['submitnew']){
                 $this->load->model('user_model');
-                $this->user_model->add_profile_bus($photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname);                $this->load->helper('cookie');
+                $this->user_model->add_user_profile($photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname);                $this->load->helper('cookie');
                 $this->load->helper('url');
                 $useridobj = $this->input->cookie('userid');
                 $userid = $useridobj[0]->userid;
-				//var_dump($userid);exit;
-				$username = $this->uri->segment(1, 0);
-			//	$this->user_model->checkusername($username);
-			//	var_dump($username);exit;
-            //    $cookie = array(
-             //       'name'   => 'userid',
-            //        'value'  => $userid,
-            //        'expire' => '86400'
-            //    );
-            //    $this->input->set_cookie($cookie);
+                //var_dump($userid);exit;
+                $username = $this->uri->segment(1, 0);
+                //	$this->user_model->checkusername($username);
+                //	var_dump($username);exit;
+                //    $cookie = array(
+                //       'name'   => 'userid',
+                //        'value'  => $userid,
+                //        'expire' => '86400'
+                //    );
+                //    $this->input->set_cookie($cookie);
                 redirect('/'.$username.'/manage/', 'refresh');
             }
         }
