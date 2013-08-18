@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7398839-36a1-4dc7-9e95-0bd1593e9adb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/uploadindependent.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/displaybussinessprofile.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/editbussiness.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/registerindependent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/profilepage.php" afterPath="$PROJECT_DIR$/application/controllers/profilepage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/upload.php" afterPath="$PROJECT_DIR$/application/controllers/upload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/uploadbussiness.php" afterPath="$PROJECT_DIR$/application/controllers/uploadbussiness.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/uploadbussinessregister.php" afterPath="$PROJECT_DIR$/application/controllers/uploadbussinessregister.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/uploadregister.php" afterPath="$PROJECT_DIR$/application/controllers/uploadregister.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/user.php" afterPath="$PROJECT_DIR$/application/controllers/user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/profile_model.php" afterPath="$PROJECT_DIR$/application/models/profile_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/user_model.php" afterPath="$PROJECT_DIR$/application/models/user_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/registerbussiness.php" afterPath="$PROJECT_DIR$/application/views/registerbussiness.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/registerbussinessphoto.php" afterPath="$PROJECT_DIR$/application/views/registerbussinessphoto.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/registeruserphoto.php" afterPath="$PROJECT_DIR$/application/views/registeruserphoto.php" />
-    </list>
+    <list default="true" id="e7398839-36a1-4dc7-9e95-0bd1593e9adb" name="Default" comment="" />
     <ignored path="baber.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
