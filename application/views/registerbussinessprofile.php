@@ -43,7 +43,6 @@
 
 <label>Password</label>
 <input type="password" name="password" style="width: 260px;" id="password">
-
 <!--
 add profile of user
 -->

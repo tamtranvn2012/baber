@@ -190,3 +190,6 @@ li.list a:hover{
 color: red;
 text-decoration: none;
 }
+.bt-text{
+    margin: 0 !important;
+}
