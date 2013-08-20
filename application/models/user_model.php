@@ -306,6 +306,19 @@ Class User_model extends CI_Model{
                 'babershopname' => $babershopname
             );
             $this->db->insert('baberindependent', $dataprofile);
+
+            $this->db->select('upid');
+            $this->db->where('userid',$user[0]->userid);
+            $query = $this->db->get('baberindependent');
+            $data=$query->result();
+            $dataapp = array(
+                'upid' => $data[0]->upid,
+                'upidpost' => $data[0]->upid,
+                'isapproved' => 1,
+            );
+            $this->db->insert('approveprofile', $dataapp);
+
+
             return true;
         }
     }
@@ -354,6 +367,18 @@ Class User_model extends CI_Model{
                     'babershopname' => $babershopname,
                 );
                 $this->db->insert('baberindependent', $dataprofile);
+
+                $this->db->select('upid');
+                $this->db->where('userid',$user[0]->userid);
+                $query = $this->db->get('baberindependent');
+                $data=$query->result();
+                $dataapp = array(
+                    'upid' => $data[0]->upid,
+                    'upidpost' => $data[0]->upid,
+                    'isapproved' => 1,
+                );
+
+                $this->db->insert('approveprofile', $dataapp);
                 return true;
             }
         }

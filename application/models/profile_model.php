@@ -309,4 +309,20 @@
 			$query = $this->db->get('approveprofile');
 			return $query->result();
 		}
+
+        function get_upid_by_userid($userid)
+        {
+            $userid = intval($userid);
+            $this->db->select('upid');
+            $this->db->where('userid', $userid);
+            $query = $this->db->get('baberindependent');
+            $result = $query->result();
+            return $result;
+        }
+        function get_apid_by_upid_upid($upid){
+            $this->db->select('apid');
+            $this->db->where('upid', $upid);
+            $query = $this->db->get('approveprofile');
+            return $query->result();
+        }
 	}

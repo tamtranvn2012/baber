@@ -53,6 +53,7 @@ $route['(:any)/manage/saverequest'] = "profilepage/save_request_approve";
 $route['(:any)/manage/posts/delete/(:any)'] = "profilepage/delete_post_by_ppid";
 $route['(:any)/manage/posts/edit/(:any)'] = "profilepage/edit_post_by_ppid";
 $route['(:any)/manage/bpposts/(:any)'] = "profilepage/add_post_form_bpid_bpid";
+$route['(:any)/manage/biposts'] = "profilepage/add_new_post_imdependent";
 $route['(:any)/manage/posts/(:any)/(:any)'] = "profilepage/manage_bp_posts";
 //$route['(:any)/manage/posts'] = "profilepage/manage_bp_posts";
 $route['(:any)/manage/approvelisting'] = "profilepage/manage_approve_listing_client";
@@ -71,17 +72,17 @@ $route['(:any)/manage'] = "profilepage/profile_manage";
 $route['(:any)/manage/displaybussiness'] = "profilepage/displaybussiness";
 //$route['(:any)/manage/adduserprofile'] = "profilepage/adduserprofile";
 $route['upload/uploadbppost'] = "uploadbppost/upload_img";
-$route['upload/uploadindependent'] = "uploadindependent/upload_img";
+$route['upload/uploadbipost'] = "uploadbipost/upload_img";
+
 $route['upload/addnew'] = "upload/upload_img";
 $route['upload/registerupload'] = "uploadregister/upload_img";
 
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
-$route['upload/registerbussinessphoto'] = "uploadbussinessregister/upload_img";
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
 $route['upload/registerbussinessphoto'] = "uploadbussinessregister/upload_img";
+$route['upload/registerindependent'] = "uploadindependent/upload_img";
 $route['upload/uploadeditpost'] = "uploadeditpost/upload_img";
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
-$route['upload/registerbussinessphoto'] = "uploadbussinessregister/upload_img";
 $route['upload/addbussinessprofilephoto'] = "uploadbussinessregister/upload_img";
 
 $route['upload/uploadregister'] = "uploadregister/upload_img";

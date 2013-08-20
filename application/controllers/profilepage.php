@@ -491,4 +491,27 @@ class Profilepage extends Main_Controller {
 			$this->load->view('include/footerbt');																			
 		}
 	}
+    function add_new_post_imdependent(){
+        $username = $this->uri->segment(1, 0);
+        $data['username'] = $username;
+        $datamenu['username'] = $username;
+        $userid = $this->input->cookie('userid', TRUE);
+        if(!$this->user_model->check_username_userid($username,$userid)){
+            redirect('/user/login/', 'refresh');
+        }
+        $upid=$this->profile_model->get_upid_by_userid($userid);
+        if(count($upid)>0){
+            $upidpost = $upid[0]->upid;
+            $data['upid'] = $upid[0]->upid;
+            $data['upidpost'] = $upid[0]->upid;
+            $this->load->view('include/headerbt');
+            $this->load->view('include/menu',$datamenu);
+            $this->load->view('addnewpostindependent',$data);
+            $this->load->view('include/footerbt');
+        }else{
+            $this->load->view('include/headerbt');
+            echo 'Please,Register Independent!!!!!!!!!!!! ';
+            $this->load->view('include/footerbt');
+        }
+    }
 }
