@@ -73,11 +73,11 @@ class Profilepage extends Main_Controller {
 	
 	//Baber request approve on Babershop to work
 	function request_approve(){
-		$username = $this->uri->segment(1, 0);
-		$data['username'] = $username;
-		$datamenu['username'] = $username;
 		$userid = 0;
 		$userid = $this->input->cookie('userid', TRUE);
+		$username = $this->user_model->get_username_by_userid($userid)[0]->username;
+		$data['username'] = $username;
+		$datamenu['username'] = $username;
 		if(!$this->user_model->check_username_userid($username,$userid)){
 			redirect('/user/login/', 'refresh');
 		}
@@ -99,25 +99,21 @@ class Profilepage extends Main_Controller {
 				}
 			}
 			$data['userbpids'] = $userinfoarr;
-			//data
-			
-			$userid = 0;
-			$userid = $this->input->cookie('userid', TRUE);
+			//data			
 			$resultbussinessprofiles = $this->profile_model->get_all_invidual_info('all');
 			$resultownbussinessprofiles = $this->profile_model->get_all_invidual_info($userid);
 			$bpownarray = array();
 			foreach ($resultownbussinessprofiles as $perbussinessprofile){
 				$upid = $perbussinessprofile->upid;
-				$bpownarray[$upid] = $perbussinessprofile->babershopname;
+				$bpownarray[$upid] = $perbussinessprofile->slug;
 			}
 			$bparray = array();
 			foreach ($resultbussinessprofiles as $perbussinessprofile){
 				$upid = $perbussinessprofile->upid;
-				$bparray[$upid] = $perbussinessprofile->babershopname;
+				$bparray[$upid] = $perbussinessprofile->slug;
 			}
 			$data['bpchoice'] = $bparray;
 			$data['bpownchoice'] = $bpownarray;
-			$data['username'] = $username;
 			$this->load->view('include/header');
 			$this->load->view('include/menu',$datamenu);
 			$this->load->view('request_approve_form',$data);
@@ -130,7 +126,7 @@ class Profilepage extends Main_Controller {
 		$userid = $this->input->cookie('userid', TRUE);
 		$username = $this->user_model->get_username_by_userid($userid)[0]->username;
 		$yourupid = intval($_REQUEST['yourbpprofile']);
-		if($this->profile_model->check_userid_upid($userid,$yourupid)){
+		if($this->profile_model->check_userid_upid_bi($userid,$yourupid)){
 			//Place code to get bussiness profile id here : get $approvetobpid
 			$approvetobpid = intval($_REQUEST['bussinessprofileid']);
 			if($this->profile_model->check_existing_approve($yourupid,$approvetobpid)){
@@ -213,14 +209,12 @@ class Profilepage extends Main_Controller {
 	
 	//Add new post action
 	function add_new_post(){
-		$username = $this->uri->segment(1, 0);
-		$data['username'] = $username;
-		$datamenu['username'] = $username;
+		$data = array();
 		$userid = 0;
 		$userid = $this->input->cookie('userid', TRUE);
-		if(!$this->user_model->check_username_userid($username,$userid)){
-			redirect('/user/login/', 'refresh');
-		}
+		$username = $this->user_model->get_username_by_userid($userid)[0]->username;
+		$data['username'] = $username;
+		$datamenu['username'] = $username;
 		$upid = intval($this->uri->segment(4, 0));
 		$bpid = intval($this->uri->segment(5, 0));
 		if($this->profile_model->check_upid_bpid($upid,$bpid,$userid)){
@@ -228,7 +222,7 @@ class Profilepage extends Main_Controller {
 			$data['bpid'] = $bpid;
 			$this->load->view('include/headerbt');
 			$this->load->view('include/menu',$datamenu);
-			$this->load->view('addnewpost',$data);
+			$this->load->view('addnewbibppost',$data);
 			$this->load->view('include/footerbt');																
 		}else{
 			$this->load->view('include/headerbt');
@@ -240,14 +234,11 @@ class Profilepage extends Main_Controller {
 	//Manage post had approve
 	function manage_bp_posts(){
 		$data = array();
-		$username = $this->uri->segment(1, 0);
-		$data['username'] = $username;
-		$datamenu['username'] = $username;
 		$userid = 0;
 		$userid = $this->input->cookie('userid', TRUE);
-		if(!$this->user_model->check_username_userid($username,$userid)){
-			redirect('/user/login/', 'refresh');
-		}
+		$username = $this->user_model->get_username_by_userid($userid)[0]->username;
+		$data['username'] = $username;
+		$datamenu['username'] = $username;
 		$upid = intval($this->uri->segment(4, 0));
 		$bpid = intval($this->uri->segment(5, 0));
 		if($this->profile_model->check_upid_bpid($upid,$bpid,$userid)){
@@ -293,9 +284,9 @@ class Profilepage extends Main_Controller {
 	//Mange approve listing
 	function manage_approve_listing_client(){
 		$data = array();
-		$username = $this->uri->segment(1, 0);
-		$datamenu['username'] = $username;
 		$userid = $this->input->cookie('userid', TRUE);
+		$username = $this->user_model->get_username_by_userid($userid)[0]->username;
+		$datamenu['username'] = $username;
 		$upid = intval($this->profile_model->get_upid_userid($userid)[0]->upid);
 		$allinfo = $this->profile_model->get_all_by_upid_allinfo($upid);
 		foreach($allinfo as $perinfo){

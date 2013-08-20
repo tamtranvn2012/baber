@@ -25,13 +25,13 @@
 		function get_all_invidual_info($userid)
 		{
 			if ($userid == 'all'){
-				$query = $this->db->get('userprofile');
+				$query = $this->db->get('baberindependent');
 				$result = $query->result();			
 			}
 			if ($userid != 'all'){
 				$userid = intval($userid);
 				$this->db->where('userid', $userid);
-				$query = $this->db->get('userprofile');
+				$query = $this->db->get('baberindependent');
 				$result = $query->result();			
 			}			
 			return $result;
@@ -43,17 +43,31 @@
 			$userid = intval($userid);
 			$this->db->select('upid');
 			$this->db->where('userid', $userid);
-			$query = $this->db->get('userprofile');
+			$query = $this->db->get('baberindependent');
 			$result = $query->result();			
 			return $result;
 		}
 		
-		//Check profile id contant with bussiness profile or not?
+		//Check profile id containt with bussiness profile or not?
 		function check_userid_upid($userid,$upid)
 		{
 			$this->db->where('userid', $userid);
 			$this->db->where('upid', $upid);
 			$query = $this->db->get('userprofile');
+			$result = $query->result();			
+			if(count($result)){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		
+		//Check baber independent profile id containt with userid or not?
+		function check_userid_upid_bi($userid,$upid)
+		{
+			$this->db->where('userid', $userid);
+			$this->db->where('upid', $upid);
+			$query = $this->db->get('baberindependent');
 			$result = $query->result();			
 			if(count($result)){
 				return true;
@@ -146,11 +160,11 @@
 			$this->db->update('approveprofile', $data); 			
 		}
 
-		//Check userprofile contant with bussisness profile or not
+		//Check userprofile containt with bussisness profile or not
 		function check_upid_bpid($upidrq,$bpid,$userid){
 			$this->db->select('upid');
 			$this->db->where('userid', $userid);
-			$query = $this->db->get('userprofile');
+			$query = $this->db->get('baberindependent');
 			$result = $query->result();			
 			$upiddb = 0;
 			$upiddb = $result[0]->upid;

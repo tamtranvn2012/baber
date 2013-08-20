@@ -71,6 +71,7 @@ $route['(:any)/manage'] = "profilepage/profile_manage";
 
 $route['(:any)/manage/displaybussiness'] = "profilepage/displaybussiness";
 //$route['(:any)/manage/adduserprofile'] = "profilepage/adduserprofile";
+$route['upload/uploadbibppost'] = "uploadbibppost/upload_img";
 $route['upload/uploadbppost'] = "uploadbppost/upload_img";
 $route['upload/uploadbipost'] = "uploadbipost/upload_img";
 
