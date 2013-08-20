@@ -58,15 +58,16 @@ class Upload extends CI_Controller
 		$this->setDelete_img_url(base_url() . 'admin/deleteImage/');
 	}
 
+	//Upload function image for bussiness user type
     public function registerbussinessupload()
-{
-    $this->load->view('include/headerbt');
-    //$this->load->view('register_user');
-    $this->load->view('registerbussinessupload');
-    $this->load->view('include/footerbt');
-}
+	{
+		$this->load->view('include/headerbt');
+		//$this->load->view('register_user');
+		$this->load->view('registerbussinessupload');
+		$this->load->view('include/footerbt');
+	}
 
-
+	//Upload function for Independent user type
     public function registerindependent()
     {
         $this->load->view('include/headerbt');

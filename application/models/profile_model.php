@@ -263,7 +263,9 @@
 				return false;
 			}
 		}
-        function update_bussiness_profile($bpid,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname)
+        
+		//Update baber bussiness profile
+		function update_bussiness_profile($bpid,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname)
         {
             $dataprofile = array(
                 'photo_link' => $photolink,
@@ -281,8 +283,30 @@
             $this->load->helper('url');
             $this->db->where('bpid',$bpid);
             $this->db->update('bussinessprofile', $dataprofile);
-
         }
 		
+		//Check bpid post on their page and make approve same bpid
+		function check_bpid_post_bpid($bpid){
+			$this->db->where('bpid',$bpid);
+			$this->db->where('bpidpost',$bpid);
+			$query = $this->db->get('approveprofile');
+			if(!count($query->result())){
+				//insert new record with bpid number
+				$data = array(
+				   'bpid' => $bpid ,
+				   'bpidpost' => $bpid ,
+				   'isapproved' => 1,
+				);
+				$this->db->insert('approveprofile', $data); 							
+			}
+		}
 		
+		//Get apid for bpid post on their profile
+		function get_apid_from_bpid_bpid($bpid){
+			$this->db->select('apid');
+			$this->db->where('bpid',$bpid);
+			$this->db->where('bpidpost',$bpid);
+			$query = $this->db->get('approveprofile');
+			return $query->result();
+		}
 	}

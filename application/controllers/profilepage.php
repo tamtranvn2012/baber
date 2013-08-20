@@ -405,6 +405,8 @@ class Profilepage extends Main_Controller {
 			$this->load->view('include/footerbt');																					
 		}
 	}
+	
+	//Display bussiness data
     function displaybussiness(){
         $this->load->helper('cookie');
         $this->load->helper('url');
@@ -417,7 +419,8 @@ class Profilepage extends Main_Controller {
         $this->load->view('displaybussinessprofile',$data);
         $this->load->view('include/footerbt');
     }
-
+	
+	//Edit bussiness profile
     function editbussiness()
     {
         $bpid= $this->uri->segment(4, 0);
@@ -426,6 +429,8 @@ class Profilepage extends Main_Controller {
         $data['bprofile']= $query->result();
         $this->load->view('editbussiness',$data);
     }
+	
+	//Add userprofile type
     function adduserprofile(){
         $this->load->helper('cookie');
         $this->load->helper('url');
@@ -438,6 +443,8 @@ class Profilepage extends Main_Controller {
             $this->load->view('include/footerbt');
         }
     }
+	
+	//Add bussiness profiel type
     function addbussinessprofile()
     {
         $this->load->helper('cookie');
@@ -451,6 +458,8 @@ class Profilepage extends Main_Controller {
             $this->load->view('include/footerbt');
         }
     }
+	
+	//Add user dependent profile type
     function addindependentprofile()
     {
         $this->load->helper('cookie');
@@ -464,4 +473,22 @@ class Profilepage extends Main_Controller {
             $this->load->view('include/footerbt');
         }
     }
+	
+	//Let bussiness profile make post on their profile
+	function add_post_form_bpid_bpid(){
+		$bpid= $this->uri->segment(4, 0);
+		$userid = $this->input->cookie('userid', TRUE);
+		$bpiddb = $this->user_model->getbpid($userid)[0]->bpid;
+		$datamenu['username'] = $this->user_model->get_username_by_userid($userid)[0]->username;
+		if(intval($bpid) == intval($bpiddb)){
+			$this->profile_model->check_bpid_post_bpid($bpid);
+			$bpidpost = $bpid;
+			$data['bpid'] = $bpid;
+			$data['bpidpost'] = $bpid;
+			$this->load->view('include/headerbt');
+			$this->load->view('include/menu',$datamenu);
+			$this->load->view('addnewbppost',$data);
+			$this->load->view('include/footerbt');																			
+		}
+	}
 }

@@ -45,7 +45,7 @@
 	<div  class="span8 well" id="form-control-addnewcontent" style="margin-left: 10px;" >
 	<h2>Upload a file</h2>
 	<!-- Upload function on action form -->
-	<?php echo form_open_multipart('/upload/addnew', array('id' => 'fileupload')); ?>
+	<?php echo form_open_multipart('upload/uploadbppost/', array('id' => 'fileupload')); ?>
 		<div class="span7">
 			<label class="span5"> Babershop name:</label>
 			<div class="span5"><input type="text" name="babershopname" value=""  class="form-control"/></div>
