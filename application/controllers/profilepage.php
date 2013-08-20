@@ -504,6 +504,7 @@ class Profilepage extends Main_Controller {
             redirect('/user/login/', 'refresh');
         }
         $upid=$this->profile_model->get_upid_by_userid($userid);
+      //  var_dump($upid);exit;
         if(count($upid)>0){
             $upidpost = $upid[0]->upid;
             $data['upid'] = $upid[0]->upid;

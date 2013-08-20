@@ -85,7 +85,6 @@ $route['upload/registerbussinessphoto'] = "uploadbussinessregister/upload_img";
 $route['upload/registerindependent'] = "uploadindependent/upload_img";
 $route['upload/uploadeditpost'] = "uploadeditpost/upload_img";
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
-$route['upload/addbussinessprofilephoto'] = "uploadbussinessregister/upload_img";
 
 $route['upload/uploadregister'] = "uploadregister/upload_img";
 $route['user/login'] = "user/login";

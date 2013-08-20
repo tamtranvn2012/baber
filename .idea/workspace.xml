@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7398839-36a1-4dc7-9e95-0bd1593e9adb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/uploadbipost.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/addnewpostindependent.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/profilepage.php" afterPath="$PROJECT_DIR$/application/controllers/profilepage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/profile_model.php" afterPath="$PROJECT_DIR$/application/models/profile_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/user_model.php" afterPath="$PROJECT_DIR$/application/models/user_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/registerindependent.php" afterPath="$PROJECT_DIR$/application/views/registerindependent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/addbussinessprofile.php" afterPath="$PROJECT_DIR$/application/views/addbussinessprofile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/profilemanage.php" afterPath="$PROJECT_DIR$/application/views/profilemanage.php" />
     </list>
     <ignored path="baber.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +29,43 @@
       <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/config/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="41" selection-start="4172" selection-end="4172" vertical-scroll-proportion="0.3696581">
+            <state line="62" column="41" selection-start="2945" selection-end="2964" vertical-scroll-proportion="0.055555556">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addindependentprofile.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/addindependentprofile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="3" selection-start="123" selection-end="162" vertical-scroll-proportion="-2.6153846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addbussinessprofile.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/addbussinessprofile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="8" selection-start="331" selection-end="331" vertical-scroll-proportion="30.73077">
+              <folding>
+                <marker date="1376984680707" expanded="true" signature="385:537" placeholder="..." />
+                <marker date="1376984680707" expanded="true" signature="578:1177" placeholder="..." />
+                <marker date="1376984680707" expanded="true" signature="621:773" placeholder="..." />
+                <marker date="1376984680707" expanded="true" signature="816:970" placeholder="..." />
+                <marker date="1376984680707" expanded="true" signature="1013:1167" placeholder="..." />
+                <marker date="1376984680707" expanded="true" signature="1218:1366" placeholder="..." />
+                <marker date="1376984680707" expanded="true" signature="1407:1567" placeholder="..." />
+                <marker date="1376984680707" expanded="true" signature="1608:1762" placeholder="..." />
+                <marker date="1376984680707" expanded="true" signature="1807:1972" placeholder="..." />
+                <marker date="1376984680707" expanded="true" signature="2014:2179" placeholder="..." />
+                <marker date="1376984680707" expanded="false" signature="2315:2333" placeholder="..." />
+                <marker date="1376984680707" expanded="true" signature="5660:6470" placeholder="..." />
+                <marker date="1376984680707" expanded="true" signature="5754:6470" placeholder="..." />
+                <marker date="1376984680707" expanded="true" signature="6161:6356" placeholder="..." />
+                <marker date="1376984680707" expanded="true" signature="6382:6470" placeholder="..." />
+                <marker date="1376984680707" expanded="true" signature="6691:7011" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,7 +73,7 @@
       <file leaf-file-name="uploadindependent.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/uploadindependent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="23" selection-start="128" selection-end="145" vertical-scroll-proportion="-1.3076923">
+            <state line="2" column="23" selection-start="128" selection-end="145" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -50,7 +82,7 @@
       <file leaf-file-name="uploadbppost.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/uploadbppost.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="45" selection-start="2298" selection-end="2298" vertical-scroll-proportion="-6.5384617">
+            <state line="73" column="45" selection-start="2298" selection-end="2298" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -59,29 +91,18 @@
       <file leaf-file-name="profilepage.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/profilepage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="512" column="57" selection-start="18237" selection-end="18237" vertical-scroll-proportion="-20.26923">
+            <state line="506" column="8" selection-start="18138" selection-end="18138" vertical-scroll-proportion="-7.8461537">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addnewpostindependent.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/addnewpostindependent.php">
+      <file leaf-file-name="profilemanage.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/profilemanage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="39" selection-start="1092" selection-end="1111" vertical-scroll-proportion="-5.8846154">
+            <state line="32" column="21" selection-start="1111" selection-end="1111" vertical-scroll-proportion="-15.692307">
               <folding>
-                <marker date="1376965679763" expanded="true" signature="189:206" placeholder="..." />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1376965679763" expanded="true" signature="1177:1372" placeholder="..." />
-                <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#6;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#td#4;n#tr#0;n#script#0;n#!!top" expanded="true" />
-                <marker date="1376965679763" expanded="true" signature="6002:6812" placeholder="..." />
-                <marker date="1376965679763" expanded="true" signature="6096:6812" placeholder="..." />
-                <marker date="1376965679763" expanded="true" signature="6503:6698" placeholder="..." />
-                <marker date="1376965679763" expanded="true" signature="6724:6812" placeholder="..." />
-                <marker date="1376965679763" expanded="true" signature="7033:7353" placeholder="..." />
+                <marker date="1376984043887" expanded="false" signature="163:180" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -90,7 +111,7 @@
       <file leaf-file-name="user.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="165" column="46" selection-start="5268" selection-end="5287" vertical-scroll-proportion="-11.923077">
+            <state line="165" column="46" selection-start="5268" selection-end="5287" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -99,16 +120,7 @@
       <file leaf-file-name="registerindependent.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/registerindependent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="63" selection-start="204" selection-end="223" vertical-scroll-proportion="-3.2692308">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile_model.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/profile_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="324" column="51" selection-start="9209" selection-end="9223" vertical-scroll-proportion="-5.9215684">
+            <state line="5" column="63" selection-start="204" selection-end="223" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -117,19 +129,8 @@
       <file leaf-file-name="user_model.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="320" column="0" selection-start="11726" selection-end="11726" vertical-scroll-proportion="-14.576923">
+            <state line="320" column="0" selection-start="11726" selection-end="11726" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addnewbppost.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/addnewbppost.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="55" selection-start="984" selection-end="1003" vertical-scroll-proportion="-4.576923">
-              <folding>
-                <marker date="1376962348964" expanded="false" signature="166:183" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -147,22 +148,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/registerbussinessphoto.php" />
         <option value="$PROJECT_DIR$/application/controllers/uploadregister.php" />
         <option value="$PROJECT_DIR$/application/views/editbussiness.php" />
-        <option value="$PROJECT_DIR$/application/views/addbussinessprofile.php" />
         <option value="$PROJECT_DIR$/application/controllers/uploadbussinessregister.php" />
         <option value="$PROJECT_DIR$/application/views/addindependentprofile.php" />
         <option value="$PROJECT_DIR$/application/views/adduserprofile.php" />
         <option value="$PROJECT_DIR$/application/controllers/adduserprofile.php" />
         <option value="$PROJECT_DIR$/application/controllers/addindependent.php" />
         <option value="$PROJECT_DIR$/application/views/addnewpostindependent.php" />
-        <option value="$PROJECT_DIR$/application/controllers/profilepage.php" />
         <option value="$PROJECT_DIR$/application/models/profile_model.php" />
         <option value="$PROJECT_DIR$/application/models/user_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/uploadbipost.php" />
         <option value="$PROJECT_DIR$/application/views/registerindependent.php" />
+        <option value="$PROJECT_DIR$/application/views/profilemanage.php" />
         <option value="$PROJECT_DIR$/application/config/routes.php" />
+        <option value="$PROJECT_DIR$/application/views/addbussinessprofile.php" />
+        <option value="$PROJECT_DIR$/application/controllers/profilepage.php" />
       </list>
     </option>
   </component>
@@ -332,8 +333,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="web-ide.project.structure" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../baber08180830" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -405,7 +406,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3285968" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25454545" sideWeight="0.32534248" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2204301" sideWeight="0.67140317" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22427036" sideWeight="0.67140317" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25192013" sideWeight="0.4937833" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3285968" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -475,131 +476,127 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/controllers/uploadbussinessregister.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="44" selection-start="2771" selection-end="2771" vertical-scroll-proportion="-0.65384614">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/addindependent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="50" selection-start="529" selection-end="529" vertical-scroll-proportion="-0.28333333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/addbussinessprofile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="37" selection-start="539" selection-end="539" vertical-scroll-proportion="0.46041667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/addnewpost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="61" selection-start="316" selection-end="316" vertical-scroll-proportion="0.28333333">
-          <folding>
-            <marker date="1376962348964" expanded="false" signature="230:247" placeholder="..." />
-          </folding>
-        </state>
+        <state line="15" column="50" selection-start="529" selection-end="529" vertical-scroll-proportion="-0.28333333" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/addnewpostindependent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="39" selection-start="1092" selection-end="1111" vertical-scroll-proportion="-5.8846154">
-          <folding>
-            <marker date="1376965679763" expanded="true" signature="189:206" placeholder="..." />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1376965679763" expanded="true" signature="1177:1372" placeholder="..." />
-            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#td#4;n#tr#0;n#script#0;n#!!top" expanded="true" />
-            <marker date="1376965679763" expanded="true" signature="6002:6812" placeholder="..." />
-            <marker date="1376965679763" expanded="true" signature="6096:6812" placeholder="..." />
-            <marker date="1376965679763" expanded="true" signature="6503:6698" placeholder="..." />
-            <marker date="1376965679763" expanded="true" signature="6724:6812" placeholder="..." />
-            <marker date="1376965679763" expanded="true" signature="7033:7353" placeholder="..." />
-          </folding>
+        <state line="24" column="39" selection-start="1092" selection-end="1111" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/addnewbppost.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="55" selection-start="984" selection-end="1003" vertical-scroll-proportion="-4.576923">
-          <folding>
-            <marker date="1376962348964" expanded="false" signature="166:183" placeholder="..." />
-          </folding>
+        <state line="22" column="55" selection-start="984" selection-end="1003" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/profile_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="324" column="51" selection-start="9209" selection-end="9223" vertical-scroll-proportion="-5.9215684">
+        <state line="324" column="9" selection-start="9209" selection-end="9223" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="320" column="0" selection-start="11726" selection-end="11726" vertical-scroll-proportion="-14.576923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/profilepage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="512" column="57" selection-start="18237" selection-end="18237" vertical-scroll-proportion="-20.26923">
+        <state line="320" column="0" selection-start="11726" selection-end="11726" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/uploadbipost.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="9" selection-start="3731" selection-end="3731" vertical-scroll-proportion="1.0270833">
-          <folding />
-        </state>
+        <state line="95" column="9" selection-start="3731" selection-end="3731" vertical-scroll-proportion="1.0270833" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/uploadbppost.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="45" selection-start="2298" selection-end="2298" vertical-scroll-proportion="-6.5384617">
+        <state line="73" column="45" selection-start="2298" selection-end="2298" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="46" selection-start="5268" selection-end="5287" vertical-scroll-proportion="-11.923077">
+        <state line="165" column="46" selection-start="5268" selection-end="5287" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/registerindependent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="63" selection-start="204" selection-end="223" vertical-scroll-proportion="-3.2692308">
+        <state line="5" column="63" selection-start="204" selection-end="223" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/uploadindependent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="23" selection-start="128" selection-end="145" vertical-scroll-proportion="-1.3076923">
+        <state line="2" column="23" selection-start="128" selection-end="145" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/profilemanage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="21" selection-start="1111" selection-end="1111" vertical-scroll-proportion="-15.692307">
+          <folding>
+            <marker date="1376984043887" expanded="false" signature="163:180" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/addindependentprofile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="3" selection-start="123" selection-end="162" vertical-scroll-proportion="-2.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/addbussinessprofile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="8" selection-start="331" selection-end="331" vertical-scroll-proportion="30.73077">
+          <folding>
+            <marker date="1376984680707" expanded="true" signature="385:537" placeholder="..." />
+            <marker date="1376984680707" expanded="true" signature="578:1177" placeholder="..." />
+            <marker date="1376984680707" expanded="true" signature="621:773" placeholder="..." />
+            <marker date="1376984680707" expanded="true" signature="816:970" placeholder="..." />
+            <marker date="1376984680707" expanded="true" signature="1013:1167" placeholder="..." />
+            <marker date="1376984680707" expanded="true" signature="1218:1366" placeholder="..." />
+            <marker date="1376984680707" expanded="true" signature="1407:1567" placeholder="..." />
+            <marker date="1376984680707" expanded="true" signature="1608:1762" placeholder="..." />
+            <marker date="1376984680707" expanded="true" signature="1807:1972" placeholder="..." />
+            <marker date="1376984680707" expanded="true" signature="2014:2179" placeholder="..." />
+            <marker date="1376984680707" expanded="false" signature="2315:2333" placeholder="..." />
+            <marker date="1376984680707" expanded="true" signature="5660:6470" placeholder="..." />
+            <marker date="1376984680707" expanded="true" signature="5754:6470" placeholder="..." />
+            <marker date="1376984680707" expanded="true" signature="6161:6356" placeholder="..." />
+            <marker date="1376984680707" expanded="true" signature="6382:6470" placeholder="..." />
+            <marker date="1376984680707" expanded="true" signature="6691:7011" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/profilepage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="506" column="8" selection-start="18138" selection-end="18138" vertical-scroll-proportion="-7.8461537">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="41" selection-start="4172" selection-end="4172" vertical-scroll-proportion="0.3696581">
+        <state line="62" column="41" selection-start="2945" selection-end="2964" vertical-scroll-proportion="0.055555556">
           <folding />
         </state>
       </provider>
