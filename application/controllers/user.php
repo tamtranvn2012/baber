@@ -78,8 +78,10 @@ class User extends Main_Controller
 
     public function register()
     {
+        	$username = $this->uri->segment(1, 0);
+		$datamenu['username'] = $username;
         $this->load->view('include/headerbt');
-        //$this->load->view('register_user');
+		$this->load->view('include/menu',$datamenu);
         $this->load->view('registeruserphoto');
         $this->load->view('include/footerbt');
     }

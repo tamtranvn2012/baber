@@ -1,47 +1,62 @@
-<div id="upload-img">
-    <h3>Fill New Business Profile Info</h3>
+<div class="container">
+	<div  class="span7 offset2">
+    <h3>Fill New User Info</h3>
     <!-- Upload function on action form -->
     <?php 
 	$username = $this->uri->segment(1, 0);
 	echo form_open_multipart('/'.$username.'/upload/addbussinessprofile/', array('id' => 'fileupload')); ?>
-    <label>Address</label>
-    <input type="text" name="address"/>
-    <br/>
-    <label>City</label>
-    <input type="text" name="city"/>
-    <br/>
-    <label>State</label>
-    <input type="text" name="state"/>
-    <br/>
-    <label>Zipcode</label>
-    <input type="text" name="zip"/>
-    <br/>
-    <label>Phone</label>
-    <input type="text" name="phone"/>
-    <br/>
-    <label>Instantgram</label>
-    <input type="text" name="instantgram"/>
-    <br/>
-    <label>Facebook</label>
-    <input type="text" name="facebook"/>
-    <br/>
-    <label>Favorite tool</label>
-    <input type="text" name="favorites_tool"/>
-    <br/>
-    <label>Babershop Name</label>
-    <input type="text" name="babershopname"/>
-    <br/>
+ 
+			 <div class="span7" style="margin:0;">
+				<label class="span5">Address:</label>
+				<div class="span5"><input type="text" name="address" class="span3 form-control"/></div>
+			</div>
+			<div class="span7" style="margin:0;">
+					<div class="span2" style="margin:0;">
+						<label class="span2">City:</label>
+						<div class="span2"><input type="text" name="city" class="span2 form-control"/></div>
+					</div>
+					<div class="span2" style="margin:0;">
+						<label class="span2">State:</label>
+						<div class="span2"><input type="text" name="state" class="span2 form-control"/></div>
+					</div>
+					<div class="span2" style="margin:0;">
+						<label class="span2">Zipcode:</label>
+						<div class="span2"><input type="text" name="zip" class="span2 form-control"/></div>
+					</div>
+			</div>
+			<div class="span7" style="margin:0;">
+				<label class="span5">Phone:</label>
+				<div class="span5"><input type="text" name="phone" class="span3 form-control"/></div>
+			</div>
+			<div class="span7" style="margin:0;">
+				<label class="span5">Instantgram:</label>
+				<div class="span5"><input type="text" name="instantgram" class="span3 form-control"/></div>
+			</div>
+			<div class="span7" style="margin:0;">
+				<label class="span5">Facebook:</label>
+				<div class="span5"><input type="text" name="facebook" class="span3 form-control"/></div>
+			</div>
+			
+			<div class="span7" style="margin:0;">
+				<label class="span5">Favorite tool:</label>
+				<div class="span5"><input type="text" name="favorites_tool" class="span3 form-control"/></div>
+			</div>
+			<div class="span7" style="margin:0;">
+				<label class="span5">Babershop Name:</label>
+				<div class="span5"><input type="text" name="babershopname" class="span3 form-control"/></div>
+			</div>
     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-    <label>User Photo:</label>
-    <div class="row fileupload-buttonbar">
+			
+			
+		<label class="span5" style="margin-left:30px;">User Photo:</label>		
+		<div class="row fileupload-buttonbar">
 
-        <div class="span7">
+			<div class="span7" style="text-align:center;">
+			
             <!-- The fileinput-button span is used to style the file input field as button -->
-			<span class="btn btn-success fileinput-button">
-				<span><i class="icon-plus icon-white"></i> Add files...</span>
-				<!-- Replace name of this input by userfile-->
-				<input type="file" name="userfile">
-			</span>
+			<button type="submit" class="btn btn-success">
+                <i class="icon-upload icon-white"></i> Add files...
+            </button>
             <button type="submit" class="btn btn-primary start">
                 <i class="icon-upload icon-white"></i> Start upload
             </button>
@@ -57,23 +72,11 @@
             <input type="checkbox" class="toggle">
         </div>
 
-        <div class="span5">
-
-            <!-- The global progress bar -->
-            <div class="progress progress-success progress-striped active fade">
-                <div class="bar" style="width:0%;"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- The loading indicator is shown during image processing -->
-    <div class="fileupload-loading"></div>
-    <br>
-    <!-- The table listing the files available for upload/download -->
-    <table class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
-    <input class="btn btn-success" name="submitnew" type="submit" value="Submit" />
+        <div class="span7" style="text-align:center;">
+		<input class="btn btn-success" name="submitnew" type="submit" value="Submit" />
+		</div>
     <?php echo form_close(); ?>
-
+</div>
 </div>
 <!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">

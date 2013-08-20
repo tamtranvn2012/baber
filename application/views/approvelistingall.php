@@ -1,7 +1,9 @@
-<div class="approve_listing">
+<div class="container">
+
 <?php
+ echo '<div class="span7 offset2 well text-center" style="line-height:30px;">';
 foreach($allinfo as $perinfo){
-	echo '<div>';
+
 	echo 'Bpid:'.$perinfo['bpid'].' , Babershop name: '.$perinfo['babershopname'];
 	
 	if($perinfo['isapproved'] == 1){
@@ -10,7 +12,7 @@ foreach($allinfo as $perinfo){
 		$statusapprove = 'Waiting';
 	}
 	echo ' | Approve status:'.$statusapprove;
-	echo '</div>';
 }
+echo '</div>';
 ?>
 </div>

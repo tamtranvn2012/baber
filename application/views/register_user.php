@@ -25,7 +25,6 @@
 </head>
 <body>
 <?php echo form_open_multipart('/user/check', array('id' => 'check')); ?>
-
 <h3>Register</h3>
 <label>Username</label>
 <input type="text" name="username" style="width: 260px;" id="username"></br>

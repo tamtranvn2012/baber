@@ -1,7 +1,8 @@
-<div id="upload-img">
+<div id="upload-img" class="container">
 	<h3>Fill New User Info</h3>
 	<!-- Upload function on action form -->
 	<?php echo form_open_multipart('/upload/uploadbussiness/', array('id' => 'fileupload')); ?>
+    <p>Duyeennnnnnnnnnnnnnnnnnnnnnnnnnnn</p>
 		<label>Username</label>
 		<input type="text" name="username"/>
 		<br/>

@@ -1,64 +1,111 @@
-<div id="upload-img">
+<div class="container">
+    <div class="row">
+    
+    <!--begin slider-->
+                    <div class="span4 well">
+                         <?php echo '<ul>';?>
+                            <?php echo '<li class="list"style=" margin-top:20px;" >';?>
+                            <a href="<?php echo base_url($username.'/manage/requestapprove/');?>"  target="_blank">Request Post approve on other baber bussiness page</a>
+                            
+                            <?php echo '</li>';?>
+                            
+                            <?php
+                            foreach($bpidsmanage as $perbpidobj){
+                                $approveurl =  base_url($username.'/manage/listapprove/'.$perbpidobj->bpid);
+                                echo '<li class=" list">';
+                                echo '<a href="'.$approveurl.'">Manage approve of profile id='.$perbpidobj->bpid.'</a>';
+                                 echo '</li>';
+                            }
+                            
+                            ?>
+                            
+                            <?php
+                            
+                            foreach($apidsobjs as $perapidobj){
+                                $upid = $perapidobj->upid;
+                                $bpid = $perapidobj->bpid;
+                                $makeposturl =  base_url($username.'/manage/addnewpost/'.$upid.'/'.$bpid);
+                                echo '<li class=" list">';
+                                echo '<a href="'.$makeposturl.'">Make new Post on Bussiness profile Id='.$bpid.'</a>';
+                                 echo '</li>';
+                            }
+                            ?>
+                            <?php echo '<li class=" list">';?>
+                            <a href="<?php echo base_url($username.'/manage/addbussinessprofile');?>">Add New Bussiness Profile</a>
+                            <?php echo '</li>';?>
+                            
+                            <?php echo '<li class="  list">';?>
+                            <a href="<?php echo base_url($username.'/manage/addprofile');?>">Add New Profile</a>
+                            <?php echo '</li>';?>
+                            <?php echo '</ul>';?>
+                                
+                  </div>
+                <!--end slider-->
+	<div  class="span8 well" id="span7-addnewcontent" style="margin-left: 10px;" >
 	<h2>Upload a file</h2>
 	<!-- Upload function on action form -->
 	<?php echo form_open_multipart('/upload/addnew', array('id' => 'fileupload')); ?>
-		<p>Babershop name</p>
-		<input type="text" name="babershopname" value="" />
-		<p>Baber type</p>
-		<select name="baber_type">
-			<option value="babershop">BaberShop</option>
-			<option value="hairsalon">Hair Salon</option>
-			<option value="stylist">Stylist</option>
-		</select> 	
-		<p>Baber Name</p>
-		<input type="text" name="babername" value="" />
-		<p>Tags(Seperate by comma)</p>
-		<input type="text" name="tags" value="" />
-		<input type="hidden" name="upid" value="<?php echo $upid;?>" />
-		<input type="hidden" name="bpid" value="<?php echo $bpid;?>" />
-	<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-	<p>Upload image for this post:</p>
-	<div class="row fileupload-buttonbar">
-	
-		<div class="span7">
-			<!-- The fileinput-button span is used to style the file input field as button -->
-			<span class="btn btn-success fileinput-button">
-				<span><i class="icon-plus icon-white"></i> Add files...</span>
-				<!-- Replace name of this input by userfile-->
-				<input type="file" name="userfile">
-			</span>
-			<button type="submit" class="btn btn-primary start">
-				<i class="icon-upload icon-white"></i> Start upload
-			</button>
-
-			<button type="reset" class="btn btn-warning cancel">
-				<i class="icon-ban-circle icon-white"></i> Cancel upload
-			</button>
-
-			<button type="button" class="btn btn-danger delete">
-				<i class="icon-trash icon-white"></i> Delete
-			</button>
-
-			<input type="checkbox" class="toggle">
+		<div class="span6">
+			<label class="span5"> Babershop name:</label>
+			<div class="span5"><input type="text" name="babershopname" value=""  class="form-control"/></div>
 		</div>
-
-		<div class="span5">
-
-		<!-- The global progress bar -->
-			<div class="progress progress-success progress-striped active fade">
-				<div class="bar" style="width:0%;"></div>
+		<div class="span6">
+			<label class="span5"> Baber type:</label>
+			<div class="span5">
+				<select name="baber_type" class="form-control" >
+					<option value="babershop">BaberShop</option>
+					<option value="hairsalon">Hair Salon</option>
+					<option value="stylist">Stylist</option>
+				</select>
 			</div>
+			
 		</div>
-	</div>
+		<div class="span6">
+				<label class="span5"> Baber Name:</label>
+				<div class="span5">
+					<input type="text" name="babername" value="" class="form-control"/>
+				</div>
+		</div>
+		<div class="span6">
+				<label class="span5">Tags(Seperate by comma)</label>
+				<div class="span5"><input type="text" name="tags" value="" class="form-control"/>
+					<input type="hidden" name="upid" value="<?php echo $upid;?>" />
+					<input type="hidden" name="bpid" value="<?php echo $bpid;?>" />
+				</div>
+		</div>	
+	 <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+		<h4 class="span6">Upload image for this post:</h4>		
+		<label class="span5" style="margin-left:30px;">User Photo:</label>		
+		<div class="row fileupload-buttonbar">
 
-	<!-- The loading indicator is shown during image processing -->
-	<div class="fileupload-loading"></div>
-	<br>
-	<!-- The table listing the files available for upload/download -->
-	<table class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
-	<input type="submit" value="Submit" />	
+			<div class="span7" style="text-align:center;">
+			
+            <!-- The fileinput-button span is used to style the file input field as button -->
+			<button type="submit" class="btn btn-success">
+                <i class="icon-upload icon-white"></i> Add files...
+            </button>
+            <button type="submit" class="btn btn-primary start">
+                <i class="icon-upload icon-white"></i> Start upload
+            </button>
+
+            <button type="reset" class="btn btn-warning cancel">
+                <i class="icon-ban-circle icon-white"></i> Cancel upload
+            </button>
+
+            <button type="button" class="btn btn-danger delete">
+                <i class="icon-trash icon-white"></i> Delete
+            </button>
+
+            <input type="checkbox" class="toggle">
+        </div>
+
+        <div class="span7" style="text-align:center;">
+		<input class="btn btn-success" name="submitnew" type="submit" value="Submit" />
+		</div>
 	<?php echo form_close(); ?>
 
+</div>
+</div>
 </div>
 <!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">

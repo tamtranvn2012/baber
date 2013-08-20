@@ -16,9 +16,9 @@
    <?php endif; ?>
    <form class="well" method="POST" action="../user/checklogin">
       <label>Username</label>
-      <input type="text" name="username" style="width: 260px;" <?php if (!empty($username)): ?> value="<?php echo $username ?>" <?php endif; ?>>
+      <input type="text" class="form-control"name="username" style="width: 260px;" <?php if (!empty($username)): ?> value="<?php echo $username ?>" <?php endif; ?>>
       <label>Password</label>
-      <input type="password" name="password" style="width: 260px;">
-      <button type="submit" class="btn btn-primary">Login</button>
+      <input type="password"class="form-control" name="password" style="width: 260px;">
+      <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Login</button>
    </form>
 </div>

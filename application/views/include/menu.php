@@ -6,7 +6,8 @@
 	$controlpostlinksurl = '/'.$username.'/manage/controlpost/';
 	$logoutlinksurl = '/user/logout/';
 	echo '<div class="menu_header">';
-	echo '<ul>';
+	echo '<div class="container menu-top">';
+	echo '<ul class="list-inline">';
 	echo '<li>';
 	echo '<a href="'.base_url($managelinksurl).'">Manage</a>';
 	echo '</li>';
@@ -26,5 +27,6 @@
 	echo '<a href="'.base_url($logoutlinksurl).'">Log out</a>';
 	echo '</li>';
 	echo '</ul>';
+	echo '</div>';
 	echo '</div>';
 ?>

@@ -21,10 +21,13 @@ class Manage extends CI_Controller
         $this->load->helper('cookie');
         $this->load->helper('url');
         $userid = $this->input->cookie('userid');
+		$username = $this->uri->segment(1, 0);
+		$datamenu['username'] = $username;
         if (intval($userid) == 0) {
             redirect('/user/login', 'refresh');
         } else {
             $this->load->view('include/headerbt');
+			$this->load->view('include/menu',$datamenu);
             $this->load->view('addprofile');
             $this->load->view('include/footerbt');
         }
@@ -33,11 +36,14 @@ class Manage extends CI_Controller
     {
         $this->load->helper('cookie');
         $this->load->helper('url');
+        	$username = $this->uri->segment(1, 0);
+		$datamenu['username'] = $username;
         $userid = $this->input->cookie('userid');
         if (intval($userid) == 0) {
             redirect('/user/login', 'refresh');
         } else {
             $this->load->view('include/headerbt');
+            $this->load->view('include/menu',$datamenu);
             $this->load->view('addbussinessprofile');
             $this->load->view('include/footerbt');
         }
