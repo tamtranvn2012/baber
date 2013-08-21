@@ -354,7 +354,7 @@ class Profilepage extends Main_Controller {
 		$this->load->view('include/footer');																					
 	}
 	
-	//Control Post listing baber bussiness
+	//Control Post listing baber independent
 	function control_post_listing_bi(){
 		$data = array();
 		$userid = $this->input->cookie('userid', TRUE);
@@ -365,6 +365,19 @@ class Profilepage extends Main_Controller {
 		$this->load->view('controlpostbi',$data);
 		$this->load->view('include/footer');																					
 	}
+    function manage_post_listing_bi(){
+        $data = array();
+        $userid = $this->input->cookie('userid', TRUE);
+        $username = $this->user_model->get_username_by_userid($userid)[0]->username;
+        $datamenu['username'] = $username;
+        $upid= $this->profile_model->get_upid_by_userid($userid)[0]->upid;
+        $apid=$this->profile_model->get_apid_by_upid_upidpost($upid)[0]->apid;
+        $data['independentinfo'] = $this->profile_model->get_all_info_by_apid($apid);
+        $this->load->view('include/header');
+        $this->load->view('include/menu',$datamenu);
+        $this->load->view('postbi',$data);
+        $this->load->view('include/footer');
+    }
 	
 	//Delete post by apid
 	function delete_post_by_ppid(){

@@ -339,4 +339,11 @@
             $query = $this->db->get('approveprofile');
             return $query->result();
         }
+        function get_apid_by_upid_upidpost($upid){
+            $this->db->select('apid');
+            $this->db->where('upid', $upid);
+            $this->db->where('upidpost', $upid);
+            $query = $this->db->get('approveprofile');
+            return $query->result();
+        }
 	}
