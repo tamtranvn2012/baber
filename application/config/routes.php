@@ -96,7 +96,7 @@ $route['user/checklogin'] = "user/checklogin";
 $route['user/check'] = "user/check";
 $route['user/checkbussiness'] = "user/checkbussiness";
 $route['user/successful'] = "user/successful";
-$route['test'] = "test";
+$route['admin'] = "admin";
 $route['(:any)'] = "profilefrontpage";
 $route['user/logout'] = "user/logout";
 //test commit

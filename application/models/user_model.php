@@ -221,7 +221,7 @@ Class User_model extends CI_Model{
         $nowtimestamp = intval(strtotime("now"));
         $this->load->helper('cookie');
         $this->load->helper('url');
-        $userid=$this->input->cookie('userid');
+        $userid = $this->input->cookie('userid');
         $this->load->model('user_model');
         $username = $this->user_model->get_username_by_userid($userid);
         //var_dump($username);exit;
@@ -252,7 +252,7 @@ Class User_model extends CI_Model{
         $nowtimestamp = intval(strtotime("now"));
         $this->load->helper('cookie');
         $this->load->helper('url');
-        $userid=$this->input->cookie('userid');
+        $userid = $this->input->cookie('userid');
         $this->load->model('user_model');
         $username = $this->user_model->get_username_by_userid($userid);
         //var_dump($username);exit;
@@ -283,7 +283,7 @@ Class User_model extends CI_Model{
         $nowtimestamp = intval(strtotime("now"));
         $this->load->helper('cookie');
         $this->load->helper('url');
-        $userid=$this->input->cookie('userid');
+        $userid = $this->input->cookie('userid');
         $this->load->model('user_model');
         $username = $this->user_model->get_username_by_userid($userid);
         //var_dump($username);exit;
@@ -310,7 +310,7 @@ Class User_model extends CI_Model{
             $this->db->select('upid');
             $this->db->where('userid',$user[0]->userid);
             $query = $this->db->get('baberindependent');
-            $data=$query->result();
+            $data = $query->result();
             $dataapp = array(
                 'upid' => $data[0]->upid,
                 'upidpost' => $data[0]->upid,
@@ -371,7 +371,7 @@ Class User_model extends CI_Model{
                 $this->db->select('upid');
                 $this->db->where('userid',$user[0]->userid);
                 $query = $this->db->get('baberindependent');
-                $data=$query->result();
+                $data = $query->result();
                 $dataapp = array(
                     'upid' => $data[0]->upid,
                     'upidpost' => $data[0]->upid,
@@ -384,5 +384,17 @@ Class User_model extends CI_Model{
         }
         return true;
     }
+	
+	//Check user is admin or not
+	function check_admin_site($userid){
+		$this->db->where('userid',$userid);
+		$this->db->where('siterole','admin');
+		$query = $this->db->get('user');
+		if(count($query->result())){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
 ?>
