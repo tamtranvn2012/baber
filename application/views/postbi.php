@@ -1,3 +1,6 @@
+<?php echo '<div class="container">';?>
+<?php echo '<div class="span7 offset2 slider-bar text-center">';?>
+
 <?php
 /**
  * Created by JetBrains PhpStorm.
@@ -8,8 +11,11 @@
  */
 foreach($independentinfo as $info){
     echo "<input type='hidden' value='$info->ppid' name='ppid'>";
-    echo $info->babershopname.'<br>';
+    echo $info->babershopname;
     echo $info->baber_type;
     echo "<a href='../manage/biposts/edit/$info->ppid'>Edit</a>";
-    echo "<a href='../manage/biposts/delete/$info->ppid'>Delete</a>";
+    echo "<a href='../manage/biposts/delete/$info->ppid'>Delete</a><br>";
 }
+?>
+<?php echo '</div>';?>
+<?php echo '</div>';?>

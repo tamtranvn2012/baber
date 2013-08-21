@@ -1,3 +1,6 @@
+<?php echo '<div class="container">';?>
+<?php echo '<div class="span7 offset2 slider-bar text-center">';?>
+
 <div id="upload-img">
     <?php
     $username = $this->uri->segment(1, 0);
@@ -22,3 +25,5 @@
     ?>
     <?php echo form_close(); ?>
 </div>
+<?php echo '</div>';?>
+<?php echo '</div>';?>

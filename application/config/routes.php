@@ -47,6 +47,8 @@ $route['(:any)/manage/addnewpost/(:any)/(:any)'] = "profilepage/add_new_post";
 $route['(:any)/manage/editbussiness/(:any)'] = "profilepage/editbussiness";
 
 $route['(:any)/manage/controlapprove'] = "profilepage/control_approve_listing_bussiness";
+$route['(:any)/manage/controlregisternewprofile'] = "profilepage/registernewprofile";
+$route['(:any)/manage/controleditprofile'] = "profilepage/controleditprofile";
 $route['(:any)/manage/controlpost'] = "profilepage/control_post_listing_client";
 $route['(:any)/manage/controlpostbp'] = "profilepage/control_post_listing_bp";
 $route['(:any)/manage/listbiposts'] = "profilepage/manage_post_listing_bi";
@@ -75,7 +77,7 @@ $route['(:any)/manage/postbpbybp'] = "profilepage/manage_bp_post_bp";
 $route['(:any)/manage/bppost/(:any)'] = "profilepage/manage_post_listing_bp";
 $route['(:any)/manage'] = "profilepage/profile_manage";
 
-$route['(:any)/manage/displaybussiness'] = "profilepage/displaybussiness";
+$route['(:any)/manage/displaybussinessprofile'] = "profilepage/displaybussiness";
 //$route['(:any)/manage/adduserprofile'] = "profilepage/adduserprofile";
 $route['upload/uploadbibppost'] = "uploadbibppost/upload_img";
 $route['upload/uploadbppost'] = "uploadbppost/upload_img";

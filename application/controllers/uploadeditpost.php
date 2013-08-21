@@ -88,7 +88,7 @@ class Uploadeditpost extends CI_Controller
 				if($checkppid){
 					$username = $this->user_model->get_username_by_userid($userid)[0]->username;
 					$this->post_model->update_post_by_postid($ppid,$photo_id,$babershopname,$baber_type,$baber_name,$tags,$isprivate);
-					redirect('/'.$username.'/manage/posts/edit/'.$ppid.'/', 'refresh');							
+                    redirect('/'.$username.'/manage/listbiposts/', 'refresh');
 				}else{
 					redirect('/'.$username.'/manage/', 'refresh');							
 				}				

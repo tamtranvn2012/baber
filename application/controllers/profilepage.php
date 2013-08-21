@@ -418,7 +418,7 @@ class Profilepage extends Main_Controller {
 		if($checkppid){
 			$this->post_model->delete_post_by_ppid($ppid);
 			$username = $this->user_model->get_username_by_userid($userid)[0]->username;
-			redirect('/'.$username.'/manage/controlpost/', 'refresh');
+			redirect('/'.$username.'/manage/listbiposts/', 'refresh');
 		}else{
 			echo 'Load view ppid not containt userid here';
 		}
@@ -461,8 +461,10 @@ class Profilepage extends Main_Controller {
         $this->load->model('profile_model');
         $data['listBusiness']=$this->profile_model->get_all_bussiness_info($userid);
         //var_dump($data);exit;
-
+        $username= $this->uri->segment(1, 0);
+        $datamenu['username'] = $username;
         $this->load->view('include/headerbt');
+        $this->load->view('include/menu',$datamenu);
         $this->load->view('displaybussinessprofile',$data);
         $this->load->view('include/footerbt');
     }
@@ -561,5 +563,26 @@ class Profilepage extends Main_Controller {
             echo 'Please,Register Independent!!!!!!!!!!!! ';
             $this->load->view('include/footerbt');
         }
+    }
+
+
+    function registernewprofile(){
+        $username = $this->uri->segment(1, 0);
+        $data['username'] = $username;
+        $datamenu['username'] = $username;
+        $this->load->view('include/headerbt');
+        $this->load->view('include/menu',$datamenu);
+        $this->load->view('registernewprofile');
+        $this->load->view('include/footerbt');
+    }
+
+    function controleditprofile(){
+        $username = $this->uri->segment(1, 0);
+        $data['username'] = $username;
+        $datamenu['username'] = $username;
+        $this->load->view('include/headerbt');
+        $this->load->view('include/menu',$datamenu);
+        $this->load->view('editprofile');
+        $this->load->view('include/footerbt');
     }
 }
