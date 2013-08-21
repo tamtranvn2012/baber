@@ -271,6 +271,12 @@
             $query = $this->db->get('bussinessprofile');
             return $query->result();
         }
+        function get_bp_by_bpid($bpid)
+        {
+            $this->db->where('bpid', $bpid);
+            $query = $this->db->get('bussinessprofile');
+            return $query->result();
+        }
 
         //Check approveid containt with userid or not
         function check_userid_by_ppid($ppid, $userid)
@@ -369,7 +375,15 @@
             $this->db->where('upidpost', $upid);
             $query = $this->db->get('approveprofile');
             return $query->result();
-
+        }
+        function get_apid_by_bpid_bpidpost($bpid)
+        {
+            $this->db->select('apid');
+            $this->db->where('bpid', $bpid);
+            $this->db->where('bpidpost', $bpid);
+            $query = $this->db->get('approveprofile');
+            return $query->result();
+        }
             //get info by userid and slug
             function get_info_profile_by_slug_bussiness($userid, $slug)
             {
@@ -383,7 +397,7 @@
                     return false;
                 }
             }
-        }
+
 
             function get_info_profile_by_slug_independent($userid, $slug)
             {

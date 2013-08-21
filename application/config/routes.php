@@ -71,6 +71,8 @@ $route['(:any)/manage/addbussinessprofile'] = "profilepage/addbussinessprofile";
 $route['(:any)/manage/adduserprofile'] = "profilepage/adduserprofile";
 $route['(:any)/manage/addindependentprofile'] = "profilepage/addindependentprofile";
 $route['(:any)/manage/profilebussiness'] = "manage/profilebussiness";
+$route['(:any)/manage/postbpbybp'] = "profilepage/manage_bp_post_bp";
+$route['(:any)/manage/bppost/(:any)'] = "profilepage/manage_post_listing_bp";
 $route['(:any)/manage'] = "profilepage/profile_manage";
 
 $route['(:any)/manage/displaybussiness'] = "profilepage/displaybussiness";
