@@ -46,16 +46,17 @@
 			$deleteposturl = '/'.$username.'/manage/posts/delete/'.$perpostinfo->ppid;
 			$editposturl = '/'.$username.'/manage/posts/edit/'.$perpostinfo->ppid;
 			$deletepost = '<a href="'.base_url($deleteposturl).'">Delete this post</a>';
+			$editpost = '<a href="'.base_url($editposturl).'">Edit this post</a>';
 			echo '<div class="span4 offset1">';
             echo '<ul>';
             echo '<li>';
-			$editpost = '<a href="'.base_url($editposturl).'">Edit this post</a>';
 			echo '<div class="postinfo" style="float:left;padding-right:20px;padding-bottom:20px;">';
 			echo '<div class="postinfo-babershopname">Babershop name:'.$perpostinfo->babershopname.'</div>';
-             echo '</li>';
+            echo '</li>';
 			echo '<div class="postinfo-photo">Photo id:'.$perpostinfo->photo_id.'</div>';
 			echo '<div class="postinfo-babertype">Baber type:'.$perpostinfo->baber_type.'</div>';
 			echo '<div class="postinfo-delete">'.$deletepost.'</div>';
+			echo '<div class="postinfo-edit">'.$editpost.'</div>';
             echo '</ul>';
 			echo '</div>';
 		}

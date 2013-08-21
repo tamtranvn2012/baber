@@ -48,6 +48,7 @@ $route['(:any)/manage/editbussiness/(:any)'] = "profilepage/editbussiness";
 
 $route['(:any)/manage/controlapprove'] = "profilepage/control_approve_listing_bussiness";
 $route['(:any)/manage/controlpost'] = "profilepage/control_post_listing_client";
+$route['(:any)/manage/controlpostbp'] = "profilepage/control_post_listing_bp";
 $route['(:any)/manage/requestapprove'] = "profilepage/request_approve";
 $route['(:any)/manage/saverequest'] = "profilepage/save_request_approve";
 $route['(:any)/manage/posts/delete/(:any)'] = "profilepage/delete_post_by_ppid";

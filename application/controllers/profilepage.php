@@ -324,10 +324,11 @@ class Profilepage extends Main_Controller {
 		$this->load->view('include/footer');																					
 	}
 	
-	//Control Post listing
+	//Control Post listing baber independent
 	function control_post_listing_client(){
 		$data = array();
-		$username = $this->uri->segment(1, 0);
+		$userid = $this->input->cookie('userid', TRUE);
+		$username = $this->user_model->get_username_by_userid($userid)[0]->username;
 		$datamenu['username'] = $username;
 		$userid = $this->input->cookie('userid', TRUE);
 		//data for make new post to approve bussiness profile id
@@ -350,6 +351,18 @@ class Profilepage extends Main_Controller {
 		$this->load->view('include/header');
 		$this->load->view('include/menu',$datamenu);
 		$this->load->view('controlpost',$data);
+		$this->load->view('include/footer');																					
+	}
+	
+	//Control Post listing baber bussiness
+	function control_post_listing_bi(){
+		$data = array();
+		$userid = $this->input->cookie('userid', TRUE);
+		$username = $this->user_model->get_username_by_userid($userid)[0]->username;
+		$datamenu['username'] = $username;
+		$this->load->view('include/header');
+		$this->load->view('include/menu',$datamenu);
+		$this->load->view('controlpostbi',$data);
 		$this->load->view('include/footer');																					
 	}
 	
