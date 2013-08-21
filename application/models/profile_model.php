@@ -269,7 +269,7 @@
 			$upid = $query->result()[0]->upid;			
 			$this->db->select('userid');
 			$this->db->where('upid', $upid);
-			$query = $this->db->get('userprofile');
+			$query = $this->db->get('baberindependent');
 			$useriddb = $query->result()[0]->userid;
 			if ($useriddb == $userid){
 				return true;
