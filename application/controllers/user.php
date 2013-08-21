@@ -75,17 +75,23 @@ class User extends Main_Controller
         $this->load->view('registerbussinessphoto');
         $this->load->view('include/footerbt');
     }
-
+	
+	//Register form
     public function register()
     {
-        	$username = $this->uri->segment(1, 0);
-		$datamenu['username'] = $username;
         $this->load->view('include/headerbt');
-		$this->load->view('include/menu',$datamenu);
         $this->load->view('registeruserphoto');
         $this->load->view('include/footerbt');
     }
 
+	//Register form ajax
+    public function registeruserprofile()
+    {
+		$this->load->view('include/headerbt');
+        $this->load->view('registeruserprofile');
+		$this->load->view('include/footerbt');
+    }
+	
     //Check  profile
     public function check()
     {

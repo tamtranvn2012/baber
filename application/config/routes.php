@@ -87,6 +87,7 @@ $route['upload/addnew'] = "upload/upload_img";
 $route['upload/registerupload'] = "uploadregister/upload_img";
 
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
+$route['upload/registerbussinessphoto'] = "uploadbussinessregister/upload_img";
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
 $route['upload/registerbussiness'] = "uploadbussinessregister/upload_img";
 $route['upload/registerindependent'] = "uploadindependent/upload_img";
@@ -97,6 +98,7 @@ $route['upload/uploadregister'] = "uploadregister/upload_img";
 $route['user/login'] = "user/login";
 $route['user/registerindependent'] = "user/registerindependent";
 $route['user/register'] = "user/register";
+$route['user/registeruserprofile'] = "user/registeruserprofile";
 $route['user/registerbussinessprofile'] = "user/registerbussinessprofile";
 
 $route['user/checklogin'] = "user/checklogin";
@@ -106,13 +108,3 @@ $route['user/successful'] = "user/successful";
 $route['admin'] = "admin";
 $route['(:any)'] = "profilefrontpage/findslug";
 $route['user/logout'] = "user/logout";
-//test commit
-//test thanh commit 2
-//test xi coomit
-
-//test xi commit1
-
-//test thanh commit 3
-
-/* End of file routes.php */
-/* Location: ./application/config/routes.php */

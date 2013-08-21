@@ -1,82 +1,82 @@
-<div class="container">
-    <div class="row">
-    
-    <!--begin slider-->
+<script type="text/javascript">
+    function getval(sel) {
+		if(sel.value == 'userprofile'){
+			window.location.href="<?php echo base_url('/user/registeruserprofile');?>";
+		};
+		if(sel.value == 'bussinessprofile'){
+			window.location.href="<?php echo base_url('/user/registerbussinessprofile');?>";
+		};
+		if(sel.value == 'independentprofile'){
+			window.location.href="<?php echo base_url('/user/registerindependent');?>";
+		}
+    }
+</script>
+<select id="choose-profile-for-register" onchange="getval(this);">
+	<option value="bussinessprofile">Register New Bussiness Profile</option>
+	<option value="independentprofile">Register New Independent Profile</option>
+	<option value="userprofile" selected="selected">Register New Userprofile</option>
+</select> 
 
-                    <div class="span4 well">
-                         <?php echo '<ul>';?>
-                            <?php echo '<li class="list"style=" margin-top:20px;" >';?>
-                            <a href="<?php echo base_url($username.'/manage/requestapprove/');?>"  target="_blank">Request Post approve on other baber bussiness page</a>
-                            
-                            <?php echo '</li>';?>
-                            
-                            <?php
-                            foreach($bpidsmanage as $perbpidobj){
-                                $approveurl =  base_url($username.'/manage/listapprove/'.$perbpidobj->bpid);
-                                echo '<li class=" list">';
-                                echo '<a href="'.$approveurl.'">Manage approve of profile id='.$perbpidobj->bpid.'</a>';
-                                 echo '</li>';
-                            }
-                            
-                            ?>
-                            
-                            <?php
-                            
-                            foreach($apidsobjs as $perapidobj){
-                                $upid = $perapidobj->upid;
-                                $bpid = $perapidobj->bpid;
-                                $makeposturl =  base_url($username.'/manage/addnewpost/'.$upid.'/'.$bpid);
-                                echo '<li class=" list">';
-                                echo '<a href="'.$makeposturl.'">Make new Post on Bussiness profile Id='.$bpid.'</a>';
-                                 echo '</li>';
-                            }
-                            ?>
-                            <?php echo '<li class=" list">';?>
-                            <a href="<?php echo base_url($username.'/manage/addbussinessprofile');?>">Add New Bussiness Profile</a>
-                            <?php echo '</li>';?>
-                            
-                            <?php echo '<li class="  list">';?>
-                            <a href="<?php echo base_url($username.'/manage/addprofile');?>">Add New Profile</a>
-                            <?php echo '</li>';?>
-                            <?php echo '</ul>';?>
-                                
-                  </div>
-                <!--end slider-->
-	<div  class="span8 well" id="form-control-addnewcontent" style="margin-left: 10px;" >
-	<h2>Upload a file</h2>
-	<!-- Upload function on action form -->
-	<?php echo form_open_multipart('upload/uploadbibppost', array('id' => 'fileupload')); ?>
-		<div class="span7">
-			<label class="span5"> Babershop name:</label>
-			<div class="span5"><input type="text" name="babershopname" value=""  class="form-control"/></div>
-		</div>
-		<div class="span7">
-			<label class="span5"> Baber type:</label>
-			<div class="span5">
-				<select name="baber_type" class="form-control" >
-					<option value="babershop">BaberShop</option>
-					<option value="hairsalon">Hair Salon</option>
-					<option value="stylist">Stylist</option>
-				</select>
+<div class="container">
+	<div  class="span7 offset2">
+		
+
+
+    <div id="upload-img">
+    <h3>Fill New User Info</h3>
+    <!-- Upload function on action form -->
+    <?php //echo form_open_multipart('/upload/registerbussinessphoto/', array('id' => 'fileupload')); ?>
+	
+    <?php echo form_open_multipart('/upload/registerupload/', array('id' => 'fileupload')); ?>
+    	<div class="span7" style="margin:0;">
+				<label class="span5">Username:</label>
+				<div class="span5"><input type="text" name="username" class="span3 form-control bt-text"/></div>
+			</div>
+             <div class="span7" style="margin:0;">
+				<label class="span5">Password:</label>
+				<div class="span5"><input type="text" name="password" class="span3 form-control bt-text"/></div>
+			</div>
+			 <div class="span7" style="margin:0;">
+				<label class="span5">Address:</label>
+				<div class="span5"><input type="text" name="address" class="span3 form-control bt-text"/></div>
+			</div>
+			<div class="span7" style="margin:0;">
+					<div class="span2" style="margin:0;">
+						<label class="span2">City:</label>
+						<div class="span2"><input type="text" name="city" class="span2 form-control bt-text"/></div>
+					</div>
+					<div class="span2" style="margin:0;">
+						<label class="span2">State:</label>
+						<div class="span2"><input type="text" name="state" class="span2 form-control bt-text"/></div>
+					</div>
+					<div class="span2" style="margin:0;">
+						<label class="span2">Zipcode:</label>
+						<div class="span2"><input type="text" name="zip" class="span2 form-control bt-text"/></div>
+					</div>
+			</div>
+			<div class="span7" style="margin:0;">
+				<label class="span5">Phone:</label>
+				<div class="span5"><input type="text" name="phone" class="span3 form-control bt-text"/></div>
+			</div>
+			<div class="span7" style="margin:0;">
+				<label class="span5">Instantgram:</label>
+				<div class="span5"><input type="text" name="instantgram" class="span3 form-control bt-text"/></div>
+			</div>
+			<div class="span7" style="margin:0;">
+				<label class="span5">Facebook:</label>
+				<div class="span5"><input type="text" name="facebook" class="span3 form-control bt-text"/></div>
 			</div>
 			
-		</div>
-		<div class="span7">
-				<label class="span5"> Baber Name:</label>
-				<div class="span5">
-					<input type="text" name="babername" value="" class="form-control"/>
-				</div>
-		</div>
-		<div class="span7">
-				<label class="span5">Tags(Seperate by comma)</label>
-				<div class="span5"><input type="text" name="tags" value="" class="form-control"/>
-					<input type="hidden" name="upid" value="<?php echo $upid;?>" />
-					<input type="hidden" name="bpid" value="<?php echo $bpid;?>" />
-				</div>
-		</div>	
-	 <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-		<h4 class="span7">Upload image for this post:</h4>		
-		<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+			<div class="span7" style="margin:0;">
+				<label class="span5">Favorite tool:</label>
+				<div class="span5"><input type="text" name="favorites_tool" class="span3 form-control bt-text"/></div>
+			</div> 
+			<div class="span7" style="margin:0;">
+				<label class="span5">Babershop Name:</label>
+				<div class="span5"><input type="text" name="babershopname" class="span3 form-control bt-text"/></div>
+			</div>
+            
+    <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
     <label style="margin-left: 20px;">User Photo:</label>
     <div class="row fileupload-buttonbar">
         <div class="span5 offset1">
@@ -118,9 +118,7 @@
     <input class="btn btn-success offset2" name="submitnew" type="submit" value="Submit"/>
     <div style="padding-bottom: 20px;"></div>
     <?php echo form_close(); ?>
-
-</div>
-</div>
+	</div>
 </div>
 <!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">
@@ -182,3 +180,4 @@
     </tr>
     {% } %}
 </script>
+</div>
