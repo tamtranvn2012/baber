@@ -99,8 +99,8 @@ $route['user/checklogin'] = "user/checklogin";
 $route['user/check'] = "user/check";
 $route['user/checkbussiness'] = "user/checkbussiness";
 $route['user/successful'] = "user/successful";
-$route['test'] = "test";
-$route['(:any)'] = "profilefrontpage";
+$route['admin'] = "admin";
+$route['(:any)'] = "profilefrontpage/findslug";
 $route['user/logout'] = "user/logout";
 //test commit
 //test thanh commit 2

@@ -10,7 +10,7 @@ class Frontpage extends Main_Controller {
 	public function index()
 	{
 		$this->load->model('photos_model');
-		$this->db->from('postapprovedprofile')->order_by("ppid", "desc")->limit(4,0);
+		$this->db->from('postapprovedprofile')->where('is_frontpage',1)->order_by("ppid", "desc")->limit(4,0);
 		$query = $this->db->get();	
 		$data['photosarrrow1'] = $query->result();
 		
@@ -20,7 +20,7 @@ class Frontpage extends Main_Controller {
 			$tempimglink = $photo_obj_name[0]->photo_img_link;
 			$perphotoobj->photo_img_link = $this->get_img_loc($tempimglink);
 		}
-		$this->db->from('postapprovedprofile')->order_by("ppid", "desc")->limit(4,4);
+		$this->db->from('postapprovedprofile')->where('is_frontpage',1)->order_by("ppid", "desc")->limit(4,4);
 		$query = $this->db->get();	
 		$data['photosarrrow2'] = $query->result();
 		foreach ($data['photosarrrow2'] as $perphotoobj){
@@ -29,7 +29,7 @@ class Frontpage extends Main_Controller {
 			$tempimglink = $photo_obj_name[0]->photo_img_link;
 			$perphotoobj->photo_img_link = $this->get_img_loc($tempimglink);
 		}		
-		$this->db->from('postapprovedprofile')->order_by("ppid", "desc")->limit(4,8);
+		$this->db->from('postapprovedprofile')->where('is_frontpage',1)->order_by("ppid", "desc")->limit(4,8);
 		$query = $this->db->get();	
 		$data['photosarrrow3'] = $query->result();
 		foreach ($data['photosarrrow3'] as $perphotoobj){
