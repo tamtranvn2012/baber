@@ -334,6 +334,7 @@ class Profilepage extends Main_Controller {
 		//data for make new post to approve bussiness profile id
 		$upidarrobj = $this->profile_model->get_upid_userid($userid);
 		$apidsobjs = array();
+		$data['upid'] = $this->profile_model->get_upid_by_userid($userid)[0]->upid;
 		foreach($upidarrobj as $perupidobj){
 			$perupid = $perupidobj->upid;
 			$apidarrobj = $this->profile_model->get_apid_by_upid_allinfo($perupid);

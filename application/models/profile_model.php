@@ -324,6 +324,7 @@
 			return $query->result();
 		}
 
+		//Get upid by userid
         function get_upid_by_userid($userid)
         {
             $userid = intval($userid);
@@ -333,6 +334,8 @@
             $result = $query->result();
             return $result;
         }
+		
+		//Get apid by upid
         function get_apid_by_upid_upid($upid){
             $this->db->select('apid');
             $this->db->where('upid', $upid);
