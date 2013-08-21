@@ -3,49 +3,24 @@
     
     <!--begin slider-->
 
-                    <div class="span4 well">
-                         <?php echo '<ul>';?>
-                            <?php echo '<li class="list"style=" margin-top:20px;" >';?>
-                            <a href="<?php echo base_url($username.'/manage/requestapprove/');?>"  target="_blank">Request Post approve on other baber bussiness page</a>
-                            
-                            <?php echo '</li>';?>
-                            
-                            <?php
-                            foreach($bpidsmanage as $perbpidobj){
-                                $approveurl =  base_url($username.'/manage/listapprove/'.$perbpidobj->bpid);
-                                echo '<li class=" list">';
-                                echo '<a href="'.$approveurl.'">Manage approve of profile id='.$perbpidobj->bpid.'</a>';
-                                 echo '</li>';
-                            }
-                            
-                            ?>
-                            
-                            <?php
-                            
-                            foreach($apidsobjs as $perapidobj){
-                                $upid = $perapidobj->upid;
-                                $bpid = $perapidobj->bpid;
-                                $makeposturl =  base_url($username.'/manage/addnewpost/'.$upid.'/'.$bpid);
-                                echo '<li class=" list">';
-                                echo '<a href="'.$makeposturl.'">Make new Post on Bussiness profile Id='.$bpid.'</a>';
-                                 echo '</li>';
-                            }
-                            ?>
-                            <?php echo '<li class=" list">';?>
-                            <a href="<?php echo base_url($username.'/manage/addbussinessprofile');?>">Add New Bussiness Profile</a>
-                            <?php echo '</li>';?>
-                            
-                            <?php echo '<li class="  list">';?>
-                            <a href="<?php echo base_url($username.'/manage/addprofile');?>">Add New Profile</a>
-                            <?php echo '</li>';?>
-                            <?php echo '</ul>';?>
-                                
-                  </div>
+		<div class="span4 well">
+			<?php echo '<ul>';?>
+				<?php echo '<li class="list"style=" margin-top:20px;" >';?>
+				<a href="<?php echo base_url($username.'/manage/requestapprove/');?>"  target="_blank">Request Post approve on other baber bussiness page</a>				
+				<?php echo '</li>';?>
+				<?php echo '<li class=" list">';?>
+				<a href="<?php echo base_url($username.'/manage/addbussinessprofile');?>">Add New Bussiness Profile</a>
+				<?php echo '</li>';?>				
+				<?php echo '<li class="  list">';?>
+				<a href="<?php echo base_url($username.'/manage/addprofile');?>">Add New Profile</a>
+				<?php echo '</li>';?>
+			<?php echo '</ul>';?>                                
+		</div>
                 <!--end slider-->
 	<div  class="span8 well" id="form-control-addnewcontent" style="margin-left: 10px;" >
 	<h2>Upload a file</h2>
 	<!-- Upload function on action form -->
-	<?php echo form_open_multipart('upload/uploadbppost/', array('id' => 'fileupload')); ?>
+	<?php echo form_open_multipart('/upload/uploadbibppost', array('id' => 'fileupload')); ?>
 		<div class="span7">
 			<label class="span5"> Babershop name:</label>
 			<div class="span5"><input type="text" name="babershopname" value=""  class="form-control"/></div>
@@ -115,7 +90,7 @@
     <br/>
     <!-- The table listing the files available for upload/download -->
     <table class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
-    <input class="btn btn-success offset2" name="submitnew" type="submit" value="Submit"/>
+    <input class="btn btn-success offset2" name="addnewbibppost" type="submit" value="Submit"/>
     <div style="padding-bottom: 20px;"></div>
     <?php echo form_close(); ?>
 
