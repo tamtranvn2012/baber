@@ -19,6 +19,7 @@ foreach($bpidsmanage as $perbpidobj){
 <?php
 
 foreach($apidsobjs as $perapidobj){
+
     $upid = $perapidobj->upid;
     $bpid = $perapidobj->bpid;
     $makeposturl =  base_url($username.'/manage/addnewpost/'.$upid.'/'.$bpid);
@@ -27,6 +28,9 @@ foreach($apidsobjs as $perapidobj){
      echo '</li>';
 }
 ?>
+<?php echo '<li class=" list">';?>
+<a href="<?php echo base_url($username.'/manage/biposts');?>">Make New Post on independent</a>
+<?php echo '</li>';?>
 <?php echo '<li class=" list">';?>
 <a href="<?php echo base_url($username.'/manage/addbussinessprofile');?>">Add New Bussiness Profile</a>
 <?php echo '</li>';?>
