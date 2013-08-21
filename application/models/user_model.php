@@ -101,6 +101,17 @@ Class User_model extends CI_Model{
                     'babershopname' => $babershopname,
                 );
                 $this->db->insert('bussinessprofile', $dataprofile);
+
+                $this->db->select('bpid');
+                $this->db->where('userid',$user[0]->userid);
+                $query = $this->db->get('bussinessprofile');
+                $data = $query->result();
+                $dataapp = array(
+                    'bpid' => $data[0]->bpid,
+                    'bpidpost' => $data[0]->bpid,
+                    'isapproved' => 1,
+                );
+                $this->db->insert('approveprofile', $dataapp);
                 return true;
             }
         }
@@ -244,6 +255,17 @@ Class User_model extends CI_Model{
                 'babershopname' => $babershopname
             );
             $this->db->insert('bussinessprofile', $dataprofile);
+
+            $this->db->select('bpid');
+            $this->db->where('userid',$user[0]->userid);
+            $query = $this->db->get('bussinessprofile');
+            $data = $query->result();
+            $dataapp = array(
+                'bpid' => $data[0]->bpid,
+                'bpidpost' => $data[0]->bpid,
+                'isapproved' => 1,
+            );
+            $this->db->insert('approveprofile', $dataapp);
             return true;
         }
     }

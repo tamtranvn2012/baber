@@ -379,6 +379,19 @@ class Profilepage extends Main_Controller {
         $this->load->view('postbi',$data);
         $this->load->view('include/footer');
     }
+    function manage_post_listing_bp(){
+        $data = array();
+        $userid = $this->input->cookie('userid', TRUE);
+        $username = $this->user_model->get_username_by_userid($userid)[0]->username;
+        $datamenu['username'] = $username;
+        $bpid= $this->profile_model->get_bpid_by_userid($userid)[0]->upid;
+        $apid=$this->profile_model->getapid_by_bpid_and_bpidpost($bpid)[0]->apid;
+        $data['independentinfo'] = $this->profile_model->get_all_info_by_apid($apid);
+        $this->load->view('include/header');
+        $this->load->view('include/menu',$datamenu);
+        $this->load->view('postbi',$data);
+        $this->load->view('include/footer');
+    }
 	
 	//Delete post by apid
 	function delete_post_by_ppid(){

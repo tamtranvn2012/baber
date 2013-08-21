@@ -84,7 +84,7 @@ $route['upload/registerupload'] = "uploadregister/upload_img";
 
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
-$route['upload/registerbussinessphoto'] = "uploadbussinessregister/upload_img";
+$route['upload/registerbussiness'] = "uploadbussinessregister/upload_img";
 $route['upload/registerindependent'] = "uploadindependent/upload_img";
 $route['upload/uploadeditpost'] = "uploadeditpost/upload_img";
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
@@ -93,7 +93,7 @@ $route['upload/uploadregister'] = "uploadregister/upload_img";
 $route['user/login'] = "user/login";
 $route['user/registerindependent'] = "user/registerindependent";
 $route['user/register'] = "user/register";
-$route['user/registerbussinessprofile'] = "user/registerbussinessupload";
+$route['user/registerbussinessprofile'] = "user/registerbussinessprofile";
 
 $route['user/checklogin'] = "user/checklogin";
 $route['user/check'] = "user/check";
