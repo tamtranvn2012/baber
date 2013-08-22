@@ -35,6 +35,7 @@ Class User_model extends CI_Model{
             $user = $this->checkusername($username);
 			$isprivate = 0;
             if ($user) {
+
                 $dataprofile = array(
                     'userid' => $user[0]->userid,
                     'photo_link' => $photolink,
@@ -51,6 +52,12 @@ Class User_model extends CI_Model{
                     'babershopname' => $babershopname,
                 );
                 $this->db->insert('userprofile', $dataprofile);
+                $upid=$this->user_model->getupid($user[0]->userid);
+
+                $dataappup=array(
+                    'puid'=> $upid[0]->upid
+                );
+                $this->db->insert('approveprofile', $dataappup);
                 return true;
             }
         }
@@ -185,6 +192,17 @@ Class User_model extends CI_Model{
             return false;
         }
     }
+    function getupid($userid){
+        $this->db->select('upid');
+        $this->db->where('userid', $userid);
+        $query = $this->db->get('userprofile');
+        $result = $query->result();
+        if(count($result)>0){
+            return $result;
+        }else{
+            return false;
+        }
+    }
 
     //Get approved id of bussiness profile id
     function getapid($bpid){
@@ -297,6 +315,12 @@ Class User_model extends CI_Model{
                 'babershopname' => $babershopname
             );
             $this->db->insert('userprofile', $dataprofile);
+            $upid=$this->user_model->getupid($user[0]->userid);
+
+            $dataappup=array(
+                'puid'=> $upid[0]->upid
+            );
+            $this->db->insert('approveprofile', $dataappup);
             return true;
         }
     }

@@ -1,6 +1,5 @@
 <?php echo '<div class="container">';?>
 <?php echo '<div class="span7 offset2 slider-bar text-center">';?>
-
 <?php
 /**
  * Created by JetBrains PhpStorm.

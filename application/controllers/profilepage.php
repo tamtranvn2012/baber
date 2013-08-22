@@ -380,27 +380,43 @@ class Profilepage extends Main_Controller {
         $this->load->view('postbi',$data);
         $this->load->view('include/footer');
     }
-    function manage_post_listing_bp(){
+    function manage_post_listing_up(){
         $data = array();
         $userid = $this->input->cookie('userid', TRUE);
         $username = $this->user_model->get_username_by_userid($userid)[0]->username;
         $datamenu['username'] = $username;
+        $upid= $this->profile_model->get_upid_by_userid_u($userid)[0]->upid;
+        $apid=$this->profile_model->get_apid_by_upid_up($upid)[0]->apid;
+      //  var_dump($apid);exit;
+        $data['userinfo'] = $this->profile_model->get_all_info_by_apid($apid);
+        $this->load->view('include/header');
+        $this->load->view('include/menu',$datamenu);
+        $this->load->view('postup',$data);
+        $this->load->view('include/footer');
+    }
+
+    function manage_post_listing_bp_by_bpid(){
+        $data = array();
+        $data['bussinessinfo']='';
+        $userid = $this->input->cookie('userid', TRUE);
+        $username = $this->user_model->get_username_by_userid($userid)[0]->username;
+        $datamenu['username'] = $username;
         $bpid = $this->uri->segment(4, 0);
-        $apid=$this->profile_model->get_apid_by_bpid_bpidpost($bpid)->apid;
-        $data['bussinessinfo'] = $this->profile_model->get_all_info_by_apid($apid);
+        $apid=$this->profile_model->get_apid_by_bpid_bpidpost($bpid);
+       // var_dump($apid[0]->apid);exit;
+        $data['bussinessinfo'] = $this->profile_model->get_all_info_by_apid($apid[0]->apid);
         $this->load->view('include/header');
         $this->load->view('include/menu',$datamenu);
         $this->load->view('bppostbp',$data);
         $this->load->view('include/footer');
     }
-    function manage_bp_post_bp(){
+    function manage_bp_post_bp_by_bpid(){
         $data = array();
         $datamenu='';
         $userid = $this->input->cookie('userid', TRUE);
         $username = $this->user_model->get_username_by_userid($userid)[0]->username;
         $datamenu['username'] = $username;
         $data['listbpobj']= $this->profile_model->get_bpid_by_userid($userid);
-
     //    $apid=$this->profile_model->getapid_by_bpid_and_bpidpost($bpid)[0]->apid;
     //    $data['independentinfo'] = $this->profile_model->get_all_info_by_apid($apid);
         $this->load->view('include/header');
@@ -411,18 +427,31 @@ class Profilepage extends Main_Controller {
 	
 	//Delete post by apid
 	function delete_post_by_ppid(){
-		$username = $this->uri->segment(1, 0);
-		$ppid = $this->uri->segment(5, 0);
-		$userid = $this->input->cookie('userid', TRUE);
-		$checkppid = $this->profile_model->check_userid_by_ppid($ppid,$userid);
-		if($checkppid){
-			$this->post_model->delete_post_by_ppid($ppid);
-			$username = $this->user_model->get_username_by_userid($userid)[0]->username;
-			redirect('/'.$username.'/manage/listbiposts/', 'refresh');
-		}else{
-			echo 'Load view ppid not containt userid here';
-		}
-	}
+    $username = $this->uri->segment(1, 0);
+    $ppid = $this->uri->segment(5, 0);
+    $userid = $this->input->cookie('userid', TRUE);
+    $checkppid = $this->profile_model->check_userid_by_ppid($ppid,$userid);
+    if($checkppid){
+        $this->post_model->delete_post_by_ppid($ppid);
+        $username = $this->user_model->get_username_by_userid($userid)[0]->username;
+        redirect('/'.$username.'/manage/listbiposts/', 'refresh');
+    }else{
+        echo 'Load view ppid not containt userid here';
+    }
+}
+    function delete_post_bp_by_ppid(){
+        $username = $this->uri->segment(1, 0);
+        $ppid = $this->uri->segment(5, 0);
+        $userid = $this->input->cookie('userid', TRUE);
+        $checkppid = $this->profile_model->check_userid_by_ppid($ppid,$userid);
+        if($checkppid){
+            $this->post_model->delete_post_by_ppid($ppid);
+            $username = $this->user_model->get_username_by_userid($userid)[0]->username;
+            redirect('/'.$username.'/manage/postbpbybp/', 'refresh');
+        }else{
+            echo 'Load view ppid not containt userid here';
+        }
+    }
 	
 	//Edit Post
 	function edit_post_by_ppid(){
@@ -452,6 +481,34 @@ class Profilepage extends Main_Controller {
 			$this->load->view('include/footerbt');																					
 		}
 	}
+    function edit_post_bp_by_ppid(){
+        $ppid = $this->uri->segment(5, 0);
+       // var_dump($ppid);exit;
+        $userid = $this->input->cookie('userid', TRUE);
+        $username = $this->user_model->get_username_by_userid($userid)[0]->username;
+        $checkppid = $this->profile_model->check_userid_by_ppid($ppid,$userid);
+        if($checkppid){
+            $data = array();
+            $postinfo = $this->post_model->get_post_info_by_ppid($ppid);
+            $imagenameobj = $this->photos_model->get_img_name($postinfo->photo_id)[0]->photo_img_link;
+            $imageurl = $this->get_img_loc($imagenameobj);
+            //set cookie photo_id
+            $cookie = array(
+                'name'   => 'photo_img_id',
+                'value'  => $postinfo->photo_id,
+                'expire' => '86400'
+            );
+            $this->input->set_cookie($cookie);
+            //set cookie
+            $postinfo->photo_id = $imageurl;
+            $datamenu['username'] = $username;
+            $data['postinfo'] = $postinfo;
+            $this->load->view('include/headerbt');
+            $this->load->view('include/menu',$datamenu);
+            $this->load->view('editpostbp',$data);
+            $this->load->view('include/footerbt');
+        }
+    }
 	
 	//Display bussiness data
     function displaybussiness(){
@@ -561,6 +618,54 @@ class Profilepage extends Main_Controller {
         }else{
             $this->load->view('include/headerbt');
             echo 'Please,Register Independent!!!!!!!!!!!! ';
+            $this->load->view('include/footerbt');
+        }
+    }
+    function add_new_post_bp_by_bp(){
+        $username = $this->uri->segment(1, 0);
+        $data['username'] = $username;
+        $datamenu['username'] = $username;
+        $userid = $this->input->cookie('userid', TRUE);
+        if(!$this->user_model->check_username_userid($username,$userid)){
+            redirect('/user/login/', 'refresh');
+        }
+        $bpid=$this->profile_model->get_bpid_by_userid($userid);
+        //  var_dump($upid);exit;
+        if(count($bpid)>0){
+            $upidpost = $bpid[0]->bpid;
+            $data['bpid'] = $bpid[0]->bpid;
+            $data['bpidpost'] = $bpid[0]->bpid;
+            $this->load->view('include/headerbt');
+            $this->load->view('include/menu',$datamenu);
+            $this->load->view('addnewpostbpbybp',$data);
+            $this->load->view('include/footerbt');
+        }else{
+            $this->load->view('include/headerbt');
+            echo 'Please,Register bussiness profile!!!!!!!!!!!! ';
+            $this->load->view('include/footerbt');
+        }
+    }
+    function add_new_post_up_by_up(){
+        $username = $this->uri->segment(1, 0);
+        $data['username'] = $username;
+        $datamenu['username'] = $username;
+        $userid = $this->input->cookie('userid', TRUE);
+        if(!$this->user_model->check_username_userid($username,$userid)){
+            redirect('/user/login/', 'refresh');
+        }
+        $upid=$this->user_model->getupid($userid);
+        //  var_dump($upid);exit;
+        if(count($upid)>0){
+            $upidpost = $upid[0]->upid;
+            $data['upid'] = $upid[0]->upid;
+            $data['upidpost'] = $upid[0]->upid;
+            $this->load->view('include/headerbt');
+            $this->load->view('include/menu',$datamenu);
+            $this->load->view('addnewpostupbyup',$data);
+            $this->load->view('include/footerbt');
+        }else{
+            $this->load->view('include/headerbt');
+            echo 'Please,Register user profile!!!!!!!!!!!! ';
             $this->load->view('include/footerbt');
         }
     }

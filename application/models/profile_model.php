@@ -285,13 +285,13 @@
             $this->db->where('ppid', $ppid);
             $query = $this->db->get('postapprovedprofile');
             $apid = $query->result()[0]->apid;
-            $this->db->select('upid');
+            $this->db->select('puid');
             $this->db->where('apid', $apid);
             $query = $this->db->get('approveprofile');
-            $upid = $query->result()[0]->upid;
+            $puid = $query->result()[0]->puid;
             $this->db->select('userid');
-            $this->db->where('upid', $upid);
-            $query = $this->db->get('baberindependent');
+            $this->db->where('upid', $puid);
+            $query = $this->db->get('userprofile');
             $useriddb = $query->result()[0]->userid;
             if ($useriddb == $userid) {
                 return true;
@@ -347,14 +347,30 @@
             $query = $this->db->get('approveprofile');
             return $query->result();
         }
+        function get_apid_from_puid($puid)
+        {
+            $this->db->select('apid');
+            $this->db->where('puid', $puid);
+            $query = $this->db->get('approveprofile');
+            return $query->result();
+        }
 
         //Get upid by userid
         function get_upid_by_userid($userid)
+    {
+        $userid = intval($userid);
+        $this->db->select('upid');
+        $this->db->where('userid', $userid);
+        $query = $this->db->get('baberindependent');
+        $result = $query->result();
+        return $result;
+    }
+        function get_upid_by_userid_u($userid)
         {
             $userid = intval($userid);
             $this->db->select('upid');
             $this->db->where('userid', $userid);
-            $query = $this->db->get('baberindependent');
+            $query = $this->db->get('userprofile');
             $result = $query->result();
             return $result;
         }
@@ -373,6 +389,13 @@
             $this->db->select('apid');
             $this->db->where('upid', $upid);
             $this->db->where('upidpost', $upid);
+            $query = $this->db->get('approveprofile');
+            return $query->result();
+        }
+        function get_apid_by_upid_up($upid)
+        {
+            $this->db->select('apid');
+            $this->db->where('puid', $upid);
             $query = $this->db->get('approveprofile');
             return $query->result();
         }

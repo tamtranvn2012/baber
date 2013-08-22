@@ -2,15 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7398839-36a1-4dc7-9e95-0bd1593e9adb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/editprofile.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/registernewprofile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/uploaduppost.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/addnewpostbpbybp.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/addnewpostupbyup.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/editpostbp.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/postup.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/profilepage.php" afterPath="$PROJECT_DIR$/application/controllers/profilepage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/uploadbppost.php" afterPath="$PROJECT_DIR$/application/controllers/uploadbppost.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/uploadeditpost.php" afterPath="$PROJECT_DIR$/application/controllers/uploadeditpost.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/displaybussinessprofile.php" afterPath="$PROJECT_DIR$/application/views/displaybussinessprofile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/include/menu.php" afterPath="$PROJECT_DIR$/application/views/include/menu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/profile_model.php" afterPath="$PROJECT_DIR$/application/models/profile_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/user_model.php" afterPath="$PROJECT_DIR$/application/models/user_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/bppostbp.php" afterPath="$PROJECT_DIR$/application/views/bppostbp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/managepostbp.php" afterPath="$PROJECT_DIR$/application/views/managepostbp.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/postbi.php" afterPath="$PROJECT_DIR$/application/views/postbi.php" />
     </list>
     <ignored path="baber.iws" />
@@ -31,28 +36,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="profilepage.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="profilepage.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/profilepage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="420" column="12" selection-start="15752" selection-end="15810" vertical-scroll-proportion="-0.64705884">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editpost.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/editpost.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="62" selection-start="403" selection-end="424" vertical-scroll-proportion="-8.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="postbi.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/postbi.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="29" selection-start="403" selection-end="403" vertical-scroll-proportion="-4.576923">
+            <state line="502" column="44" selection-start="19291" selection-end="19291" vertical-scroll-proportion="0.3180873">
               <folding />
             </state>
           </provider>
@@ -61,68 +48,82 @@
       <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/config/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="49" selection-start="4932" selection-end="4946" vertical-scroll-proportion="-3.0588236">
+            <state line="59" column="24" selection-start="2775" selection-end="2775" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uploadeditpost.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/uploadeditpost.php">
+      <file leaf-file-name="registeruserphoto.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/registeruserphoto.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="78" selection-start="3107" selection-end="3107" vertical-scroll-proportion="0.6361746">
+            <state line="26" column="58" selection-start="970" selection-end="984" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/include/menu.php">
+      <file leaf-file-name="uploadregister.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/uploadregister.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="47" selection-start="1440" selection-end="1440" vertical-scroll-proportion="-13.076923">
+            <state line="291" column="47" selection-start="12582" selection-end="12594" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editprofile.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/editprofile.php">
+      <file leaf-file-name="user_model.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="932" selection-end="977" vertical-scroll-proportion="-16.346153">
+            <state line="322" column="60" selection-start="11608" selection-end="11608" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uploaduppost.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/uploaduppost.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="86" column="17" selection-start="3300" selection-end="3300" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile_model.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/profile_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="293" column="48" selection-start="9573" selection-end="9573" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addnewpostupbyup.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/addnewpostupbyup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="53" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1377072967591" expanded="false" signature="163:180" placeholder="..." />
+                <marker date="1377109026000" expanded="false" signature="189:206" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="displaybussinessprofile.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/displaybussinessprofile.php">
+      <file leaf-file-name="postbi.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/postbi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="22" selection-start="1234" selection-end="1234" vertical-scroll-proportion="-18.307692">
+            <state line="0" column="0" selection-start="0" selection-end="622" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profilemanage.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/profilemanage.php">
+      <file leaf-file-name="postup.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/postup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="0" selection-start="1395" selection-end="1484" vertical-scroll-proportion="-21.576923">
-              <folding>
-                <marker date="1376984043887" expanded="false" signature="163:180" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registernewprofile.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/registernewprofile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="42" selection-start="438" selection-end="438" vertical-scroll-proportion="-6.5384617">
-              <folding>
-                <marker date="1377072035885" expanded="true" signature="163:180" placeholder="..." />
-              </folding>
+            <state line="6" column="16" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -140,25 +141,26 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/controlpostbi.php" />
-        <option value="$PROJECT_DIR$/application/controllers/uploadbussiness.php" />
-        <option value="$PROJECT_DIR$/application/views/registerbussinessprofile.php" />
-        <option value="$PROJECT_DIR$/application/models/user_model.php" />
-        <option value="$PROJECT_DIR$/application/views/registeruserphoto.php" />
-        <option value="$PROJECT_DIR$/application/views/bppostbp.php" />
-        <option value="$PROJECT_DIR$/application/models/profile_model.php" />
-        <option value="$PROJECT_DIR$/application/views/managepostbp.php" />
-        <option value="$PROJECT_DIR$/application/views/registernewprofile.php" />
-        <option value="$PROJECT_DIR$/application/config/routes.php" />
-        <option value="$PROJECT_DIR$/application/views/editprofile.php" />
         <option value="$PROJECT_DIR$/application/views/displaybussinessprofile.php" />
         <option value="$PROJECT_DIR$/application/views/include/menu.php" />
+        <option value="$PROJECT_DIR$/application/views/managepostbp.php" />
+        <option value="$PROJECT_DIR$/application/views/addnewpostbpbybp.php" />
+        <option value="$PROJECT_DIR$/application/controllers/uploadbppost.php" />
         <option value="$PROJECT_DIR$/application/views/postbi.php" />
-        <option value="$PROJECT_DIR$/application/controllers/profilepage.php" />
+        <option value="$PROJECT_DIR$/application/views/bppostbp.php" />
         <option value="$PROJECT_DIR$/application/controllers/uploadeditpost.php" />
+        <option value="$PROJECT_DIR$/application/views/editpostbp.php" />
+        <option value="$PROJECT_DIR$/application/views/addnewpostupbyup.php" />
+        <option value="$PROJECT_DIR$/application/controllers/uploaduppost.php" />
+        <option value="$PROJECT_DIR$/application/models/user_model.php" />
+        <option value="$PROJECT_DIR$/application/controllers/profilepage.php" />
+        <option value="$PROJECT_DIR$/application/views/postup.php" />
+        <option value="$PROJECT_DIR$/application/config/routes.php" />
+        <option value="$PROJECT_DIR$/application/models/profile_model.php" />
       </list>
     </option>
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="1" />
     <option name="y" value="2" />
@@ -191,10 +193,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Default" />
-        <subPane subId="Project Files" />
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -301,6 +299,10 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Default" />
+        <subPane subId="Project Files" />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -331,14 +333,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="2" width="1364" height="725" extended-state="1" />
+    <frame x="1" y="2" width="1364" height="725" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3285968" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25454545" sideWeight="0.32534248" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23195085" sideWeight="0.67021275" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23963134" sideWeight="0.67021275" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25192013" sideWeight="0.4937833" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3285968" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -408,124 +410,104 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/profilemanage.php">
+    <entry file="file://$PROJECT_DIR$/application/views/addnewpostbpbybp.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1395" selection-end="1484" vertical-scroll-proportion="-21.576923">
-          <folding>
-            <marker date="1376984043887" expanded="false" signature="163:180" placeholder="..." />
-          </folding>
-        </state>
+        <state line="39" column="18" selection-start="1845" selection-end="1845" vertical-scroll-proportion="0.27145708" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/profilepage.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/uploadbppost.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="18940" vertical-scroll-proportion="-0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/add_new.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/registeruserprofile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="58" selection-start="1071" selection-end="1085" vertical-scroll-proportion="-11.115385" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="37.26923" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="44" selection-start="2157" selection-end="2174" vertical-scroll-proportion="-2.8076923" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/registeruserphoto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="58" selection-start="970" selection-end="984" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/registernewprofile.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/uploadregister.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="42" selection-start="438" selection-end="438" vertical-scroll-proportion="-6.5384617">
-          <folding>
-            <marker date="1377072035885" expanded="true" signature="163:180" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/addprofile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding>
-            <marker date="1376983851509" expanded="false" signature="557:574" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/profilefrontpage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.4068825">
+        <state line="291" column="47" selection-start="12582" selection-end="12594" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/displaybussinessprofile.php">
+    <entry file="file://$PROJECT_DIR$/application/views/addnewpostupbyup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="22" selection-start="1234" selection-end="1234" vertical-scroll-proportion="-18.307692">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/include/menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="47" selection-start="1440" selection-end="1440" vertical-scroll-proportion="-13.076923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/registerbussinessprofile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="49" selection-start="1391" selection-end="1392" vertical-scroll-proportion="-13.076923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/addnewpostindependent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.2266111">
+        <state line="24" column="53" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1376983851506" expanded="false" signature="189:206" placeholder="..." />
+            <marker date="1377109026000" expanded="false" signature="189:206" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/editprofile.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/uploaduppost.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="932" selection-end="977" vertical-scroll-proportion="-16.346153">
-          <folding>
-            <marker date="1377072967591" expanded="false" signature="163:180" placeholder="..." />
-          </folding>
+        <state line="86" column="17" selection-start="3300" selection-end="3300" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="322" column="60" selection-start="11608" selection-end="11608" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/postbi.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="29" selection-start="403" selection-end="403" vertical-scroll-proportion="-4.576923">
+        <state line="0" column="0" selection-start="0" selection-end="622" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/editpost.php">
+    <entry file="file://$PROJECT_DIR$/application/views/postup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="62" selection-start="403" selection-end="424" vertical-scroll-proportion="-8.5">
+        <state line="6" column="16" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="49" selection-start="4932" selection-end="4946" vertical-scroll-proportion="-3.0588236">
+        <state line="59" column="24" selection-start="2775" selection-end="2775" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/registerbussinessphoto.php">
+    <entry file="file://$PROJECT_DIR$/application/models/profile_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+        <state line="293" column="48" selection-start="9573" selection-end="9573" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/profilepage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="420" column="12" selection-start="15752" selection-end="15810" vertical-scroll-proportion="-0.64705884">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/uploadeditpost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="78" selection-start="3107" selection-end="3107" vertical-scroll-proportion="0.6361746">
+        <state line="502" column="44" selection-start="19291" selection-end="19291" vertical-scroll-proportion="0.3180873">
           <folding />
         </state>
       </provider>

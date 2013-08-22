@@ -1,3 +1,6 @@
+
+<?php echo '<div class="container">';?>
+<?php echo '<div class="span7 offset2 slider-bar text-center">';?>
 <?php
 /**
  * Created by JetBrains PhpStorm.
@@ -9,4 +12,8 @@
 foreach($listbpobj as $obj){
     echo "<a href='../manage/bppost/$obj->bpid'>Manage post by bpid</a>".$obj->bpid;
     echo "<input type='hidden' value='$obj->bpid' name='bpid'>";
+    echo'<br>';
 }
+?>
+<?php echo '</div>';?>
+<?php echo '</div>';?>
