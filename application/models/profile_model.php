@@ -342,4 +342,81 @@
             $query = $this->db->get('approveprofile');
             return $query->result();
         }
+        //get info by userid and slug
+        function get_info_profile_by_slug_bussiness($userid,$slug){
+
+            $this->db->where('userid', $userid);
+            $this->db->where('slug', $slug);
+            $query = $this->db->get('bussinessprofile');
+            if(count($query)>0){
+                return $query->result();
+            }
+            else{
+                return false;
+            }
+        }
+        function get_info_profile_by_slug_independent($userid,$slug){
+            $this->db->where('userid', $userid);
+            $this->db->where('slug', $slug);
+            $query = $this->db->get('baberindependent');
+            if(count($query)>0){
+                return $query->result();
+            }
+            else{
+                return false;
+            }
+
+        }
+        // get apid by uid from table approvide
+        function getapid_by_upid_and_upidpost($upid){
+            $this->db->select('apid');
+            $this->db->where('upidpost',$upid);
+            $query = $this->db->get('approveprofile');
+            if(count($query)>0){
+                return $query->result();
+            }
+            else{
+                return false;
+            }
+        }
+        // get apid by bpid from table approvide
+        function getapid_by_upid_post_bpid($bpid){
+            $this->db->select('apid');
+            $this->db->where('bpid',$bpid);
+            $this->db->where('bpidpost !=',$bpid);
+            $this->db->where('isapproved',1);
+            $query = $this->db->get('approveprofile');
+            if(count($query)>0){
+                return $query->result();
+            }
+            else{
+                return false;
+            }
+        }
+        //get apid bay bpidpost
+        function getapid_by_bpid_and_bpidpost($bpid){
+            $this->db->select('apid');
+            $this->db->where('bpid',$bpid);
+            $this->db->where('bpidpost',$bpid);
+            $query = $this->db->get('approveprofile');
+            if(count($query)>0){
+                return $query->result();
+            }
+            else{
+                return false;
+            }
+        }
+
+        //get info approvide from table approveprofile
+        function get_info_postapprovide_by_apid($apid){
+            $this->db->where('apid', $apid);
+            $query = $this->db->get('postapprovedprofile');
+            if(count($query)>0){
+                return $query->result();
+            }
+            else{
+                return false;
+            }
+
+        }
 	}

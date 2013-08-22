@@ -396,5 +396,12 @@ Class User_model extends CI_Model{
 			return false;
 		}
 	}
+    //Get userid by username
+    function get_userid_by_username($username){
+        $this->db->select('userid');
+        $this->db->where('username', $username);
+        $query = $this->db->get('user');
+        return $query->result();
+    }
 }
 ?>
