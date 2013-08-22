@@ -122,6 +122,8 @@ $route['user/register'] = "user/register";
 $route['user/registeruserprofile'] = "user/registeruserprofile";
 $route['user/registerbussinessprofile'] = "user/registerbussinessprofile";
 
+$route['follows/(:any)'] = "youfollow/check_follows_by_apid";
+$route['unfollows/(:any)'] = "youfollow/check_unfollows_by_apid";
 $route['user/checklogin'] = "user/checklogin";
 $route['user/check'] = "user/check";
 $route['user/checkbussiness'] = "user/checkbussiness";
