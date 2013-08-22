@@ -66,6 +66,32 @@ class Uploadindependent extends CI_Controller
     // Function called by the form
     public function upload_img()
     {
+        $submit = $_REQUEST['submitnew'];
+      //  var_dump($submit);exit;
+        if ($submit == 'Edit') {
+            $this->load->helper('cookie');
+            $this->load->helper('url');
+            $photolink = $this->input->cookie('photo_img_id', TRUE);
+            $biid=$_REQUEST['biid'];
+
+            $address = $_REQUEST['address'];
+            $city = $_REQUEST['city'];
+            $state = $_REQUEST['state'];
+            $zip = $_REQUEST['zip'];
+            $phone = $_REQUEST['phone'];
+            $instantgram = $_REQUEST['instantgram'];
+            $facebook = $_REQUEST['facebook'];
+            $favorites_tool = $_REQUEST['favorites_tool'];
+            $private = $_REQUEST['private'];
+            $private = 0;
+            $babershopname = $_REQUEST['babershopname'];
+            //var_dump($babershopname);exit;
+            $this->load->model('profile_model');
+            $this->profile_model->update_independent_profile($biid,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname);
+            $username = $this->uri->segment(1, 0);
+            redirect('/' . $username . '/manage/displayindependentprofile', 'refresh');
+
+        }
         if($_FILES['userfile']['name'] == ''){
             $photolink = 0;
             $photolink = $this->input->cookie('photo_img_id', TRUE);

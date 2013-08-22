@@ -45,6 +45,8 @@ $route['(:any)/manage/unapproveapid/(:any)/(:any)'] = "profilepage/unapproved_ap
 $route['(:any)/manage/listapprove/(:any)'] = "profilepage/listing_approved_by_bpid";
 $route['(:any)/manage/addnewpost/(:any)/(:any)'] = "profilepage/add_new_post";
 $route['(:any)/manage/editbussiness/(:any)'] = "profilepage/editbussiness";
+$route['(:any)/manage/editindependent/(:any)'] = "profilepage/editindependent";
+$route['(:any)/manage/edituserprofile/(:any)'] = "profilepage/edituserprofile";
 
 $route['(:any)/manage/controlapprove'] = "profilepage/control_approve_listing_bussiness";
 $route['(:any)/manage/controlregisternewprofile'] = "profilepage/registernewprofile";
@@ -76,7 +78,13 @@ $route['search/zipcode'] = "search/search_by_zipcode";
 $route['(:any)/upload/addbussinessprofile'] = "uploadbussinessregister/upload_img_bussiness";
 $route['(:any)/upload/addindependentprofile'] = "addindependent/upload_img_independent";
 $route['(:any)/upload/adduserprofile'] = "adduserprofile/upload_img_userprofile";
-$route['(:any)/upload/registerupload'] = "uploadregister/upload_img";
+
+$route['(:any)/manage/deletebussiness/(:any)'] = "profilepage/delete_bussiness_profile_by_upid";
+$route['(:any)/upload/editbussniess'] = "uploadbussiness/upload_img";
+$route['(:any)/manage/deleteindependent/(:any)'] = "profilepage/delete_independent_profile_by_upid";
+$route['(:any)/upload/editindependent'] = "uploadindependent/upload_img";
+$route['(:any)/upload/edituserprofile'] = "uploadregister/upload_img";
+
 $route['(:any)/manage/addbussinessprofile'] = "profilepage/addbussinessprofile";
 $route['(:any)/manage/adduserprofile'] = "profilepage/adduserprofile";
 $route['(:any)/manage/addindependentprofile'] = "profilepage/addindependentprofile";
@@ -87,6 +95,8 @@ $route['(:any)/manage/bppost/(:any)'] = "profilepage/manage_post_listing_bp_by_b
 $route['(:any)/manage'] = "profilepage/profile_manage";
 
 $route['(:any)/manage/displaybussinessprofile'] = "profilepage/displaybussiness";
+$route['(:any)/manage/displayindependentprofile'] = "profilepage/displayindependent";
+$route['(:any)/manage/displayuserprofile'] = "profilepage/displayuserprofile";
 //$route['(:any)/manage/adduserprofile'] = "profilepage/adduserprofile";
 $route['upload/uploadbibppost'] = "uploadbibppost/upload_img";
 $route['upload/uploadbppost'] = "uploadbppost/upload_img";

@@ -1,18 +1,16 @@
 <?php echo '<div class="container">';?>
 <?php echo '<div class="span7 offset2 slider-bar text-center">';?>
-
 <div id="upload-img">
     <h3>Edit</h3>
     <!-- Upload function on action form -->
     <?php
-    $upid= $this->uri->segment(4, 0);
+    $biid= $this->uri->segment(4, 0);
     $username = $this->uri->segment(1, 0);
-
-    echo form_open_multipart('/'.$username.'/upload/editbussniess/', array('id' => 'fileupload'));
-    echo'<input type="hidden" name="upid" value='.$upid.'>';
+    echo form_open_multipart('/'.$username.'/upload/editindependent/', array('id' => 'fileupload'));
+    echo'<input type="hidden" name="biid" value='.$biid.'>';
     ?>
     <?php
-    foreach ($bprofile as $bp) {
+    foreach ($biprofile as $bp) {
         echo'<label>Address</label>';
         echo"<input type='text' name='address' value='$bp->address'/>
     <br/>";
@@ -90,7 +88,6 @@
 
 
 </div>
-
 <?php echo '</div>';?>
 <?php echo '</div>';?>
 <!-- The template to display files available for upload -->

@@ -529,6 +529,35 @@ class Profilepage extends Main_Controller {
         $this->load->view('displaybussinessprofile',$data);
         $this->load->view('include/footerbt');
     }
+
+    function displayindependent(){
+        $this->load->helper('cookie');
+        $this->load->helper('url');
+        $userid=$this->input->cookie('userid');
+        $this->load->model('profile_model');
+        $data['listindependent']=$this->profile_model->get_all_invidual_info($userid);
+     //   var_dump($data);exit;
+        $username= $this->uri->segment(1, 0);
+        $datamenu['username'] = $username;
+        $this->load->view('include/headerbt');
+        $this->load->view('include/menu',$datamenu);
+        $this->load->view('displayindependentprofile',$data);
+        $this->load->view('include/footerbt');
+    }
+    function displayuserprofile(){
+        $this->load->helper('cookie');
+        $this->load->helper('url');
+        $userid=$this->input->cookie('userid');
+        $this->load->model('profile_model');
+        $data['listuserprofile']=$this->profile_model->get_all_userprofile_info($userid);
+        //   var_dump($data);exit;
+        $username= $this->uri->segment(1, 0);
+        $datamenu['username'] = $username;
+        $this->load->view('include/headerbt');
+        $this->load->view('include/menu',$datamenu);
+        $this->load->view('displayuserprofile',$data);
+        $this->load->view('include/footerbt');
+    }
 	
 	//Edit bussiness profile
     function editbussiness()
@@ -537,7 +566,41 @@ class Profilepage extends Main_Controller {
         $this->db->where('bpid',$bpid);
         $query = $this->db->get('bussinessprofile');
         $data['bprofile']= $query->result();
+
+        $username= $this->uri->segment(1, 0);
+        $datamenu['username'] = $username;
+        $this->load->view('include/headerbt');
+        $this->load->view('include/menu',$datamenu);
         $this->load->view('editbussiness',$data);
+        $this->load->view('include/footerbt');
+    }
+    function editindependent()
+    {
+        $biid= $this->uri->segment(4, 0);
+        $this->db->where('upid',$biid);
+        $query = $this->db->get('baberindependent');
+        $data['biprofile']= $query->result();
+
+        $username= $this->uri->segment(1, 0);
+        $datamenu['username'] = $username;
+        $this->load->view('include/headerbt');
+        $this->load->view('include/menu',$datamenu);
+        $this->load->view('editindependent',$data);
+        $this->load->view('include/footerbt');
+    }
+    function edituserprofile()
+    {
+        $upid= $this->uri->segment(4, 0);
+        $this->db->where('upid',$upid);
+        $query = $this->db->get('userprofile');
+        $data['upprofile']= $query->result();
+
+        $username= $this->uri->segment(1, 0);
+        $datamenu['username'] = $username;
+        $this->load->view('include/headerbt');
+        $this->load->view('include/menu',$datamenu);
+        $this->load->view('edituserprofile',$data);
+        $this->load->view('include/footerbt');
     }
 	
 	//Add userprofile type
@@ -693,5 +756,19 @@ class Profilepage extends Main_Controller {
         $this->load->view('include/menu',$datamenu);
         $this->load->view('editprofile');
         $this->load->view('include/footerbt');
+    }
+    function delete_independent_profile_by_upid(){
+        $username = $this->uri->segment(1, 0);
+        $upid = $this->uri->segment(4, 0);
+      //  var_dump($upid);exit;
+        $this->profile_model->delete_independent_profile_by_upid($upid);
+        redirect('/' . $username . '/manage/displayindependentprofile', 'refresh');
+    }
+    function delete_bussiness_profile_by_upid(){
+        $username = $this->uri->segment(1, 0);
+        $bpid = $this->uri->segment(4, 0);
+        //  var_dump($upid);exit;
+        $this->profile_model->delete_bussiness_profile_by_bpid($bpid);
+        redirect('/' . $username . '/manage/displayindependentprofile', 'refresh');
     }
 }

@@ -20,7 +20,7 @@
         echo'Slug: ' . $bprofile->slug;
         //  $id = $this->uri->segment(3, 0);
         echo"<a href='../manage/editbussiness/$bprofile->bpid' name='$bprofile->bpid'>Edit</a>";
-        echo"<a href='../manage/$bprofile->bpid' name='$bprofile->bpid'>Delete</a><br>";
+        echo"<a href='../manage/deletebussiness/$bprofile->bpid' name='$bprofile->bpid'>Delete</a><br>";
     }
     ?>
     <?php echo form_close(); ?>

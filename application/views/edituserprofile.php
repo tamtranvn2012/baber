@@ -8,40 +8,40 @@
     $upid= $this->uri->segment(4, 0);
     $username = $this->uri->segment(1, 0);
 
-    echo form_open_multipart('/'.$username.'/upload/editbussniess/', array('id' => 'fileupload'));
+    echo form_open_multipart('/'.$username.'/upload/edituserprofile/', array('id' => 'fileupload'));
     echo'<input type="hidden" name="upid" value='.$upid.'>';
     ?>
     <?php
-    foreach ($bprofile as $bp) {
+    foreach ($upprofile as $up) {
         echo'<label>Address</label>';
-        echo"<input type='text' name='address' value='$bp->address'/>
+        echo"<input type='text' name='address' value='$up->address'/>
     <br/>";
         echo'<label>City</label>';
-        echo"<input type='text' name='city' value='$bp->city'/>
+        echo"<input type='text' name='city' value='$up->city'/>
     <br/>";
         echo '<label>State</label>';
-        echo "<input type='text' name='state' value='$bp->state'/>
+        echo "<input type='text' name='state' value='$up->state'/>
     <br/>";
         echo '<label>Zipcode</label>';
-        echo "<input type='text' name='zip' value='$bp->zip'/>
+        echo "<input type='text' name='zip' value='$up->zip'/>
     <br/>";
         echo '<label>Phone</label>';
-        echo "<input type='text' name='phone' value='$bp->phone'/>
+        echo "<input type='text' name='phone' value='$up->phone'/>
     <br/>";
         echo '<label>Instantgram</label>';
-        echo "<input type='text' name='instantgram' value='$bp->instantgram'/>
+        echo "<input type='text' name='instantgram' value='$up->instantgram'/>
     <br/>";
         echo '<label>Facebook</label>';
-        echo "<input type='text' name='facebook' value='$bp->facebook'/>
+        echo "<input type='text' name='facebook' value='$up->facebook'/>
     <br/>";
         echo '<label>Favorite tool</label>';
-        echo "<input type='text' name='favorites_tool' value='$bp->favorites_tool'/>
+        echo "<input type='text' name='favorites_tool' value='$up->favorites_tool'/>
     <br/>";
         echo '<label>Slug</label>';
-        echo "<input type='text' name='slug' value='$bp->slug'/>
+        echo "<input type='text' name='slug' value='$up->slug'/>
     <br/>";
         echo '<label>Babershop Name</label>';
-        echo "<input type='text' name='babershopname' value='$bp->babershopname'/>
+        echo "<input type='text' name='babershopname' value='$up->babershopname'/>
     <br/>";
     }
     ?>

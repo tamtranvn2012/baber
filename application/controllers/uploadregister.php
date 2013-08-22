@@ -250,7 +250,7 @@ class Uploadregister extends CI_Controller
             $this->load->helper('cookie');
             $this->load->helper('url');
             $photolink = $this->input->cookie('photo_img_id', TRUE);
-            $bpid=$_REQUEST['bpid'];
+            $upid=$_REQUEST['upid'];
             $address = $_REQUEST['address'];
             $city = $_REQUEST['city'];
             $state = $_REQUEST['state'];
@@ -262,10 +262,11 @@ class Uploadregister extends CI_Controller
             $private = $_REQUEST['private'];
             $private = 0;
             $babershopname = $_REQUEST['babershopname'];
+         //   var_dump($babershopname);exit;
             $this->load->model('profile_model');
-            $this->profile_model->update_bussiness_profile($bpid,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname);
+            $this->profile_model->update_user_profile($upid,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname);
             $username = $this->uri->segment(1, 0);
-            redirect('/' . $username . '/manage/', 'refresh');
+            redirect('/' . $username . '/manage/displayuserprofile', 'refresh');
 
         } elseif ($_FILES['userfile']['name'] == '') {
             $photolink = 0;
