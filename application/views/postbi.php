@@ -8,7 +8,9 @@
  * Time: 8:19 AM
  * To change this template use File | Settings | File Templates.
  */
+echo "<a href='../manage/biposts'>Add new post</a><br>";
 foreach($independentinfo as $info){
+
     echo "<input type='hidden' value='$info->ppid' name='ppid'>";
     echo $info->babershopname;
     echo $info->baber_type;

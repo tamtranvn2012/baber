@@ -8,6 +8,7 @@
  * Time: 8:19 AM
  * To change this template use File | Settings | File Templates.
  */
+echo "<a href='../manage/addnewpostbpbybp'>Add new post</a><br>";
 foreach($userinfo as $info){
     echo "<input type='hidden' value='$info->ppid' name='ppid'>";
     echo $info->babershopname;

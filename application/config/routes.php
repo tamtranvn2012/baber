@@ -90,7 +90,7 @@ $route['(:any)/manage/adduserprofile'] = "profilepage/adduserprofile";
 $route['(:any)/manage/addindependentprofile'] = "profilepage/addindependentprofile";
 $route['(:any)/manage/profilebussiness'] = "manage/profilebussiness";
 $route['(:any)/manage/postbpbybp'] = "profilepage/manage_bp_post_bp_by_bpid";
-$route['(:any)/manage/addnewpostbpbybp'] = "profilepage/add_new_post_bp_by_bp";
+$route['(:any)/manage/addnewpostbpbybp(:any)'] = "profilepage/add_new_post_bp_by_bp";
 $route['(:any)/manage/bppost/(:any)'] = "profilepage/manage_post_listing_bp_by_bpid";
 $route['(:any)/manage'] = "profilepage/profile_manage";
 

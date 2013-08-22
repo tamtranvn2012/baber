@@ -747,12 +747,12 @@ class Profilepage extends Main_Controller {
         if(!$this->user_model->check_username_userid($username,$userid)){
             redirect('/user/login/', 'refresh');
         }
-        $bpid=$this->profile_model->get_bpid_by_userid($userid);
+        $bpid= $this->uri->segment(4, 0);
         //  var_dump($upid);exit;
         if(count($bpid)>0){
-            $upidpost = $bpid[0]->bpid;
-            $data['bpid'] = $bpid[0]->bpid;
-            $data['bpidpost'] = $bpid[0]->bpid;
+            $upidpost = $bpid;
+            $data['bpid'] = $bpid;
+            $data['bpidpost'] = $bpid;
             $this->load->view('include/headerbt');
             $this->load->view('include/menu',$datamenu);
             $this->load->view('addnewpostbpbybp',$data);
