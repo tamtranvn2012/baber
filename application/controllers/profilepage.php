@@ -583,8 +583,11 @@ class Profilepage extends Main_Controller {
         $biid= $this->uri->segment(4, 0);
         $this->db->where('upid',$biid);
         $query = $this->db->get('baberindependent');
+        $independentprofileinfo = $query->result()[0];
         $data['biprofile']= $query->result();
-
+        $imagenameobj = $this->photos_model->get_img_name($independentprofileinfo->photo_link)[0]->photo_img_link;
+        $imageurl = $this->get_img_loc($imagenameobj);
+        $independentprofileinfo->photo_link = $imageurl;
         $username= $this->uri->segment(1, 0);
         $datamenu['username'] = $username;
         $this->load->view('include/headerbt');
@@ -599,6 +602,10 @@ class Profilepage extends Main_Controller {
         $upid= $this->uri->segment(4, 0);
         $this->db->where('upid',$upid);
         $query = $this->db->get('userprofile');
+        $userprofileinfo = $query->result()[0];
+        $imagenameobj = $this->photos_model->get_img_name($userprofileinfo->photo_link)[0]->photo_img_link;
+        $imageurl = $this->get_img_loc($imagenameobj);
+        $userprofileinfo->photo_link = $imageurl;
         $data['upprofile']= $query->result();
 
         $username= $this->uri->segment(1, 0);
