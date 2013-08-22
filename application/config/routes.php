@@ -49,7 +49,9 @@ $route['(:any)/manage/editbussiness/(:any)'] = "profilepage/editbussiness";
 $route['(:any)/manage/controlapprove'] = "profilepage/control_approve_listing_bussiness";
 $route['(:any)/manage/controlregisternewprofile'] = "profilepage/registernewprofile";
 $route['(:any)/manage/controleditprofile'] = "profilepage/controleditprofile";
+//control post baber independent - baber bussiness profile
 $route['(:any)/manage/controlpost'] = "profilepage/control_post_listing_client";
+
 $route['(:any)/manage/controlpostbp'] = "profilepage/control_post_listing_bp";
 $route['(:any)/manage/listbiposts'] = "profilepage/manage_post_listing_bi";
 $route['(:any)/manage/requestapprove'] = "profilepage/request_approve";

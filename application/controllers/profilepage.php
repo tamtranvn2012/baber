@@ -346,7 +346,11 @@ class Profilepage extends Main_Controller {
 				$allinfoobj['apid'] = $perapidobj->apid;
 				$allinfoobj['bpid'] = $perapidobj->bpid;
 				$allinfoobj['isapproved'] = $perapidobj->isapproved;
-				$allinfoobj['babershopname'] = $this->profile_model->get_babershop_name_by_bpid($perapidobj->bpid)[0]->babershopname;
+				$babershopobj = $this->profile_model->get_babershop_name_by_bpid($perapidobj->bpid);
+				if($babershopobj){
+					$allinfoobj['babershopname'] = $babershopobj[0]->babershopname;
+				}
+				
 				$data['apidsobjs'][] = $allinfoobj;
 			}
 		}		
