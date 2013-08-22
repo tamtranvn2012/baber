@@ -71,6 +71,8 @@ $route['(:any)/manage/addbussinessprofile'] = "profilepage/addbussinessprofile";
 $route['(:any)/manage/adduserprofile'] = "profilepage/adduserprofile";
 $route['(:any)/manage/addindependentprofile'] = "profilepage/addindependentprofile";
 $route['(:any)/manage/profilebussiness'] = "manage/profilebussiness";
+$route['(:any)/manage/postbpbybp'] = "profilepage/manage_bp_post_bp";
+$route['(:any)/manage/bppost/(:any)'] = "profilepage/manage_post_listing_bp";
 $route['(:any)/manage'] = "profilepage/profile_manage";
 
 $route['(:any)/manage/displaybussiness'] = "profilepage/displaybussiness";
@@ -84,6 +86,8 @@ $route['upload/registerupload'] = "uploadregister/upload_img";
 
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
 $route['upload/registerbussinessphoto'] = "uploadbussinessregister/upload_img";
+$route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
+$route['upload/registerbussiness'] = "uploadbussinessregister/upload_img";
 $route['upload/registerindependent'] = "uploadindependent/upload_img";
 $route['upload/uploadeditpost'] = "uploadeditpost/upload_img";
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
@@ -93,7 +97,7 @@ $route['user/login'] = "user/login";
 $route['user/registerindependent'] = "user/registerindependent";
 $route['user/register'] = "user/register";
 $route['user/registeruserprofile'] = "user/registeruserprofile";
-$route['user/registerbussinessprofile'] = "user/registerbussinessupload";
+$route['user/registerbussinessprofile'] = "user/registerbussinessprofile";
 
 $route['user/checklogin'] = "user/checklogin";
 $route['user/check'] = "user/check";
@@ -102,13 +106,3 @@ $route['user/successful'] = "user/successful";
 $route['admin'] = "admin";
 $route['(:any)'] = "profilefrontpage/findslug";
 $route['user/logout'] = "user/logout";
-//test commit
-//test thanh commit 2
-//test xi coomit
-
-//test xi commit1
-
-//test thanh commit 3
-
-/* End of file routes.php */
-/* Location: ./application/config/routes.php */

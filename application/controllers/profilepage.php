@@ -332,6 +332,7 @@ class Profilepage extends Main_Controller {
 		$datamenu['username'] = $username;
 		$userid = $this->input->cookie('userid', TRUE);
 		//data for make new post to approve bussiness profile id
+
 		$upidarrobj = $this->profile_model->get_upid_userid($userid);
 		$apidsobjs = array();
 		$data['upid'] = $this->profile_model->get_upid_by_userid($userid)[0]->upid;
@@ -377,6 +378,34 @@ class Profilepage extends Main_Controller {
         $this->load->view('include/header');
         $this->load->view('include/menu',$datamenu);
         $this->load->view('postbi',$data);
+        $this->load->view('include/footer');
+    }
+    function manage_post_listing_bp(){
+        $data = array();
+        $userid = $this->input->cookie('userid', TRUE);
+        $username = $this->user_model->get_username_by_userid($userid)[0]->username;
+        $datamenu['username'] = $username;
+        $bpid = $this->uri->segment(4, 0);
+        $apid=$this->profile_model->get_apid_by_bpid_bpidpost($bpid)->apid;
+        $data['bussinessinfo'] = $this->profile_model->get_all_info_by_apid($apid);
+        $this->load->view('include/header');
+        $this->load->view('include/menu',$datamenu);
+        $this->load->view('bppostbp',$data);
+        $this->load->view('include/footer');
+    }
+    function manage_bp_post_bp(){
+        $data = array();
+        $datamenu='';
+        $userid = $this->input->cookie('userid', TRUE);
+        $username = $this->user_model->get_username_by_userid($userid)[0]->username;
+        $datamenu['username'] = $username;
+        $data['listbpobj']= $this->profile_model->get_bpid_by_userid($userid);
+
+    //    $apid=$this->profile_model->getapid_by_bpid_and_bpidpost($bpid)[0]->apid;
+    //    $data['independentinfo'] = $this->profile_model->get_all_info_by_apid($apid);
+        $this->load->view('include/header');
+        $this->load->view('include/menu',$datamenu);
+        $this->load->view('managepostbp',$data);
         $this->load->view('include/footer');
     }
 	
