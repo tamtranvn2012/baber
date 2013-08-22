@@ -16,10 +16,6 @@
                     <div class="col-md-3 pull-right" id="add" style="padding-top: 10px;">
 						<a href="<?php echo base_url('/user/login');?>"><input type="button" value="Login to your account" class="btn-danger" /></a><br/>
 						<a href="<?php echo base_url('/user/register');?>"><input type="button" value="Add your Barber Shop" class="btn-danger" /></a><br/>
-                        <a href="<?php
-                        $username = $this->uri->segment(1, 0);
-                        echo base_url('/'.$username.'/manage/addprofile');?>"><input type="button" value="Create your bussiness profile" class="btn-danger" /></a>
-
                     </div>
                 </div>
                 <!--end banner-->
