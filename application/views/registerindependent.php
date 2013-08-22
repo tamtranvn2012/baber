@@ -1,3 +1,21 @@
+<script type="text/javascript">
+    function getval(sel) {
+		if(sel.value == 'userprofile'){
+			window.location.href="<?php echo base_url('/user/registeruserprofile');?>";
+		};
+		if(sel.value == 'bussinessprofile'){
+			window.location.href="<?php echo base_url('/user/registerbussinessprofile');?>";
+		};
+		if(sel.value == 'independentprofile'){
+			window.location.href="<?php echo base_url('/user/registerindependent');?>";
+		}
+    }
+</script>
+<select id="choose-profile-for-register" onchange="getval(this);">
+	<option value="bussinessprofile">Register New Bussiness Profile</option>
+	<option value="independentprofile" selected="selected">Register New Independent Profile</option>
+	<option value="userprofile">Register New Userprofile</option>
+</select> 
 <div class="container">
 	<div  class="span7 offset2">
         <div id="upload-img">

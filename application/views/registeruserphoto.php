@@ -1,9 +1,32 @@
+<script type="text/javascript">
+    function getval(sel) {
+		if(sel.value == 'userprofile'){
+			window.location.href="<?php echo base_url('/user/register');?>";
+		}
+		if(sel.value == 'bussinessprofile'){
+			window.location.href="<?php echo base_url('/user/registerbussinessprofile');?>";
+		}
+		if(sel.value == 'independentprofile'){
+			window.location.href="<?php echo base_url('/user/registerindependent');?>";
+		}
+    }
+</script>
+<select id="choose-profile-for-register" onchange="getval(this);">
+	<option value="bussinessprofile">Register New Bussiness Profile</option>
+	<option value="independentprofile" selected="selected">Register New Independent Profile</option>
+	<option value="userprofile" selected="selected">Register New Userprofile</option>
+</select> 
 <div class="container">
 	<div  class="span7 offset2">
-        <div id="upload-img">
+		
+
+
+    <div id="upload-img">
     <h3>Fill New User Info</h3>
     <!-- Upload function on action form -->
-    <?php echo form_open_multipart('/upload/registerbussinessphoto/', array('id' => 'fileupload')); ?>
+    <?php //echo form_open_multipart('/upload/registerbussinessphoto/', array('id' => 'fileupload')); ?>
+	
+    <?php echo form_open_multipart('/upload/registerupload/', array('id' => 'fileupload')); ?>
     	<div class="span7" style="margin:0;">
 				<label class="span5">Username:</label>
 				<div class="span5"><input type="text" name="username" class="span3 form-control bt-text"/></div>
@@ -94,9 +117,7 @@
     <input class="btn btn-success offset2" name="submitnew" type="submit" value="Submit"/>
     <div style="padding-bottom: 20px;"></div>
     <?php echo form_close(); ?>
-
-</div>
-</div>
+	</div>
 </div>
 <!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">
@@ -158,3 +179,4 @@
     </tr>
     {% } %}
 </script>
+</div>
