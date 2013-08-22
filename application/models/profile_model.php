@@ -304,6 +304,48 @@ Class Profile_model extends CI_Model
         $this->db->where('ppid', $ppid);
         $query = $this->db->get('postapprovedprofile');
         $apid = $query->result()[0]->apid;
+        $this->db->select('upid');
+        $this->db->where('apid', $apid);
+        $query = $this->db->get('approveprofile');
+        $upid = $query->result()[0]->upid;
+      //  var_dump($upid);exit;
+        $this->db->select('userid');
+        $this->db->where('upid', $upid);
+        $query = $this->db->get('baberindependent');
+        $useriddb = $query->result()[0]->userid;
+        if ($useriddb == $userid) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function check_userid_by_ppid_bp($ppid, $userid)
+{
+    $this->db->select('apid');
+    $this->db->where('ppid', $ppid);
+    $query = $this->db->get('postapprovedprofile');
+    $apid = $query->result()[0]->apid;
+    $this->db->select('bpid');
+    $this->db->where('apid', $apid);
+    $query = $this->db->get('approveprofile');
+    $bpid = $query->result()[0]->bpid;
+    $this->db->select('userid');
+    $this->db->where('bpid', $bpid);
+    $query = $this->db->get('bussinessprofile');
+    $useriddb = $query->result()[0]->userid;
+    if ($useriddb == $userid) {
+        return true;
+    } else {
+        return false;
+    }
+}
+    function check_userid_by_ppid_pu($ppid, $userid)
+    {
+        $this->db->select('apid');
+        $this->db->where('ppid', $ppid);
+        $query = $this->db->get('postapprovedprofile');
+        $apid = $query->result()[0]->apid;
         $this->db->select('puid');
         $this->db->where('apid', $apid);
         $query = $this->db->get('approveprofile');
@@ -311,7 +353,9 @@ Class Profile_model extends CI_Model
         $this->db->select('userid');
         $this->db->where('upid', $puid);
         $query = $this->db->get('userprofile');
+     //   var_dump($userid);exit;
         $useriddb = $query->result()[0]->userid;
+      //  var_dump($useriddb);exit;
         if ($useriddb == $userid) {
             return true;
         } else {
