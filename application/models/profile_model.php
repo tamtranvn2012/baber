@@ -231,6 +231,7 @@
         function get_apid_by_upid_allinfo($upid)
         {
             $this->db->where('upid', $upid);
+            $this->db->where('bpid >', 0);
             $this->db->where('isapproved', 1);
             $query = $this->db->get('approveprofile');
             return $query->result();
@@ -240,6 +241,7 @@
         function get_all_by_upid_allinfo($upid)
         {
             $this->db->where('upid', $upid);
+            $this->db->where('bpid >', 0);
             $query = $this->db->get('approveprofile');
             return $query->result();
         }
@@ -271,6 +273,8 @@
             $query = $this->db->get('bussinessprofile');
             return $query->result();
         }
+		
+		
         function get_bp_by_bpid($bpid)
         {
             $this->db->where('bpid', $bpid);
