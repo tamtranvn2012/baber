@@ -83,12 +83,12 @@ class Uploadbussinessregister extends CI_Controller
             $private = $_REQUEST['private'];
             $private = 0;
             $babershopname = $_REQUEST['babershopname'];
-            //$slug = $_REQUEST['slug'];
+            $slug = $_REQUEST['slug'];
             //$this->load->model('user_model');
             //Insert to database user info if user fill all info
             if ($_REQUEST['submitnew']){
                 $this->load->model('user_model');
-                $this->user_model->add_profile_bus($photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname);                $this->load->helper('cookie');
+                $this->user_model->add_profile_bus($photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname,$slug);                $this->load->helper('cookie');
                 $this->load->helper('url');
                 $useridobj = $this->input->cookie('userid');
                 $userid = $useridobj[0]->userid;
@@ -267,12 +267,12 @@ class Uploadbussinessregister extends CI_Controller
             $private = $_REQUEST['private'];
             $private = 0;
             $babershopname = $_REQUEST['babershopname'];
-            //$slug = $_REQUEST['slug'];
+            $slug = $_REQUEST['slug'];
             //$this->load->model('user_model');
             //Insert to database user info if user fill all info
             if ($_REQUEST['submitnew']){
                 $this->load->model('user_model');
-                $this->user_model->add_new_user_bussiness($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname);
+                $this->user_model->add_new_user_bussiness($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname,$slug);
                 $useridobj = $this->user_model->checkusername($username);
                 $userid = $useridobj[0]->userid;
                 $cookie = array(

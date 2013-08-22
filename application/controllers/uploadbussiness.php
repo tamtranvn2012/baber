@@ -83,8 +83,9 @@ class Uploadbussiness extends CI_Controller
             $private = $_REQUEST['private'];
             $private = 0;
             $babershopname = $_REQUEST['babershopname'];
+            $slug = $_REQUEST['slug'];
             $this->load->model('profile_model');
-            $this->profile_model->update_bussiness_profile($bpid,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname);
+            $this->profile_model->update_bussiness_profile($bpid,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname,$slug);
             $username = $this->uri->segment(1, 0);
             redirect('/' . $username . '/manage/', 'refresh');
 
