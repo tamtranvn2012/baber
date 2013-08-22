@@ -74,6 +74,13 @@ $route['(:any)/manage/posts/(:any)/(:any)'] = "profilepage/manage_bp_posts";
 //$route['(:any)/manage/posts'] = "profilepage/manage_bp_posts";
 $route['(:any)/manage/approvelisting'] = "profilepage/manage_approve_listing_client";
 $route['(:any)/manage/addprofile'] = "manage/addprofile";
+$route['(:any)/manage/postuser'] = "profilepage/postuser";
+
+$route['(:any)/manage/editpostuser/(:any)'] = "profilepage/editpostuser";
+$route['(:any)/manage/updatepostuser'] = "profilepage/updatepostuser";
+
+$route['(:any)/manage/postuserprofile'] = "profilepage/postuserprofile";
+$route['(:any)/manage/displaypostuser'] = "profilepage/displaypostuser";
 $route['search/zipcode'] = "search/search_by_zipcode";
 $route['(:any)/upload/addbussinessprofile'] = "uploadbussinessregister/upload_img_bussiness";
 $route['(:any)/upload/addindependentprofile'] = "addindependent/upload_img_independent";
