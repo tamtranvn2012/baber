@@ -73,6 +73,7 @@ class Uploadbppost extends CI_Controller
 			$this->load->model('profile_model');
 			$this->load->model('post_model');
 			$bpidpost = $bpid = $_REQUEST['bpid'];
+          // var_dump($bpid);exit;
 			$userid = $this->input->cookie('userid', TRUE);
 			$bpiddb = $this->user_model->getbpid($userid)[0]->bpid;
 			

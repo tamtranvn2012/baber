@@ -45,6 +45,8 @@ $route['(:any)/manage/unapproveapid/(:any)/(:any)'] = "profilepage/unapproved_ap
 $route['(:any)/manage/listapprove/(:any)'] = "profilepage/listing_approved_by_bpid";
 $route['(:any)/manage/addnewpost/(:any)/(:any)'] = "profilepage/add_new_post";
 $route['(:any)/manage/editbussiness/(:any)'] = "profilepage/editbussiness";
+$route['(:any)/manage/editindependent/(:any)'] = "profilepage/editindependent";
+$route['(:any)/manage/edituserprofile/(:any)'] = "profilepage/edituserprofile";
 
 $route['(:any)/manage/controlapprove'] = "profilepage/control_approve_listing_bussiness";
 $route['(:any)/manage/controlregisternewprofile'] = "profilepage/registernewprofile";
@@ -54,14 +56,20 @@ $route['(:any)/manage/controlpost'] = "profilepage/control_post_listing_client";
 
 $route['(:any)/manage/controlpostbp'] = "profilepage/control_post_listing_bp";
 $route['(:any)/manage/listbiposts'] = "profilepage/manage_post_listing_bi";
+$route['(:any)/manage/listupposts'] = "profilepage/manage_post_listing_up";
 $route['(:any)/manage/requestapprove'] = "profilepage/request_approve";
 $route['(:any)/manage/saverequest'] = "profilepage/save_request_approve";
 $route['(:any)/manage/posts/delete/(:any)'] = "profilepage/delete_post_by_ppid";
 $route['(:any)/manage/biposts/delete/(:any)'] = "profilepage/delete_post_by_ppid";
+$route['(:any)/manage/upposts/delete/(:any)'] = "profilepage/delete_post_by_ppid";
+$route['(:any)/manage/bpposts/delete/(:any)'] = "profilepage/delete_post_bp_by_ppid";
 $route['(:any)/manage/posts/edit/(:any)'] = "profilepage/edit_post_by_ppid";
 $route['(:any)/manage/biposts/edit/(:any)'] = "profilepage/edit_post_by_ppid";
+$route['(:any)/manage/upposts/edit/(:any)'] = "profilepage/edit_post_by_ppid";
+$route['(:any)/manage/bpposts/edit/(:any)'] = "profilepage/edit_post_bp_by_ppid";
 $route['(:any)/manage/bpposts/(:any)'] = "profilepage/add_post_form_bpid_bpid";
 $route['(:any)/manage/biposts'] = "profilepage/add_new_post_imdependent";
+$route['(:any)/manage/upposts'] = "profilepage/add_new_post_up_by_up";
 $route['(:any)/manage/posts/(:any)/(:any)'] = "profilepage/manage_bp_posts";
 //$route['(:any)/manage/posts'] = "profilepage/manage_bp_posts";
 $route['(:any)/manage/approvelisting'] = "profilepage/manage_approve_listing_client";
@@ -70,20 +78,30 @@ $route['search/zipcode'] = "search/search_by_zipcode";
 $route['(:any)/upload/addbussinessprofile'] = "uploadbussinessregister/upload_img_bussiness";
 $route['(:any)/upload/addindependentprofile'] = "addindependent/upload_img_independent";
 $route['(:any)/upload/adduserprofile'] = "adduserprofile/upload_img_userprofile";
-$route['(:any)/upload/registerupload'] = "uploadregister/upload_img";
+
+$route['(:any)/manage/deletebussiness/(:any)'] = "profilepage/delete_bussiness_profile_by_upid";
+$route['(:any)/upload/editbussniess'] = "uploadbussiness/upload_img";
+$route['(:any)/manage/deleteindependent/(:any)'] = "profilepage/delete_independent_profile_by_upid";
+$route['(:any)/upload/editindependent'] = "uploadindependent/upload_img";
+$route['(:any)/upload/edituserprofile'] = "uploadregister/upload_img";
+
 $route['(:any)/manage/addbussinessprofile'] = "profilepage/addbussinessprofile";
 $route['(:any)/manage/adduserprofile'] = "profilepage/adduserprofile";
 $route['(:any)/manage/addindependentprofile'] = "profilepage/addindependentprofile";
 $route['(:any)/manage/profilebussiness'] = "manage/profilebussiness";
-$route['(:any)/manage/postbpbybp'] = "profilepage/manage_bp_post_bp";
-$route['(:any)/manage/bppost/(:any)'] = "profilepage/manage_post_listing_bp";
+$route['(:any)/manage/postbpbybp'] = "profilepage/manage_bp_post_bp_by_bpid";
+$route['(:any)/manage/addnewpostbpbybp'] = "profilepage/add_new_post_bp_by_bp";
+$route['(:any)/manage/bppost/(:any)'] = "profilepage/manage_post_listing_bp_by_bpid";
 $route['(:any)/manage'] = "profilepage/profile_manage";
 
 $route['(:any)/manage/displaybussinessprofile'] = "profilepage/displaybussiness";
+$route['(:any)/manage/displayindependentprofile'] = "profilepage/displayindependent";
+$route['(:any)/manage/displayuserprofile'] = "profilepage/displayuserprofile";
 //$route['(:any)/manage/adduserprofile'] = "profilepage/adduserprofile";
 $route['upload/uploadbibppost'] = "uploadbibppost/upload_img";
 $route['upload/uploadbppost'] = "uploadbppost/upload_img";
 $route['upload/uploadbipost'] = "uploadbipost/upload_img";
+$route['upload/uploaduppost'] = "uploaduppost/upload_img";
 
 $route['upload/addnew'] = "upload/upload_img";
 $route['upload/registerupload'] = "uploadregister/upload_img";
@@ -94,6 +112,7 @@ $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
 $route['upload/registerbussiness'] = "uploadbussinessregister/upload_img";
 $route['upload/registerindependent'] = "uploadindependent/upload_img";
 $route['upload/uploadeditpost'] = "uploadeditpost/upload_img";
+$route['upload/uploadeditpostbp'] = "uploadeditpost/upload_img_bp";
 $route['upload/uploadbussiness'] = "uploadbussiness/upload_img";
 
 $route['upload/uploadregister'] = "uploadregister/upload_img";

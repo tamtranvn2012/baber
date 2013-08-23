@@ -5,19 +5,15 @@
  * Created by JetBrains PhpStorm.
  * User: Chicken
  * Date: 8/21/13
- * Time: 10:18 AM
+ * Time: 8:19 AM
  * To change this template use File | Settings | File Templates.
  */
-foreach($bussinessinfo as $info){
+foreach($userinfo as $info){
     echo "<input type='hidden' value='$info->ppid' name='ppid'>";
     echo $info->babershopname;
     echo $info->baber_type;
-
-    $edit = $username.'/manage/bpposts/edit/'.$info->ppid;
-    $delete = $username.'/manage/bpposts/delete/'.$info->ppid;
-    echo '<a href="' . base_url($edit) . '">Edit</a>';
-    echo '<a href="' . base_url($delete) . '">delete</a><br>' ;
-
+    echo "<a href='../manage/upposts/edit/$info->ppid'>Edit</a>";
+    echo "<a href='../manage/upposts/delete/$info->ppid'>Delete</a><br>";
 }
 ?>
 <?php echo '</div>';?>

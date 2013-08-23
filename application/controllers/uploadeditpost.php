@@ -88,7 +88,11 @@ class Uploadeditpost extends CI_Controller
 				if($checkppid){
 					$username = $this->user_model->get_username_by_userid($userid)[0]->username;
 					$this->post_model->update_post_by_postid($ppid,$photo_id,$babershopname,$baber_type,$baber_name,$tags,$isprivate);
-                    redirect('/'.$username.'/manage/listbiposts/', 'refresh');
+
+                 //   redirect('/'.$username.'/manage/postbpbybp/', 'refresh');
+
+                        redirect('/'.$username.'/manage/listbiposts/', 'refresh');
+
 				}else{
 					redirect('/'.$username.'/manage/', 'refresh');							
 				}				
@@ -238,6 +242,185 @@ class Uploadeditpost extends CI_Controller
 			}
 		}
 	}
+    public function upload_img_bp()
+    {
+        if($_FILES['userfile']['name'] == ''){
+            $this->load->helper('cookie');
+            $this->load->model('profile_model');
+            $this->load->model('post_model');
+            $this->load->model('user_model');
+            $isprivate = $this->input->post('isprivate');
+            if(!$isprivate){
+                $isprivate = 0;
+            }else{
+                $isprivate = 1;
+            }
+            $ppid = $_REQUEST['ppid'];
+            $babershopname = $_REQUEST['babershopname'];
+            $baber_type = $_REQUEST['baber_type'];
+            $baber_name = $_REQUEST['baber_name'];
+            $tags = $_REQUEST['tags'];
+            $photo_id = $this->input->cookie('photo_img_id', TRUE);
+            $userid = $this->input->cookie('userid', TRUE);
+            $checkppid = $this->profile_model->check_userid_by_ppid($ppid,$userid);
+            if ($_REQUEST['submitedit']){
+                if($checkppid){
+                    $username = $this->user_model->get_username_by_userid($userid)[0]->username;
+                    $this->post_model->update_post_by_postid($ppid,$photo_id,$babershopname,$baber_type,$baber_name,$tags,$isprivate);
+
+                       redirect('/'.$username.'/manage/postbpbybp/', 'refresh');
+
+                   // redirect('/'.$username.'/manage/listbiposts/', 'refresh');
+
+                }else{
+                    redirect('/'.$username.'/manage/', 'refresh');
+                }
+
+            }
+        }
+
+        //Format the name
+        if ($_FILES['userfile']['name']){
+            $name = $_FILES['userfile']['name'];
+            $name = strtr($name, 'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+            $useridss = $this->input->cookie('userid', TRUE);
+            $yearfolder = date('Y');
+            $monthfolder = date('m');
+            $dayfolder = date('d');
+            $fulldate = date('Y-m-d');
+            $timtostr = strtotime(now());
+            $baber_name = '';
+            $photo_link = '';
+            $photo_tag = '';
+            $baber_name = $_REQUEST['baber_name'];
+            $baber_type = $_REQUEST['baber_type'];
+            $photo_link = $_REQUEST['photo_link'];
+            $photo_tag = $_REQUEST['photo_tag'];
+            //$photo_img_link = $useridss.'___'.$fulldate.'___'.$name;
+            //$photo_img_link = str_replace('-','_',$photo_img_link);
+            $isprivate = 0;
+
+            $uploaddir = FCPATH.'uploads';
+            //$uploaddir = FCPATH.'assets'.DS.'img'.DS.'articles';
+            $yearuploaddir = $uploaddir.DS.$yearfolder;
+            if (!is_dir($yearuploaddir)){
+                mkdir($yearuploaddir,777);
+            }
+            $monthuploaddir = $yearuploaddir.DS.$monthfolder;
+            if (!is_dir($monthuploaddir)){
+                mkdir($monthuploaddir,777);
+            }
+            $dayuploaddir = $monthuploaddir.DS.$dayfolder;
+            if (!is_dir($dayuploaddir)){
+                mkdir($dayuploaddir,777);
+            }
+            $useruploaddir = $dayuploaddir.DS.$useridss;
+            if (!is_dir($useruploaddir)){
+                mkdir($useruploaddir,777);
+            }
+            $thumbsdir = $useruploaddir.DS.'thumbnails';
+            if (!is_dir($thumbsdir)){
+                mkdir($thumbsdir,777);
+            }
+
+            $this->setPath_img_upload_folder($useruploaddir);
+            $this->setPath_img_thumb_upload_folder($thumbsdir);
+            //Set url img with Base_url()
+            $this->setPath_url_img_upload_folder(base_url() . 'uploads/'.$yearfolder.'/'.$monthfolder.'/'.$dayfolder.'/'.$useridss.'/');
+            $this->setPath_url_img_thumb_upload_folder(base_url() . 'uploads/'.$yearfolder.'/'.$monthfolder.'/'.$dayfolder.'/'.$useridss.'/thumbnails/');
+
+            // replace characters other than letters, numbers and . by _
+            $name = preg_replace('/([^.a-z0-9]+)/i', '_', $name);
+
+            //Your upload directory, see CI user guide
+
+            $config['upload_path'] = $this->getPath_img_upload_folder();
+
+            $config['allowed_types'] = 'gif|jpg|png|JPG|GIF|PNG';
+            $config['max_size'] = '2000';
+            $config['file_name'] = $name;
+
+            //Load the upload library
+            $this->load->library('upload', $config);
+
+            if ($this->do_upload())
+            {
+                // Codeigniter Upload class alters name automatically (e.g. periods are escaped with an
+                //underscore) - so use the altered name for thumbnail
+                $data = $this->upload->data();
+                $name = $data['file_name'];
+
+                //If you want to resize
+                $config['new_image'] = $this->getPath_img_thumb_upload_folder().$name;
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = $this->getPath_img_upload_folder() . $name;
+                $config['create_thumb'] = False;
+                $config['maintain_ratio'] = TRUE;
+                $config['width'] = 193;
+                $config['height'] = 94;
+
+                $this->load->library('image_lib', $config);
+
+                $this->image_lib->resize();
+
+                //Get info
+                $info = new stdClass();
+
+                $info->name = $name;
+                $info->size = $data['file_size'];
+                $info->type = $data['file_type'];
+                //$info->url = $this->getPath_img_upload_folder() . $name;
+
+                $info->url = $this->getPath_url_img_upload_folder() . $name;
+                $info->thumbnail_url = $this->getPath_url_img_upload_folder() . $name; //I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$name
+                $info->delete_url = $this->getDelete_img_url() . $name;
+                $info->delete_type = 'DELETE';
+
+                //upload file
+                $photo_img_link = $useridss.'___'.$fulldate.'___'.$name;
+                $photo_img_link = str_replace('-','_',$photo_img_link);
+
+                if (strlen($photo_img_link)>0){
+                    $this->load->model('photos_model');
+                    $this->photos_model->add_new_photo($baber_name,$photo_link,$photo_tag,$photo_img_link,$isprivate,$baber_type,$useridss);
+                    $resultphotoid = $this->photos_model->get_img_id($photo_img_link);
+                    $photo_id = 0;
+                    $photo_id = $resultphotoid[0]->photo_id;
+                    $cookie = array(
+                        'name'   => 'photo_img_id',
+                        'value'  => $photo_id,
+                        'expire' => '86400'
+                    );
+                    $this->input->set_cookie($cookie);
+                }else{
+                    //echo 'Please fill form';exit;
+                }
+
+                //Return JSON data
+                if (IS_AJAX)
+                {   //this is why we put this in the constants to pass only json data
+                    echo json_encode(array($info));
+                    //this has to be the only the only data returned or you will get an error.
+                    //if you don't give this a json array it will give you a Empty file upload result error
+                    //it you set this without the if(IS_AJAX)...else... you get ERROR:TRUE (my experience anyway)
+                }
+                else
+                {   // so that this will still work if javascript is not enabled
+                    $file_data['upload_data'] = $this->upload->data();
+                    echo json_encode(array($info));
+                }
+            }
+            else
+            {
+
+                // the display_errors() function wraps error messages in <p> by default and these html chars don't parse in
+                // default view on the forum so either set them to blank, or decide how you want them to display.  null is passed.
+                $error = array('error' => $this->upload->display_errors('',''));
+
+                echo json_encode(array($error));
+            }
+        }
+    }
 	
 	//Function for the upload : return true/false
 	public function do_upload()
