@@ -1,29 +1,29 @@
 <?php echo '<div class="container">';?>
-<?php echo '<div class="span7 offset2 slider-bar text-center">';?>
+<?php echo '<div class="row well offset1">';?>
 
-<div id="upload-img">
     <?php
     $username = $this->uri->segment(1, 0);
     echo form_open_multipart('/' . $username . '/manage/editindependent/', array('id' => 'fileupload'));
     foreach ($listindependent as $biprofile) {
-        echo'Photo Link: ' . $biprofile->photo_link;
-        echo'Address: ' . $biprofile->address ;
-        echo'City: ' . $biprofile->city ;
-        echo'State: ' . $biprofile->state ;
-        echo'Zip: ' . $biprofile->zip ;
-        echo'Phone: ' . $biprofile->phone ;
-        echo'Instangram: ' . $biprofile->instantgram;
-        echo'Facebook: ' . $biprofile->facebook;
-        echo'Favorites Tool: ' . $biprofile->favorites_tool;
-        echo'Private: ' . $biprofile->isprivate . '';
-        echo'Baber Shop Name: ' . $biprofile->babershopname;
-        echo'Slug: ' . $biprofile->slug;
+         echo '<ul class="span3 ">';
+        echo '<li>'.'Photo Link: ' . $biprofile->photo_link.'</li>';
+        echo '<li>'.'Address: ' . $biprofile->address.'</li>' ;
+        echo '<li>'.'City: ' . $biprofile->city.'</li>' ;
+        echo '<li>'.'State: ' . $biprofile->state.'</li>' ;
+        echo '<li>'.'Zip: ' . $biprofile->zip.'</li>' ;
+        echo '<li>'.'Phone: ' . $biprofile->phone.'</li>' ;
+        echo '<li>'.'Instangram: ' . $biprofile->instantgram.'</li>';
+        echo '<li>'.'Facebook: ' . $biprofile->facebook.'</li>';
+        echo '<li>'.'Favorites Tool: ' . $biprofile->favorites_tool.'</li>';
+        echo '<li>'.'Private: ' . $biprofile->isprivate.'</li>';
+        echo '<li>'.'Baber Shop Name: ' . $biprofile->babershopname.'</li>';
+        echo '<li>'.'Slug: ' . $biprofile->slug.'</li>';
         //  $id = $this->uri->segment(3, 0);
-        echo"<a href='../manage/editindependent/$biprofile->upid' name='$biprofile->upid'>Edit</a>";
-        echo"<a href='../manage/deleteindependent/$biprofile->upid' name='$biprofile->upid'>Delete</a><br>";
+        echo '<li>'."<a href='../manage/editindependent/$biprofile->upid' name='$biprofile->upid'>Edit</a>".'</li>';
+        echo '<li>'."<a href='../manage/deleteindependent/$biprofile->upid' name='$biprofile->upid'>Delete</a><br>".'</li>';
+        echo '</ul>';
     }
     ?>
     <?php echo form_close(); ?>
-</div>
 <?php echo '</div>';?>
 <?php echo '</div>';?>
