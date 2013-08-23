@@ -1,29 +1,29 @@
 <?php echo '<div class="container">';?>
-<?php echo '<div class="span7 offset2 slider-bar text-center">';?>
+<?php echo '<div class="row  well offset1">';?>
 
-<div id="upload-img">
     <?php
     $username = $this->uri->segment(1, 0);
     echo form_open_multipart('/' . $username . '/manage/editprofile/', array('id' => 'fileupload'));
     foreach ($listBusiness as $bprofile) {
-        echo'Photo Link: ' . $bprofile->photo_link;
-        echo'Address: ' . $bprofile->address ;
-        echo'City: ' . $bprofile->city ;
-        echo'State: ' . $bprofile->state ;
-        echo'Zip: ' . $bprofile->zip ;
-        echo'Phone: ' . $bprofile->phone ;
-        echo'Instangram: ' . $bprofile->instantgram;
-        echo'Facebook: ' . $bprofile->facebook;
-        echo'Favorites Tool: ' . $bprofile->favorites_tool;
-        echo'Private: ' . $bprofile->isprivate . '';
-        echo'Baber Shop Name: ' . $bprofile->babershopname;
-        echo'Slug: ' . $bprofile->slug;
+        echo '<ul class="span3 ">';
+        echo '<li>'.'Photo Link: ' . $bprofile->photo_link.'</li>';
+        echo '<li>'.'<p>'.'Address: ' . $bprofile->address.'</p>'.'</li>' ;
+        echo '<li>'.'City: ' . $bprofile->city.'</li>' ;
+        echo '<li>'.'State: ' . $bprofile->state.'</li>' ;
+        echo '<li>'.'Zip: ' . $bprofile->zip.'</li>' ;
+        echo '<li>'.'Phone: ' . $bprofile->phone.'</li>' ;
+        echo '<li>'.'Instangram: ' . $bprofile->instantgram.'</li>';
+        echo '<li>'.'Facebook: ' . $bprofile->facebook.'</li>';
+        echo '<li>'.'Favorites Tool: ' . $bprofile->favorites_tool.'</li>';
+        echo '<li>'.'Private: ' . $bprofile->isprivate .'</li>';
+        echo '<li>'.'Baber Shop Name: ' . $bprofile->babershopname.'</li>';
+        echo '<li>'.'Slug: ' . $bprofile->slug.'</li>';
         //  $id = $this->uri->segment(3, 0);
-        echo"<a href='../manage/editbussiness/$bprofile->bpid' name='$bprofile->bpid'>Edit</a>";
-        echo"<a href='../manage/deletebussiness/$bprofile->bpid' name='$bprofile->bpid'>Delete</a><br>";
+        echo '<li>'."<a href='../manage/editbussiness/$bprofile->bpid' name='$bprofile->bpid'>Edit</a>".'</li>';
+        echo'<li>'."<a href='../manage/deletebussiness/$bprofile->bpid' name='$bprofile->bpid'>Delete</a><br>".'</li>';
+        echo '</ul>';
     }
     ?>
     <?php echo form_close(); ?>
-</div>
 <?php echo '</div>';?>
 <?php echo '</div>';?>
