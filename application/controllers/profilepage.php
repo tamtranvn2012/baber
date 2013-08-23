@@ -429,13 +429,15 @@ class Profilepage extends Main_Controller
     {
         $data = array();
         $data['bussinessinfo'] = '';
+
         $userid = $this->input->cookie('userid', TRUE);
         $username = $this->user_model->get_username_by_userid($userid)[0]->username;
         $datamenu['username'] = $username;
         $bpid = $this->uri->segment(4, 0);
         $apid = $this->profile_model->get_apid_by_bpid_bpidpost($bpid);
-        // var_dump($apid[0]->apid);exit;
-        $data['bussinessinfo'] = $this->profile_model->get_all_info_by_apid($apid[0]->apid);
+         //var_dump($apid);exit;
+            $data['bussinessinfo'] = $this->profile_model->get_all_info_by_apid($apid[0]->apid);
+      //  var_dump($data);
         $this->load->view('include/header');
         $this->load->view('include/menu', $datamenu);
         $this->load->view('bppostbp', $data);
@@ -786,7 +788,7 @@ class Profilepage extends Main_Controller
             redirect('/user/login/', 'refresh');
         }
         $bpid = $this->uri->segment(4, 0);
-        //  var_dump($upid);exit;
+         // var_dump($bpid);exit;
         if (count($bpid) > 0) {
             $upidpost = $bpid;
             $data['bpid'] = $bpid;

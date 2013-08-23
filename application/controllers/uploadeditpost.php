@@ -262,10 +262,12 @@ class Uploadeditpost extends CI_Controller
             $tags = $_REQUEST['tags'];
             $photo_id = $this->input->cookie('photo_img_id', TRUE);
             $userid = $this->input->cookie('userid', TRUE);
-            $checkppid = $this->profile_model->check_userid_by_ppid($ppid,$userid);
+            $checkppid = $this->profile_model->check_userid_by_ppid_bp($ppid,$userid);
+            //var_dump($checkppid);exit;
             if ($_REQUEST['submitedit']){
+                $username = $this->user_model->get_username_by_userid($userid)[0]->username;
                 if($checkppid){
-                    $username = $this->user_model->get_username_by_userid($userid)[0]->username;
+
                     $this->post_model->update_post_by_postid($ppid,$photo_id,$babershopname,$baber_type,$baber_name,$tags,$isprivate);
 
                        redirect('/'.$username.'/manage/postbpbybp/', 'refresh');
