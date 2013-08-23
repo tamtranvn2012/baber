@@ -27,14 +27,17 @@ class Admin extends Main_Controller {
 			$perpostobj->photo_id = $imageurl;
 		}
 		$data['frontpage_post'] = $postfrontpage;
-		$this->load->view('include/header');
+		//$this->load->view('include/header');
         $this->load->view('controlpostfrontpage',$data);
-		$this->load->view('include/footer');		
+		//$this->load->view('include/footer');		
 	}
 	
 	//test
 	function completebabername(){
-		$term = $_REQUEST['term'];
+		$term = '';
+		if($_REQUEST){
+			$term = $_REQUEST['term'];
+		}
 		$allpostinfo = $this->post_model->get_allinfo_by_term($term);
 		$data = array();
 		foreach($allpostinfo as $perpostobj){
