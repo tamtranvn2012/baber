@@ -39,6 +39,10 @@
                                                 <p><?php echo $perphotoobj->tag;?></p>
                                                 <p><?php echo $perphotoobj->baber_name;?></p>
                                                 <p><?php echo date('Y-m-d h:m',$perphotoobj->created);?></p>
+                                                <?php $followlink = '/follows/'.$perphotoobj->ppid;?>
+                                                <p><?php echo '<a href="'.base_url($followlink).'">follows</a>';?></p>
+                                                <?php $unfollowlink = '/unfollows/'.$perphotoobj->ppid;?>
+                                                <p><?php echo '<a href="'.base_url($unfollowlink).'">unfollows</a>';?></p>
                                             </div>
                                          </div>
                                  
@@ -62,6 +66,10 @@
                                                 <p><?php echo $perphotoobj->tag;?></p>
                                                 <p><?php echo $perphotoobj->baber_name;?></p>
                                                 <p><?php echo date('Y-m-d h:m',$perphotoobj->created);?></p>
+                                                <?php $followlink = '/follows/'.$perphotoobj->ppid;?>
+                                                <p><?php echo '<a href="'.base_url($followlink).'">follows</a>';?></p>
+                                                <?php $unfollowlink = '/unfollows/'.$perphotoobj->ppid;?>
+                                                <p><?php echo '<a href="'.base_url($unfollowlink).'">unfollows</a>';?></p>
                                             </div>
                                          </div>
                                  
@@ -85,6 +93,10 @@
                                                 <p><?php echo $perphotoobj->tag;?></p>
                                                 <p><?php echo $perphotoobj->baber_name;?></p>
                                                 <p><?php echo date('Y-m-d h:m',$perphotoobj->created);?></p>
+                                                <?php $followlink = '/follows/'.$perphotoobj->ppid;?>
+                                                <p><?php echo '<a href="'.base_url($followlink).'">follows</a>';?></p>
+                                                <?php $unfollowlink = '/unfollows/'.$perphotoobj->ppid;?>
+                                                <p><?php echo '<a href="'.base_url($unfollowlink).'">unfollows</a>';?></p>
                                             </div>
                                          </div>
                                  

@@ -579,5 +579,127 @@ Class Profile_model extends CI_Model
         $this->db->where('upid', $upid);
         $this->db->delete('baberindependent');
     }
+
+    function get_all_info_apid($apid){
+        $this->db->where('apid', $apid);
+        $query = $this->db->get('approveprofile');
+        return $query->result();
+    }
+    //Get all info of approvideprofile by apid
+    function get_upid_by_independent($apid){
+        $this->db->select('upid');
+        $this->db->where('apid', $apid);
+        $this->db->where('upidpost >', 0);
+        $query = $this->db->get('approveprofile');
+        return $query->result();
+    }
+    function get_bpid_by_bussiness($apid){
+        $this->db->select('bpid');
+        $this->db->where('apid', $apid);
+        $this->db->where('bpidpost >', 0);
+        $query = $this->db->get('approveprofile');
+        return $query->result();
+    }
+    function get_upid_by_upid_post_bpid($apid){
+        $this->db->select('upid');
+        $this->db->where('apid', $apid);
+        $this->db->where('bpid >', 0);
+        $this->db->where('bpidpost', 0);
+        $query = $this->db->get('approveprofile');
+        return $query->result();
+    }
+    function get_info_indepdent_by_upid($upid){
+        $this->db->where('upid',$upid);
+        $query = $this->db->get('baberindependent');
+        return $query->result();
+
+    }
+    function get_info_business_by_bpid($bpid){
+        $this->db->where('bpid',$bpid);
+        $query = $this->db->get('bussinessprofile');
+        return $query->result();
+
+    }
+    function get_upid_in_userprofile_by_userid($userid){
+        $this->db->select('upid');
+        $this->db->where('userid',$userid);
+        $query = $this->db->get('userprofile');
+        return $query->result();
+    }
+    function save_follows($slug,$upid,$ppid,$uid)
+    {
+        $data = array(
+            'slug' => $slug ,
+            'upid' => $upid ,
+            'isfollow' => 1 ,
+            'ppid' =>$ppid ,
+            'uid' =>$uid ,
+        );
+        $this->db->insert('follows', $data);
+    }
+    function check_follows($slug,$upid,$ppid,$uid){
+        $this->db->where('slug',$slug);
+        $this->db->where('upid',$upid);
+        $this->db->where('ppid',$ppid);
+        $this->db->where('uid',$uid);
+        $query = $this->db->get('follows');
+        //var_dump(count($query->result()));exit;
+        if($query->result()==null){
+            return false;
+        }
+        if(count($query->result()>0)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function update_follows($slug,$upid,$ppid,$uid){
+        $this->db->where('slug',$slug);
+        $this->db->where('upid',$upid);
+        $this->db->where('ppid',$ppid);
+        $this->db->where('uid',$uid);
+        $data =array(
+            'slug' => $slug ,
+            'upid' => $upid ,
+            'isfollow' => 1,
+            'ppid' => $ppid ,
+            'uid' => $uid ,
+        );
+        $this->db->update('follows',$data);
+    }
+    function check_unfollows($slug,$upid,$ppid,$uid){
+        $this->db->where('slug',$slug);
+        $this->db->where('upid',$upid);
+        $this->db->where('isfollow',1);
+        $this->db->where('ppid',$ppid);
+        $this->db->where('uid',$uid);
+        $query = $this->db->get('follows');
+
+        if(count($query->result()>0)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function update_unfollows($slug,$upid,$ppid,$uid){
+        $this->db->where('slug',$slug);
+        $this->db->where('upid',$upid);
+        $this->db->where('ppid',$ppid);
+        $this->db->where('uid',$uid);
+        $data =array(
+            'slug' => $slug ,
+            'upid' => $upid ,
+            'isfollow' => 0 ,
+            'ppid' => $ppid ,
+            'uid' => $uid ,
+        );
+        $this->db->update('follows',$data);
+    }
+    function get_apid_by_ppid($ppid){
+        $this->db->select('apid');
+        $this->db->where('ppid',$ppid);
+        $query = $this->db->get('postapprovedprofile');
+        return $query->result();
+    }
 }
 
