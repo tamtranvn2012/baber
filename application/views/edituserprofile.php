@@ -47,6 +47,7 @@
     ?>
     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
     <label>User Photo:</label>
+    <p><img src="<?php echo base_url($up->photo_link);?>" width="200"/></p>
     <div class="row fileupload-buttonbar">
 
         <div class="span7">

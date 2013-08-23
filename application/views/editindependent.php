@@ -41,10 +41,12 @@
         echo '<label>Babershop Name</label>';
         echo "<input type='text' name='babershopname' value='$bp->babershopname'/>
     <br/>";
+
     }
     ?>
     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
     <label>User Photo:</label>
+    <p><img src="<?php echo base_url($bp->photo_link);?>" width="200"/></p>
     <div class="row fileupload-buttonbar">
 
         <div class="span7">

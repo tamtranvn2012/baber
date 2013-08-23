@@ -372,9 +372,18 @@ class Profilepage extends Main_Controller {
 		$this->load->view('include/footer');																					
 	}
     function manage_post_listing_bi(){
+    //    $bpid= $this->uri->segment(4, 0);
+     //   $this->db->where('bpid',$bpid);
+     //   $query = $this->db->get('bussinessprofile');
+     //   $bussinessprofileinfo = $query->result()[0];
+     //   $imagenameobj = $this->photos_model->get_img_name($bussinessprofileinfo->photo_link)[0]->photo_img_link;
+     //   $imageurl = $this->get_img_loc($imagenameobj);
+     //   $bussinessprofileinfo->photo_link = $imageurl;
+
         $data = array();
         $userid = $this->input->cookie('userid', TRUE);
         $username = $this->user_model->get_username_by_userid($userid)[0]->username;
+
         $datamenu['username'] = $username;
         $upid= $this->profile_model->get_upid_by_userid($userid)[0]->upid;
         $apid=$this->profile_model->get_apid_by_upid_upidpost($upid)[0]->apid;
@@ -490,7 +499,36 @@ class Profilepage extends Main_Controller {
        // var_dump($ppid);exit;
         $userid = $this->input->cookie('userid', TRUE);
         $username = $this->user_model->get_username_by_userid($userid)[0]->username;
-        $checkppid = $this->profile_model->check_userid_by_ppid($ppid,$userid);
+        $checkppid = $this->profile_model->check_userid_by_ppid_bp($ppid,$userid);
+        if($checkppid){
+            $data = array();
+            $postinfo = $this->post_model->get_post_info_by_ppid($ppid);
+            $imagenameobj = $this->photos_model->get_img_name($postinfo->photo_id)[0]->photo_img_link;
+            $imageurl = $this->get_img_loc($imagenameobj);
+            //set cookie photo_id
+            $cookie = array(
+                'name'   => 'photo_img_id',
+                'value'  => $postinfo->photo_id,
+                'expire' => '86400'
+            );
+            $this->input->set_cookie($cookie);
+            //set cookie
+            $postinfo->photo_id = $imageurl;
+            $datamenu['username'] = $username;
+            $data['postinfo'] = $postinfo;
+            $this->load->view('include/headerbt');
+            $this->load->view('include/menu',$datamenu);
+            $this->load->view('editpostbp',$data);
+            $this->load->view('include/footerbt');
+        }
+    }
+    function edit_post_up_by_ppid(){
+        $ppid = $this->uri->segment(5, 0);
+        // var_dump($ppid);exit;
+        $userid = $this->input->cookie('userid', TRUE);
+        $username = $this->user_model->get_username_by_userid($userid)[0]->username;
+        $checkppid = $this->profile_model->check_userid_by_ppid_pu($ppid,$userid);
+        //var_dump($checkppid);exit;
         if($checkppid){
             $data = array();
             $postinfo = $this->post_model->get_post_info_by_ppid($ppid);
@@ -583,8 +621,11 @@ class Profilepage extends Main_Controller {
         $biid= $this->uri->segment(4, 0);
         $this->db->where('upid',$biid);
         $query = $this->db->get('baberindependent');
+        $independentprofileinfo = $query->result()[0];
         $data['biprofile']= $query->result();
-
+        $imagenameobj = $this->photos_model->get_img_name($independentprofileinfo->photo_link)[0]->photo_img_link;
+        $imageurl = $this->get_img_loc($imagenameobj);
+        $independentprofileinfo->photo_link = $imageurl;
         $username= $this->uri->segment(1, 0);
         $datamenu['username'] = $username;
         $this->load->view('include/headerbt');
@@ -599,6 +640,10 @@ class Profilepage extends Main_Controller {
         $upid= $this->uri->segment(4, 0);
         $this->db->where('upid',$upid);
         $query = $this->db->get('userprofile');
+        $userprofileinfo = $query->result()[0];
+        $imagenameobj = $this->photos_model->get_img_name($userprofileinfo->photo_link)[0]->photo_img_link;
+        $imageurl = $this->get_img_loc($imagenameobj);
+        $userprofileinfo->photo_link = $imageurl;
         $data['upprofile']= $query->result();
 
         $username= $this->uri->segment(1, 0);

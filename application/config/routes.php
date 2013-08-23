@@ -65,7 +65,7 @@ $route['(:any)/manage/upposts/delete/(:any)'] = "profilepage/delete_post_by_ppid
 $route['(:any)/manage/bpposts/delete/(:any)'] = "profilepage/delete_post_bp_by_ppid";
 $route['(:any)/manage/posts/edit/(:any)'] = "profilepage/edit_post_by_ppid";
 $route['(:any)/manage/biposts/edit/(:any)'] = "profilepage/edit_post_by_ppid";
-$route['(:any)/manage/upposts/edit/(:any)'] = "profilepage/edit_post_by_ppid";
+$route['(:any)/manage/upposts/edit/(:any)'] = "profilepage/edit_post_up_by_ppid";
 $route['(:any)/manage/bpposts/edit/(:any)'] = "profilepage/edit_post_bp_by_ppid";
 $route['(:any)/manage/bpposts/(:any)'] = "profilepage/add_post_form_bpid_bpid";
 $route['(:any)/manage/biposts'] = "profilepage/add_new_post_imdependent";
@@ -122,6 +122,8 @@ $route['user/register'] = "user/register";
 $route['user/registeruserprofile'] = "user/registeruserprofile";
 $route['user/registerbussinessprofile'] = "user/registerbussinessprofile";
 
+$route['follows/(:any)'] = "youfollow/check_follows_by_apid";
+$route['unfollows/(:any)'] = "youfollow/check_unfollows_by_apid";
 $route['user/checklogin'] = "user/checklogin";
 $route['user/check'] = "user/check";
 $route['user/checkbussiness'] = "user/checkbussiness";
