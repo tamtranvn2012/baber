@@ -890,7 +890,7 @@ class Profilepage extends Main_Controller
         $comment = $_REQUEST['comment'];
         $this->load->model('post_model');
         $this->post_model->add_new_post_user_profile($userid,$comment);
-        echo 'add success';
+        redirect('/' . $username . '/manage/displaypostuser', 'refresh');
     }
     function displaypostuser(){
         $username = $this->uri->segment(1, 0);
@@ -916,6 +916,13 @@ class Profilepage extends Main_Controller
         $ppid = $_REQUEST['ppid'];
     //    var_dump($ppid);exit;
         $this->post_model->edit_post_user_profile($ppid,$userid,$comment);
+        redirect('/' . $username . '/manage/displaypostuser', 'refresh');
+    }
+    function delete_post_user_profile_by_ppid(){
+        $username = $this->uri->segment(1, 0);
+        $ppid=$this->uri->segment(4, 0);
+     //   var_dump($ppid);exit;
+        $this->post_model->delete_post_user_by_ppid($ppid);
         redirect('/' . $username . '/manage/displaypostuser', 'refresh');
     }
 

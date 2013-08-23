@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7398839-36a1-4dc7-9e95-0bd1593e9adb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/add_post_userprofile.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/displaypostuser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/editpostuser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/profilepage.php" afterPath="$PROJECT_DIR$/application/controllers/profilepage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/post_model.php" afterPath="$PROJECT_DIR$/application/models/post_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/add_post_userprofile.php" afterPath="$PROJECT_DIR$/application/views/add_post_userprofile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/displaypostuser.php" afterPath="$PROJECT_DIR$/application/views/displaypostuser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/include/menu.php" afterPath="$PROJECT_DIR$/application/views/include/menu.php" />
     </list>
     <ignored path="baber.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,36 +30,34 @@
       <file leaf-file-name="post_model.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/post_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="38" selection-start="1494" selection-end="1515" vertical-scroll-proportion="-4.0588236">
+            <state line="69" column="41" selection-start="2118" selection-end="2142" vertical-scroll-proportion="-10.461538">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_post_userprofile.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/add_post_userprofile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="53" selection-start="501" selection-end="501" vertical-scroll-proportion="-9.807693">
-              <folding>
-                <element signature="e#113#271#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/config/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="30" selection-start="3993" selection-end="4001" vertical-scroll-proportion="0.30916846">
+            <state line="80" column="36" selection-start="4212" selection-end="4212" vertical-scroll-proportion="-3.2692308">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profilepage.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="menu.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/include/menu.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="40" selection-start="1935" selection-end="1935" vertical-scroll-proportion="-10.461538">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profilepage.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/profilepage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="906" column="66" selection-start="36732" selection-end="36732" vertical-scroll-proportion="-4.1960783">
+            <state line="923" column="7" selection-start="37451" selection-end="37451" vertical-scroll-proportion="0.72469634">
               <folding />
             </state>
           </provider>
@@ -69,7 +66,7 @@
       <file leaf-file-name="user.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="8" selection-start="3348" selection-end="3398" vertical-scroll-proportion="-9.807693">
+            <state line="114" column="8" selection-start="3348" selection-end="3398" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -78,7 +75,18 @@
       <file leaf-file-name="displaypostuser.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/displaypostuser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="19" selection-start="222" selection-end="222" vertical-scroll-proportion="-5.230769">
+            <state line="26" column="27" selection-start="921" selection-end="921" vertical-scroll-proportion="-14.423077">
+              <folding>
+                <element signature="e#113#271#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_post_userprofile.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/add_post_userprofile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="0" selection-start="637" selection-end="637" vertical-scroll-proportion="-9.153846">
               <folding />
             </state>
           </provider>
@@ -87,10 +95,8 @@
       <file leaf-file-name="editpostuser.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/editpostuser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="50" selection-start="640" selection-end="640" vertical-scroll-proportion="-11.115385">
-              <folding>
-                <element signature="e#113#271#0" expanded="true" />
-              </folding>
+            <state line="17" column="50" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,7 +104,7 @@
       <file leaf-file-name="addbussinessprofile.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/addbussinessprofile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="11" selection-start="171" selection-end="209" vertical-scroll-proportion="-3.2692308">
+            <state line="5" column="11" selection-start="171" selection-end="209" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -107,10 +113,8 @@
       <file leaf-file-name="bppostbp.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/bppostbp.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="826" vertical-scroll-proportion="-0.0">
-              <folding>
-                <element signature="e#113#271#0" expanded="false" />
-              </folding>
+            <state line="0" column="0" selection-start="0" selection-end="826" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,7 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/controllers/uploadbussiness.php" />
         <option value="$PROJECT_DIR$/application/models/user_model.php" />
         <option value="$PROJECT_DIR$/application/views/addbussinessprofile.php" />
         <option value="$PROJECT_DIR$/application/views/addindependentprofile.php" />
@@ -138,11 +141,12 @@
         <option value="$PROJECT_DIR$/application/views/registerindependent.php" />
         <option value="$PROJECT_DIR$/application/views/registeruserphoto.php" />
         <option value="$PROJECT_DIR$/application/views/registeruserprofile.php" />
+        <option value="$PROJECT_DIR$/application/models/post_model.php" />
+        <option value="$PROJECT_DIR$/application/views/editpostuser.php" />
+        <option value="$PROJECT_DIR$/application/views/include/menu.php" />
         <option value="$PROJECT_DIR$/application/views/add_post_userprofile.php" />
         <option value="$PROJECT_DIR$/application/views/displaypostuser.php" />
         <option value="$PROJECT_DIR$/application/config/routes.php" />
-        <option value="$PROJECT_DIR$/application/models/post_model.php" />
-        <option value="$PROJECT_DIR$/application/views/editpostuser.php" />
         <option value="$PROJECT_DIR$/application/controllers/profilepage.php" />
       </list>
     </option>
@@ -179,6 +183,10 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Default" />
+        <subPane subId="Project Files" />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -307,10 +315,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Default" />
-        <subPane subId="Project Files" />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -318,8 +322,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="web-ide.project.structure" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -348,7 +352,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3285968" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25454545" sideWeight="0.32534248" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24347158" sideWeight="0.67021275" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24731183" sideWeight="0.67021275" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25192013" sideWeight="0.4937833" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3285968" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -418,126 +422,95 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/registerbussinessprofile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="18" selection-start="3997" selection-end="3997" vertical-scroll-proportion="-9.153846">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/registerindependent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="18" selection-start="3485" selection-end="3485" vertical-scroll-proportion="-9.153846">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="74" column="18" selection-start="3485" selection-end="3485" vertical-scroll-proportion="-9.153846" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/registernewprofile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1377072035885" expanded="false" signature="163:180" placeholder="..." />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/registeruserphoto.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="14" selection-start="3472" selection-end="3472" vertical-scroll-proportion="-11.115385">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="77" column="14" selection-start="3472" selection-end="3472" vertical-scroll-proportion="-11.115385" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/registeruserprofile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="14" selection-start="3573" selection-end="3573" vertical-scroll-proportion="-11.115385">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="80" column="14" selection-start="3573" selection-end="3573" vertical-scroll-proportion="-11.115385" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/editpost.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/editpostbp.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="3.9230769">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="3.9230769" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/bppostbp.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="826" vertical-scroll-proportion="-0.0">
-          <folding>
-            <element signature="e#113#271#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/addbussinessprofile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="11" selection-start="171" selection-end="209" vertical-scroll-proportion="-3.2692308">
+        <state line="5" column="11" selection-start="171" selection-end="209" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/displaypostuser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="19" selection-start="222" selection-end="222" vertical-scroll-proportion="-5.230769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/add_post_userprofile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="53" selection-start="501" selection-end="501" vertical-scroll-proportion="-9.807693">
-          <folding>
-            <element signature="e#113#271#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="8" selection-start="3348" selection-end="3398" vertical-scroll-proportion="-9.807693">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/post_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="38" selection-start="1494" selection-end="1515" vertical-scroll-proportion="-4.0588236">
+        <state line="114" column="8" selection-start="3348" selection-end="3398" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/editpostuser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="50" selection-start="640" selection-end="640" vertical-scroll-proportion="-11.115385">
+        <state line="17" column="50" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/include/menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="40" selection-start="1935" selection-end="1935" vertical-scroll-proportion="-10.461538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/add_post_userprofile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="637" selection-end="637" vertical-scroll-proportion="-9.153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/post_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="41" selection-start="2118" selection-end="2142" vertical-scroll-proportion="-10.461538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="36" selection-start="4212" selection-end="4212" vertical-scroll-proportion="-3.2692308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/displaypostuser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="27" selection-start="921" selection-end="921" vertical-scroll-proportion="-14.423077">
           <folding>
             <element signature="e#113#271#0" expanded="true" />
           </folding>
@@ -546,14 +519,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/profilepage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="906" column="66" selection-start="36732" selection-end="36732" vertical-scroll-proportion="-4.1960783">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="30" selection-start="3993" selection-end="4001" vertical-scroll-proportion="0.30916846">
+        <state line="923" column="7" selection-start="37451" selection-end="37451" vertical-scroll-proportion="0.72469634">
           <folding />
         </state>
       </provider>

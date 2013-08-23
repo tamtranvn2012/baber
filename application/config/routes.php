@@ -78,6 +78,7 @@ $route['(:any)/manage/postuser'] = "profilepage/postuser";
 
 $route['(:any)/manage/editpostuser/(:any)'] = "profilepage/editpostuser";
 $route['(:any)/manage/updatepostuser'] = "profilepage/updatepostuser";
+$route['(:any)/manage/deletepostuser/(:any)'] = "profilepage/delete_post_user_profile_by_ppid";
 
 $route['(:any)/manage/postuserprofile'] = "profilepage/postuserprofile";
 $route['(:any)/manage/displaypostuser'] = "profilepage/displaypostuser";
