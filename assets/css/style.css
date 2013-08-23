@@ -193,3 +193,4 @@ text-decoration: none;
 .bt-text{
     margin: 0 !important;
 }
+.ui-autocomplete { z-index:2147483647; }

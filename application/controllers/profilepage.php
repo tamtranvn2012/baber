@@ -464,7 +464,6 @@ class Profilepage extends Main_Controller {
         $userid=$this->input->cookie('userid');
         $this->load->model('profile_model');
         $data['listBusiness']=$this->profile_model->get_all_bussiness_info($userid);
-        //var_dump($data);exit;
         $username= $this->uri->segment(1, 0);
         $datamenu['username'] = $username;
         $this->load->view('include/headerbt');
@@ -479,8 +478,14 @@ class Profilepage extends Main_Controller {
         $bpid= $this->uri->segment(4, 0);
         $this->db->where('bpid',$bpid);
         $query = $this->db->get('bussinessprofile');
-        $data['bprofile']= $query->result();
+		$bussinessprofileinfo = $query->result()[0];
+		$imagenameobj = $this->photos_model->get_img_name($bussinessprofileinfo->photo_link)[0]->photo_img_link;		
+		$imageurl = $this->get_img_loc($imagenameobj);
+		$bussinessprofileinfo->photo_link = $imageurl;
+        $data['bprofile']= $bussinessprofileinfo;
+		$this->load->view('include/headerbt');
         $this->load->view('editbussiness',$data);
+		$this->load->view('include/footerbt');
     }
 	
 	//Add userprofile type

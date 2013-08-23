@@ -56,6 +56,7 @@ Class User_model extends CI_Model{
         }
         return false;
     }
+	
 	//Add new user info bussiness
     function add_new_user_bussiness($username, $password,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $isprivate,$babershopname,$slug)
     {

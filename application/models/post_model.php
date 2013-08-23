@@ -59,4 +59,27 @@
 			$this->db->where('ppid', $ppid);
 			$this->db->update('postapprovedprofile', $data); 						
 		}
+		
+		//list post has in frontpage property
+		function get_post_frontpage(){
+			$this->db->where('is_frontpage',1);
+			$query = $this->db->get('postapprovedprofile');
+			return $query->result();
+		}
+		
+		//Unset post in frontpage
+		function unset_post_frontpage($ppid){
+			$data = array(
+						   'is_frontpage' => 0,
+						);
+			$this->db->where('ppid', $ppid);
+			$this->db->update('postapprovedprofile', $data); 						
+		}
+		
+		//Get all post info by term-auto complete
+		function get_allinfo_by_term($term){
+			$this->db->like('baber_name', $term);
+			$query = $this->db->get('postapprovedprofile');
+			return $query->result();			
+		}
 	}

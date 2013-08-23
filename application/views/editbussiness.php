@@ -1,6 +1,3 @@
-
-<?php         $this->load->view('include/headerbt');
-?>
 <div id="upload-img">
     <h3>Edit</h3>
     <!-- Upload function on action form -->
@@ -12,7 +9,7 @@
     echo'<input type="hidden" name="bpid" value='.$bpid.'>';
     ?>
     <?php
-    foreach ($bprofile as $bp) {
+    $bp = $bprofile;
         echo'<label>Address</label>';
         echo"<input type='text' name='address' value='$bp->address'/>
     <br/>";
@@ -43,10 +40,12 @@
         echo '<label>Babershop Name</label>';
         echo "<input type='text' name='babershopname' value='$bp->babershopname'/>
     <br/>";
-    }
+    
     ?>
     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
     <label>User Photo:</label>
+	<p><img src="<?php echo base_url($bp->photo_link);?>" width="200"/></p>
+	
     <div class="row fileupload-buttonbar">
 
         <div class="span7">
@@ -90,8 +89,6 @@
 
 
 </div>
-<?php
-$this->load->view('include/footerbt');?>
 <!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">
     {% for (var i=0, file; file=o.files[i]; i++) { %}

@@ -45,5 +45,6 @@
 <script src="<?php echo base_url('assets/js/jquery.Jcrop.min.js');?>"></script>
 <!-- The main application script -->
 <script src="<?php echo base_url('assets/js/main.js');?>"></script>
+
 	
  </head>

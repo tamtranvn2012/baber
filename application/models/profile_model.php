@@ -470,4 +470,10 @@
                 }
 
             }
+			
+			//function get babershopname from bussiness profile
+			function get_all_babershopname_bp(){
+                $this->db->where('slug', $slug);
+                $query = $this->db->get('bussinessprofile');				
+			}
         }

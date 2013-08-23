@@ -107,6 +107,11 @@ $route['user/checklogin'] = "user/checklogin";
 $route['user/check'] = "user/check";
 $route['user/checkbussiness'] = "user/checkbussiness";
 $route['user/successful'] = "user/successful";
+$route['admin/unsetpostfrontpage/(:any)'] = "admin/unset_post_frontpage";
+$route['admin/completebabername'] = "admin/completebabername";
+
 $route['admin'] = "admin";
+
+
 $route['(:any)'] = "profilefrontpage/findslug";
 $route['user/logout'] = "user/logout";

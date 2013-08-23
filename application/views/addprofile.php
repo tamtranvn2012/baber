@@ -14,11 +14,9 @@ $username = $this->uri->segment(1, 0);
 echo form_open_multipart('/'.$username.'/manage/profilebussiness', array('id' => 'profilebussiness')) ?>
 <div class="container">
     <div class="row"> 
-                <!--begin slider-->
 	<div class="span4 well">
 		Left SideBar here
 	</div>
-                <!--end slider-->
 				  <div class="span8 well" style="line-height:30px;margin-left: 10px;">
 				  <h3 style="text-align: center;">Your Bussiness Profile</h3>
 					<form>
