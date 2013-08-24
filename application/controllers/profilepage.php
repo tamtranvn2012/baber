@@ -897,7 +897,9 @@ class Profilepage extends Main_Controller
         $userid = $this->input->cookie('userid', TRUE);
         $postinfo = $this->post_model->get_all_post_user_by_userid($userid);
         $data['postinfo']= $postinfo;
+		$this->load->view('include/headerbt');
         $this->load->view('displaypostuser',$data);
+        $this->load->view('include/footerbt');
     }
     function editpostuser(){
         $username = $this->uri->segment(1, 0);

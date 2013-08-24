@@ -1,5 +1,5 @@
 <?php echo '<div class="container">';?>
-<?php echo '<div class="span7 offset2 slider-bar text-center">';?>
+<?php echo '<div class="row well">';?>
 <?php
 /**
  * Created by JetBrains PhpStorm.
@@ -13,15 +13,20 @@
 $username = $this->uri->segment(1, 0);
 echo form_open_multipart('/'.$username.'/manage/editpostuser', array('id' => 'fileupload')); ?>
 <?php
-echo '<h3>your post diary</h3>'.'<br>';
-    echo 'you have '.count($postinfo).' post<br>';
-echo '<p><a href="../manage/postuser">Add your new post</a></p>';
+echo '<div class="span11 text-center">';
+echo '<ul>';
+echo '<li>'.'<h3>'.'Your post diary'.'</h3>'.'</li>';
+echo '<li>'.'You have'.'&nbsp;'.count($postinfo).'&nbsp;'.'post'.'</li>';
+echo '<li>'.'<a href="../manage/postuser">Add your new post</a>'.'</li>';
+echo '</ul>';
+echo '</div>';
 foreach($postinfo as $obj){
-    echo '<br>-------------------<br>';
-    echo $obj->comment.'<br>';
+    echo '<ul class="span3">';
+    echo '<li>'.$obj->comment.'</li>';
     echo "<input type='hidden' value='$obj->ppid' name='ppid'>";
-    echo '<a href="../manage/editpostuser/'.$obj->ppid.'">Edit</a> || ';
-    echo '<a href="../manage/deletepostuser/'.$obj->ppid.'">Delete</a>';
+    echo '<li>'.'<a href="../manage/editpostuser/'.$obj->ppid.'">Edit</a>'.'</li>';
+    echo '<li>'.'<a href="../manage/deletepostuser/'.$obj->ppid.'">Delete</a>'.'</li>';
+    echo '</ul>';
 }
 ?>
 <?php echo form_close(); ?>
