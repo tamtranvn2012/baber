@@ -49,6 +49,7 @@
                 <div class="span5"><input type="text" name="tags" value="" class="form-control"/>
                     <input type="hidden" name="bpidpost" value="<?php echo $bpidpost;?>" />
                     <input type="hidden" name="bpid" value="<?php echo $bpid;?>" />
+
                 </div>
             </div>
             <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->

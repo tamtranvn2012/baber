@@ -8,7 +8,7 @@ Class User_model extends CI_Model{
     }
 
 	//Add new user info independent
-    function add_new_user($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $isprivate, $babershopname)
+    function add_new_user($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $isprivate, $babershopname,$slug)
     {
         $this->load->database();
         $nowtimestamp = intval(strtotime("now"));
@@ -50,14 +50,10 @@ Class User_model extends CI_Model{
                     'isprivate' => $isprivate,
                     'created' => $nowtimestamp,
                     'babershopname' => $babershopname,
+                    'slug' => $slug
                 );
                 $this->db->insert('userprofile', $dataprofile);
-                $upid=$this->user_model->getupid($user[0]->userid);
 
-                $dataappup=array(
-                    'puid'=> $upid[0]->upid
-                );
-                $this->db->insert('approveprofile', $dataappup);
                 return true;
             }
         }
@@ -316,12 +312,8 @@ Class User_model extends CI_Model{
                 'babershopname' => $babershopname
             );
             $this->db->insert('userprofile', $dataprofile);
-            $upid=$this->user_model->getupid($user[0]->userid);
 
-            $dataappup=array(
-                'puid'=> $upid[0]->upid
-            );
-            $this->db->insert('approveprofile', $dataappup);
+
             return true;
         }
     }

@@ -9,11 +9,14 @@
  * Time: 9:52 AM
  * To change this template use File | Settings | File Templates.
  */
+echo form_open_multipart('/upload/uploaduppost', array('id' => 'fileupload')); ?>
+<?php
 foreach($listbpobj as $obj){
     echo "<a href='../manage/bppost/$obj->bpid'>Manage post by bpid</a>".$obj->bpid;
     echo "<input type='hidden' value='$obj->bpid' name='bpid'>";
     echo'<br>';
 }
 ?>
+<?php echo form_close(); ?>
 <?php echo '</div>';?>
 <?php echo '</div>';?>

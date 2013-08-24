@@ -46,7 +46,10 @@
 				<label class="span5">Babershop Name:</label>
 				<div class="span5"><input type="text" name="babershopname" class="span3 form-control bt-text"/></div>
 			</div>
-            
+            <div class="span7" style="margin:0;">
+            <label class="span5">Slug: </label>
+            <div class="span5"><input type="text" name="slug" class="span3 form-control bt-text"/></div>
+            </div>
     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
     <label style="margin-left: 20px;">User Photo:</label>
     <div class="row fileupload-buttonbar">

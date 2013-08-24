@@ -72,12 +72,12 @@ class Uploadbppost extends CI_Controller
 			$this->load->model('user_model');
 			$this->load->model('profile_model');
 			$this->load->model('post_model');
-			$bpidpost = $bpid = $_REQUEST['bpid'];
-          // var_dump($bpid);exit;
+			 $bpid = $_REQUEST['bpid'];
+         //  var_dump($bpid);exit;
 			$userid = $this->input->cookie('userid', TRUE);
-			$bpiddb = $this->user_model->getbpid($userid)[0]->bpid;
-			
-			if(intval($bpiddb) == intval($bpid)){
+			$bpiddb = $this->user_model->getbpid($userid);
+        foreach($bpiddb as $obj){
+			if($obj->bpid == intval($bpid)){
 				$babershopname = $_REQUEST['babershopname'];
 				$baber_type = $_REQUEST['baber_type'];
 				$baber_name = $_REQUEST['babername'];
@@ -91,6 +91,7 @@ class Uploadbppost extends CI_Controller
 				}
 				echo 'Load view complete insert post here';
 			}
+        }
 		}
 		$cookie = array(
 			'name'   => 'photo_img_id',

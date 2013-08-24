@@ -6,6 +6,7 @@
     <?php
     $username = $this->uri->segment(1, 0);
     echo form_open_multipart('/'.$username.'/upload/adduserprofile/', array('id' => 'fileupload')); ?>
+
     	 <div class="span7" style="margin:0;">
 				<label class="span5">Address:</label>
 				<div class="span5"><input type="text" name="address" class="span3 form-control bt-text"/></div>

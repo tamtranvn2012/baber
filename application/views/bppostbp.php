@@ -8,6 +8,9 @@
  * Time: 10:18 AM
  * To change this template use File | Settings | File Templates.
  */
+$bpid = $this->uri->segment(4, 0);
+echo "<a href='../addnewpostbpbybp/$bpid'>Add new post</a><br>";
+
 foreach($bussinessinfo as $info){
     echo "<input type='hidden' value='$info->ppid' name='ppid'>";
     echo $info->babershopname;

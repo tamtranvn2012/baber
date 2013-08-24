@@ -65,7 +65,7 @@ $route['(:any)/manage/upposts/delete/(:any)'] = "profilepage/delete_post_by_ppid
 $route['(:any)/manage/bpposts/delete/(:any)'] = "profilepage/delete_post_bp_by_ppid";
 $route['(:any)/manage/posts/edit/(:any)'] = "profilepage/edit_post_by_ppid";
 $route['(:any)/manage/biposts/edit/(:any)'] = "profilepage/edit_post_by_ppid";
-$route['(:any)/manage/upposts/edit/(:any)'] = "profilepage/edit_post_by_ppid";
+$route['(:any)/manage/upposts/edit/(:any)'] = "profilepage/edit_post_up_by_ppid";
 $route['(:any)/manage/bpposts/edit/(:any)'] = "profilepage/edit_post_bp_by_ppid";
 $route['(:any)/manage/bpposts/(:any)'] = "profilepage/add_post_form_bpid_bpid";
 $route['(:any)/manage/biposts'] = "profilepage/add_new_post_imdependent";
@@ -74,6 +74,14 @@ $route['(:any)/manage/posts/(:any)/(:any)'] = "profilepage/manage_bp_posts";
 //$route['(:any)/manage/posts'] = "profilepage/manage_bp_posts";
 $route['(:any)/manage/approvelisting'] = "profilepage/manage_approve_listing_client";
 $route['(:any)/manage/addprofile'] = "manage/addprofile";
+$route['(:any)/manage/postuser'] = "profilepage/postuser";
+
+$route['(:any)/manage/editpostuser/(:any)'] = "profilepage/editpostuser";
+$route['(:any)/manage/updatepostuser'] = "profilepage/updatepostuser";
+$route['(:any)/manage/deletepostuser/(:any)'] = "profilepage/delete_post_user_profile_by_ppid";
+
+$route['(:any)/manage/postuserprofile'] = "profilepage/postuserprofile";
+$route['(:any)/manage/displaypostuser'] = "profilepage/displaypostuser";
 $route['search/zipcode'] = "search/search_by_zipcode";
 $route['(:any)/upload/addbussinessprofile'] = "uploadbussinessregister/upload_img_bussiness";
 $route['(:any)/upload/addindependentprofile'] = "addindependent/upload_img_independent";
@@ -90,7 +98,7 @@ $route['(:any)/manage/adduserprofile'] = "profilepage/adduserprofile";
 $route['(:any)/manage/addindependentprofile'] = "profilepage/addindependentprofile";
 $route['(:any)/manage/profilebussiness'] = "manage/profilebussiness";
 $route['(:any)/manage/postbpbybp'] = "profilepage/manage_bp_post_bp_by_bpid";
-$route['(:any)/manage/addnewpostbpbybp'] = "profilepage/add_new_post_bp_by_bp";
+$route['(:any)/manage/addnewpostbpbybp(:any)'] = "profilepage/add_new_post_bp_by_bp";
 $route['(:any)/manage/bppost/(:any)'] = "profilepage/manage_post_listing_bp_by_bpid";
 $route['(:any)/manage'] = "profilepage/profile_manage";
 

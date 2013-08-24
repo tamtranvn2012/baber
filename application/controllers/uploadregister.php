@@ -81,12 +81,12 @@ class Uploadregister extends CI_Controller
             $private = $_REQUEST['private'];
             $private = 0;
             $babershopname = $_REQUEST['babershopname'];
-            //$slug = $_REQUEST['slug'];
+            $slug = $_REQUEST['slug'];
             //$this->load->model('user_model');
             //Insert to database user info if user fill all info
             if ($_REQUEST['submitnew']){
                 $this->load->model('user_model');
-                $this->user_model->add_new_user_independent($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname);
+                $this->user_model->add_new_user_independent($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname,$slug);
                 $useridobj = $this->user_model->checkusername($username);
                 $userid = $useridobj[0]->userid;
                 $cookie = array(
@@ -262,9 +262,10 @@ class Uploadregister extends CI_Controller
             $private = $_REQUEST['private'];
             $private = 0;
             $babershopname = $_REQUEST['babershopname'];
+            $slug = $_REQUEST['slug'];
          //   var_dump($babershopname);exit;
             $this->load->model('profile_model');
-            $this->profile_model->update_user_profile($upid,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname);
+            $this->profile_model->update_user_profile($upid,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname,$slug);
             $username = $this->uri->segment(1, 0);
             redirect('/' . $username . '/manage/displayuserprofile', 'refresh');
 
@@ -285,12 +286,12 @@ class Uploadregister extends CI_Controller
             $private = $_REQUEST['private'];
             $private = 0;
             $babershopname = $_REQUEST['babershopname'];
-            //$slug = $_REQUEST['slug'];
+            $slug = $_REQUEST['slug'];
             //$this->load->model('user_model');
             //Insert to database user info if user fill all info
             if ($_REQUEST['submitnew']) {
                 $this->load->model('user_model');
-                $this->user_model->add_new_user($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname);
+                $this->user_model->add_new_user($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname,$slug);
                 $useridobj = $this->user_model->checkusername($username);
                 $userid = $useridobj[0]->userid;
                 $cookie = array(
