@@ -1,5 +1,5 @@
 <?php echo '<div class="container">';?>
-<?php echo '<div class="span7 offset2 slider-bar text-center">';?>
+<?php echo '<div class="row well">';?>
 <?php
 /**
  * Created by JetBrains PhpStorm.
@@ -9,18 +9,18 @@
  * To change this template use File | Settings | File Templates.
  */
 $bpid = $this->uri->segment(4, 0);
-echo "<a href='../addnewpostbpbybp/$bpid'>Add new post</a><br>";
-
+echo '<div class="span11 text-center">'."<a href='../addnewpostbpbybp/$bpid'>Add new post</a><br>".'</div>';
 foreach($bussinessinfo as $info){
+    echo '<ul class="span3">';
     echo "<input type='hidden' value='$info->ppid' name='ppid'>";
-    echo $info->babershopname;
-    echo $info->baber_type;
+    echo  '<li>'.$info->babershopname.'</li>';
+    echo '<li>'.$info->baber_type.'</li>';
 
     $edit = $username.'/manage/bpposts/edit/'.$info->ppid;
     $delete = $username.'/manage/bpposts/delete/'.$info->ppid;
-    echo '<a href="' . base_url($edit) . '">Edit</a>';
-    echo '<a href="' . base_url($delete) . '">delete</a><br>' ;
-
+    echo '<li>'.'<a href="' . base_url($edit) . '">Edit</a>'.'</li>';
+    echo '<li>'.'<a href="' . base_url($delete) . '">delete</a><br>'.'</li>' ;
+    echo '</ul>';
 }
 ?>
 <?php echo '</div>';?>

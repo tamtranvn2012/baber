@@ -1,6 +1,6 @@
 <div class="container">
 <div class="row">
-<!--begin slider-->
+<!--begin sider-->
                     <div class="span4 well">
                          <?php echo '<ul>';?>
                             <?php echo '<li class="list"style=" margin-top:20px;" >';?>
@@ -39,29 +39,26 @@
                             <?php echo '</ul>';?>
                                 
                   </div>
-                <!--end slider-->
-	<?php
-         echo '<div class="span8 well" style="margin-left:10px;">';
+                <!--end sider-->
+    <div class="span7 well">
+        	<?php
 		foreach($allinfoposts as $perpostinfo){
 			$deleteposturl = '/'.$username.'/manage/posts/delete/'.$perpostinfo->ppid;
 			$editposturl = '/'.$username.'/manage/posts/edit/'.$perpostinfo->ppid;
 			$deletepost = '<a href="'.base_url($deleteposturl).'">Delete this post</a>';
 			$editpost = '<a href="'.base_url($editposturl).'">Edit this post</a>';
-			echo '<div class="span4 offset1">';
-            echo '<ul>';
+		
+            echo '<ul class="span3">';
             echo '<li>';
-			echo '<div class="postinfo" style="float:left;padding-right:20px;padding-bottom:20px;">';
-			echo '<div class="postinfo-babershopname">Babershop name:'.$perpostinfo->babershopname.'</div>';
-            echo '</li>';
-			echo '<div class="postinfo-photo">Photo id:'.$perpostinfo->photo_id.'</div>';
-			echo '<div class="postinfo-babertype">Baber type:'.$perpostinfo->baber_type.'</div>';
-			echo '<div class="postinfo-delete">'.$deletepost.'</div>';
-			echo '<div class="postinfo-edit">'.$editpost.'</div>';
+			echo '<li>'.'Babershop name:'.$perpostinfo->babershopname.'</li>';
+			echo '<li>'.'Photo id:'.$perpostinfo->photo_id.'</li>';
+			echo '<li>'.'Baber type:'.$perpostinfo->baber_type.'</li>';
+			echo '<li>'.$deletepost.'</li>';
+			echo '<li>'.$editpost.'</li>';
             echo '</ul>';
-			echo '</div>';
 		}
-        
-        echo '</div>';
+
 	?>
+    </div>
     </div>
 </div>
