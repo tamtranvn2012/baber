@@ -292,7 +292,7 @@ Class User_model extends CI_Model{
         $userid = $this->input->cookie('userid');
         $this->load->model('user_model');
         $username = $this->user_model->get_username_by_userid($userid);
-        //var_dump($username);exit;
+      //  var_dump($babershopname);exit;
         $user = $this->checkusername($username[0]->username);
         if ($user) {
             $dataprofile = array(
