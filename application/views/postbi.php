@@ -1,5 +1,5 @@
 <?php echo '<div class="container">';?>
-<?php echo '<div class="span7 offset2 slider-bar text-center">';?>
+<?php echo '<div class="row well">';?>
 <?php
 /**
  * Created by JetBrains PhpStorm.
@@ -9,11 +9,13 @@
  * To change this template use File | Settings | File Templates.
  */
 foreach($independentinfo as $info){
-    echo "<input type='hidden' value='$info->ppid' name='ppid'>";
-    echo $info->babershopname;
-    echo $info->baber_type;
-    echo "<a href='../manage/biposts/edit/$info->ppid'>Edit</a>";
-    echo "<a href='../manage/biposts/delete/$info->ppid'>Delete</a><br>";
+    echo '<ul>';
+    echo '<li>'."<input type='hidden' value='$info->ppid' name='ppid'>".'</li>';
+    echo '<li>'.$info->babershopname.'</li>';
+    echo '<li>'.$info->baber_type.'</li>';
+    echo '<li>'."<a href='../manage/biposts/edit/$info->ppid'>Edit</a>".'</li>';
+    echo '<li>'."<a href='../manage/biposts/delete/$info->ppid'>Delete</a><br>".'</li>';
+    echo '</ul>';
 }
 ?>
 <?php echo '</div>';?>
