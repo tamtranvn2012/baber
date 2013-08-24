@@ -29,6 +29,7 @@
             'tag' => $tag,
             'isprivate' => $isprivate,
         );
+         //   var_dump($datapost);exit;
         $this->db->insert('postapprovedprofile',$datapost);
     }
 

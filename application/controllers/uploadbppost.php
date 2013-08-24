@@ -73,9 +73,10 @@ class Uploadbppost extends CI_Controller
 			$this->load->model('profile_model');
 			$this->load->model('post_model');
 			 $bpid = $_REQUEST['bpid'];
-         //  var_dump($bpid);exit;
+
 			$userid = $this->input->cookie('userid', TRUE);
 			$bpiddb = $this->user_model->getbpid($userid);
+           // var_dump($bpiddb);exit;
         foreach($bpiddb as $obj){
 			if($obj->bpid == intval($bpid)){
 				$babershopname = $_REQUEST['babershopname'];
@@ -84,12 +85,15 @@ class Uploadbppost extends CI_Controller
 				$tags = $_REQUEST['tags'];
 				$resultapid = $this->profile_model->get_apid_from_bpid_bpid($bpid);
 				$apid = $resultapid[0]->apid;
+               //var_dump($resultapid);exit;
 				$photo_id = $this->input->cookie('photo_img_id', TRUE);
 				$private = 0;
+
 				if($_REQUEST['addnewbppost']){
 					$this->post_model->add_new_post($apid,$photo_id,$babershopname,$baber_type,$baber_name,$tags,$private);
 				}
-				echo 'Load view complete insert post here';
+                $username = $this->user_model->get_username_by_userid($userid)[0]->username;
+                redirect('/'.$username.'/manage/postbpbybp/', 'refresh');
 			}
         }
 		}

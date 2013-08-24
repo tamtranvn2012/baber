@@ -108,6 +108,7 @@ Class User_model extends CI_Model{
 
                 $this->db->select('bpid');
                 $this->db->where('userid',$user[0]->userid);
+                $this->db->where('created',$nowtimestamp);
                 $query = $this->db->get('bussinessprofile');
                 $data = $query->result();
                 $dataapp = array(
@@ -273,6 +274,7 @@ Class User_model extends CI_Model{
 
             $this->db->select('bpid');
             $this->db->where('userid',$user[0]->userid);
+            $this->db->where('created',$nowtimestamp);
             $query = $this->db->get('bussinessprofile');
             $data = $query->result();
             $dataapp = array(
