@@ -7,8 +7,8 @@ Class User_model extends CI_Model{
         $this->load->database();
     }
 
-	//Add new user info independent
-    function add_new_user($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $isprivate, $babershopname)
+	//Add new user profile info 
+    function add_new_user($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $isprivate, $babershopname,$slug)
     {
         $this->load->database();
         $nowtimestamp = intval(strtotime("now"));
@@ -50,18 +50,39 @@ Class User_model extends CI_Model{
                     'isprivate' => $isprivate,
                     'created' => $nowtimestamp,
                     'babershopname' => $babershopname,
+                    'slug' => $slug
                 );
                 $this->db->insert('userprofile', $dataprofile);
-                $upid=$this->user_model->getupid($user[0]->userid);
 
-                $dataappup=array(
-                    'puid'=> $upid[0]->upid
-                );
-                $this->db->insert('approveprofile', $dataappup);
                 return true;
             }
         }
         return false;
+    }    
+	
+	//Add new user profile (logged)
+	function add_new_user_ck($useid, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $isprivate, $babershopname,$slug)
+    {
+        $this->load->database();
+        $nowtimestamp = intval(strtotime("now"));
+		$dataprofile = array(
+			'userid' => $useid,
+			'photo_link' => $photolink,
+			'address' => $address,
+			'city' => $city,
+			'state' => $state,
+			'zip' => $zip,
+			'phone' => $phone,
+			'instantgram' => $instantgram,
+			'facebook' => $facebook,
+			'favorites_tool' => $favorites_tool,
+			'isprivate' => $isprivate,
+			'created' => $nowtimestamp,
+			'babershopname' => $babershopname,
+			'slug' => $slug
+		);
+		$this->db->insert('userprofile', $dataprofile);
+        return true;
     }
 	
 	//Add new user info bussiness
@@ -112,6 +133,7 @@ Class User_model extends CI_Model{
 
                 $this->db->select('bpid');
                 $this->db->where('userid',$user[0]->userid);
+                $this->db->where('created',$nowtimestamp);
                 $query = $this->db->get('bussinessprofile');
                 $data = $query->result();
                 $dataapp = array(
@@ -124,6 +146,43 @@ Class User_model extends CI_Model{
             }
         }
         return true;
+    }	
+	
+	//Add new user info bussiness(Logged)
+    function add_new_user_bussiness_ck($userid, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $isprivate,$babershopname,$slug)
+    {
+		$nowtimestamp = intval(strtotime("now"));
+		$this->load->database();
+		$dataprofile = array(
+			'userid' => $userid,
+			'photo_link' =>$photolink,
+			'address' => $address,
+			'city' => $city,
+			'state' => $state,
+			'zip' => $zip,
+			'phone' => $phone,
+			'instantgram' => $instantgram,
+			'facebook' => $facebook,
+			'favorites_tool' => $favorites_tool,
+			'isprivate' => $isprivate,
+			'created' => $nowtimestamp,
+			'slug' => $slug,
+			'babershopname' => $babershopname,
+		);
+		$this->db->insert('bussinessprofile', $dataprofile);
+
+		$this->db->select('bpid');
+		$this->db->where('userid',$$userid);
+		$this->db->where('created',$nowtimestamp);
+		$query = $this->db->get('bussinessprofile');
+		$data = $query->result();
+		$dataapp = array(
+			'bpid' => $data[0]->bpid,
+			'bpidpost' => $data[0]->bpid,
+			'isapproved' => 1,
+		);
+		$this->db->insert('approveprofile', $dataapp);
+		return true;
     }
 	//Check login correct or not
     function checklogin($username, $password)
@@ -277,6 +336,7 @@ Class User_model extends CI_Model{
 
             $this->db->select('bpid');
             $this->db->where('userid',$user[0]->userid);
+            $this->db->where('created',$nowtimestamp);
             $query = $this->db->get('bussinessprofile');
             $data = $query->result();
             $dataapp = array(
@@ -296,7 +356,7 @@ Class User_model extends CI_Model{
         $userid = $this->input->cookie('userid');
         $this->load->model('user_model');
         $username = $this->user_model->get_username_by_userid($userid);
-        //var_dump($username);exit;
+      //  var_dump($babershopname);exit;
         $user = $this->checkusername($username[0]->username);
         if ($user) {
             $dataprofile = array(
@@ -316,12 +376,8 @@ Class User_model extends CI_Model{
                 'babershopname' => $babershopname
             );
             $this->db->insert('userprofile', $dataprofile);
-            $upid=$this->user_model->getupid($user[0]->userid);
 
-            $dataappup=array(
-                'puid'=> $upid[0]->upid
-            );
-            $this->db->insert('approveprofile', $dataappup);
+
             return true;
         }
     }
@@ -369,6 +425,8 @@ Class User_model extends CI_Model{
             return true;
         }
     }
+	
+	//Add new independent user
     function add_new_user_independent($username, $password,$photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $isprivate,$babershopname,$slug)
     {
         $this->load->database();
@@ -429,6 +487,40 @@ Class User_model extends CI_Model{
                 return true;
             }
         }
+        return true;
+    }
+
+	//Add new independent user
+    function add_new_user_independent_ck($userid, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $isprivate,$babershopname,$slug)
+    {
+        $nowtimestamp = intval(strtotime("now"));
+		$dataprofile = array(
+			'userid' => $userid,
+			'photo_link' =>$photolink,
+			'address' => $address,
+			'city' => $city,
+			'state' => $state,
+			'zip' => $zip,
+			'phone' => $phone,
+			'instantgram' => $instantgram,
+			'facebook' => $facebook,
+			'favorites_tool' => $favorites_tool,
+			'isprivate' => $isprivate,
+			'created' => $nowtimestamp,
+			'slug' => $slug,
+			'babershopname' => $babershopname,
+		);
+		$this->db->insert('baberindependent', $dataprofile);
+		$this->db->select('upid');
+		$this->db->where('userid',$userid);
+		$query = $this->db->get('baberindependent');
+		$data = $query->result();
+		$dataapp = array(
+			'upid' => $data[0]->upid,
+			'upidpost' => $data[0]->upid,
+			'isapproved' => 1,
+		);
+		$this->db->insert('approveprofile', $dataapp);
         return true;
     }
 	

@@ -91,7 +91,9 @@ class Uploadbipost extends CI_Controller
                 if($_REQUEST['addnewbipost']){
                     $this->post_model->add_new_post($apid,$photo_id,$babershopname,$baber_type,$baber_name,$tags,$private);
                 }
-                echo 'Load view complete insert post here';
+                $username = $this->user_model->get_username_by_userid($userid)[0]->username;
+                redirect('/' . $username . '/manage/listbiposts', 'refresh');
+
             }
         }
         $cookie = array(

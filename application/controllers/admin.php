@@ -41,8 +41,13 @@ class Admin extends Main_Controller {
 		$allpostinfo = $this->post_model->get_allinfo_by_term($term);
 		$data = array();
 		foreach($allpostinfo as $perpostobj){
-			$imagenameobj = $this->photos_model->get_img_name($perpostobj->photo_id)[0]->photo_img_link;
-			$imageurl = $this->get_img_loc($imagenameobj);
+			$imagenameobjall = $this->photos_model->get_img_name($perpostobj->photo_id);
+            if($imagenameobjall){
+                $imagenameobj = $imagenameobjall[0]->photo_img_link;
+            }
+
+
+            $imageurl = $this->get_img_loc($imagenameobj);
 			$imglinksrc = '<img src="'.base_url($imageurl).'" width=50 height=50/>';
 			$data[] = $perpostobj->baber_name;
 		}

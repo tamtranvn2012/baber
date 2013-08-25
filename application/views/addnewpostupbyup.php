@@ -1,6 +1,5 @@
 <div class="container">
     <div class="row">
-
         <!--begin slider-->
 
         <div class="span4 well">
