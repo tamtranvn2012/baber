@@ -1,5 +1,5 @@
 <?php echo '<div class="container">';?>
-<?php echo '<div class="span7 offset2 slider-bar text-center">';?>
+<?php echo '<div class="span7 offset2 well">';?>
 
 <div id="upload-img">
     <h3>Edit</h3>
@@ -13,36 +13,80 @@
     ?>
     <?php
     foreach ($upprofile as $up) {
-        echo'<label>Address</label>';
-        echo"<input type='text' name='address' value='$up->address'/>
-    <br/>";
-        echo'<label>City</label>';
-        echo"<input type='text' name='city' value='$up->city'/>
-    <br/>";
-        echo '<label>State</label>';
-        echo "<input type='text' name='state' value='$up->state'/>
-    <br/>";
-        echo '<label>Zipcode</label>';
-        echo "<input type='text' name='zip' value='$up->zip'/>
-    <br/>";
-        echo '<label>Phone</label>';
-        echo "<input type='text' name='phone' value='$up->phone'/>
-    <br/>";
-        echo '<label>Instantgram</label>';
-        echo "<input type='text' name='instantgram' value='$up->instantgram'/>
-    <br/>";
-        echo '<label>Facebook</label>';
-        echo "<input type='text' name='facebook' value='$up->facebook'/>
-    <br/>";
-        echo '<label>Favorite tool</label>';
-        echo "<input type='text' name='favorites_tool' value='$up->favorites_tool'/>
-    <br/>";
-        echo '<label>Slug</label>';
-        echo "<input type='text' name='slug' value='$up->slug'/>
-    <br/>";
-        echo '<label>Babershop Name</label>';
-        echo "<input type='text' name='babershopname' value='$up->babershopname'/>
-    <br/>";
+        echo '<div class="span7" style="margin:0;">';
+        echo '<label class="span5">Address</label>';
+        echo '<div class="span5">';
+        echo "<input type='text' name='address' value='$up->address' class='form-control span3 bt-text'/>";
+        echo '</div>';
+        echo '</div>';
+        
+        
+         echo '<div class="span7" style="margin:0;">';
+        echo'<label class="span5">City</label>';
+         echo '<div class="span5">';
+        echo"<input type='text' name='city' value='$up->city' class='form-control span3 bt-text' />";
+        echo '</div>';
+        echo '</div>';
+    
+    
+        echo '<div class="span7" style="margin:0;">';
+        echo '<label class="span5">State</label>';
+        echo '<div class="span5">';
+        echo "<input type='text' name='state' value='$up->state' class='form-control span3 bt-text'/>";
+        echo '</div>';
+        echo '</div>';
+        
+        
+        echo '<div class="span7" style="margin:0;">';
+        echo '<label class="span5">Zipcode</label>';
+        echo '<div class="span5">';
+        echo "<input type='text' name='zip' value='$up->zip' class='form-control span3 bt-text'/>";
+        echo '</div>';
+        echo '</div>';
+        
+        echo '<div class="span7" style="margin:0;">';
+        echo '<label class="span5">Phone</label>';
+        echo '<div class="span5">';
+        echo "<input type='text' name='phone' value='$up->phone' class='form-control span3 bt-text'/>";
+        echo '</div>';
+        echo '</div>';
+        
+        echo '<div class="span7" style="margin:0;">';
+        echo '<label class="span5">Instantgram</label>';
+        echo '<div class="span5">';
+        echo "<input type='text' name='instantgram' value='$up->instantgram' class='form-control span3 bt-text'/>";
+        echo '</div>';
+        echo '</div>';
+        
+        echo '<div class="span7" style="margin:0;">';
+        echo '<label class="span5">Facebook</label>';
+        echo '<div class="span5">';
+        echo "<input type='text' name='facebook' value='$up->facebook' class='form-control span3 bt-text'/>";
+        echo '</div>';
+        echo '</div>';
+        
+        
+        echo '<div class="span7" style="margin:0;">';
+        echo '<label class="span5">Favorite tool</label>';
+        echo '<div class="span5">';
+        echo "<input type='text' name='favorites_tool' value='$up->favorites_tool' class='form-control span3 bt-text'/>";
+        echo '</div>';
+        echo '</div>';
+        
+        echo '<div class="span7" style="margin:0;">';
+        echo '<label class="span5">Slug</label>';
+        echo '<div class="span5">';
+        echo "<input type='text' name='slug' value='$up->slug' class='form-control span3 bt-text'/>";
+        echo '</div>';
+        echo '</div>';
+        
+        echo '<div class="span7" style="margin:0;">';
+        echo '<label class="span5">Babershop Name</label>';
+        echo '<div class="span5">';
+        echo "<input type='text' name='babershopname' value='$up->babershopname' class='form-control span3 bt-text'/>";
+        echo '</div>';
+        echo '</div>';
+
     }
     ?>
     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
