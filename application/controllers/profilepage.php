@@ -299,6 +299,7 @@ class Profilepage extends Main_Controller
         $datamenu['username'] = $username;
         $upid = intval($this->profile_model->get_upid_userid($userid)[0]->upid);
         $allinfo = $this->profile_model->get_all_by_upid_allinfo($upid);
+		$data['allinfo'] = array();
         foreach ($allinfo as $perinfo) {
             $datainfoarr = array();
             $datainfoarr['bpid'] = $perinfo->bpid;
@@ -321,6 +322,7 @@ class Profilepage extends Main_Controller
         $userid = $this->input->cookie('userid', TRUE);
         //data for manage links approve
         $bpidofuser = $this->profile_model->get_bpid_by_userid($userid);
+		$data['bpidsmanage'] = array();
         foreach ($bpidofuser as $perbp) {
             $bpinfo = array();
             $bpinfo['bpid'] = $perbp->bpid;
@@ -348,6 +350,7 @@ class Profilepage extends Main_Controller
         $upidarrobj = $this->profile_model->get_upid_userid($userid);
         $apidsobjs = array();
         $data['upid'] = $this->profile_model->get_upid_by_userid($userid)[0]->upid;
+		$data['apidsobjs'] = array();
         foreach ($upidarrobj as $perupidobj) {
             $perupid = $perupidobj->upid;
             $apidarrobj = $this->profile_model->get_apid_by_upid_allinfo($perupid);
@@ -387,22 +390,19 @@ class Profilepage extends Main_Controller
 
     function manage_post_listing_bi()
     {
-        //    $bpid= $this->uri->segment(4, 0);
-        //   $this->db->where('bpid',$bpid);
-        //   $query = $this->db->get('bussinessprofile');
-        //   $bussinessprofileinfo = $query->result()[0];
-        //   $imagenameobj = $this->photos_model->get_img_name($bussinessprofileinfo->photo_link)[0]->photo_img_link;
-        //   $imageurl = $this->get_img_loc($imagenameobj);
-        //   $bussinessprofileinfo->photo_link = $imageurl;
-
         $data = array();
         $userid = $this->input->cookie('userid', TRUE);
         $username = $this->user_model->get_username_by_userid($userid)[0]->username;
-
         $datamenu['username'] = $username;
+		$data['independentinfo'] = '';
+		$apid = 0;
         $upid = $this->profile_model->get_upid_by_userid($userid)[0]->upid;
-        $apid = $this->profile_model->get_apid_by_upid_upidpost($upid)[0]->apid;
-        $data['independentinfo'] = $this->profile_model->get_all_info_by_apid($apid);
+        if($this->profile_model->get_apid_by_upid_upidpost($upid)){
+			$apid = $this->profile_model->get_apid_by_upid_upidpost($upid)[0]->apid;
+		}
+		if($apid){
+			$data['independentinfo'] = $this->profile_model->get_all_info_by_apid($apid);
+		}
         $this->load->view('include/header');
         $this->load->view('include/menu', $datamenu);
         $this->load->view('postbi', $data);

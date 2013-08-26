@@ -250,6 +250,7 @@ class Uploadbussinessregister extends CI_Controller
     }
     public function upload_img()
     {
+		$this->load->helper('cookie');
         if($_FILES['userfile']['name'] == ''){
             $photolink = 0;
             $photolink = $this->input->cookie('photo_img_id', TRUE);
@@ -271,16 +272,22 @@ class Uploadbussinessregister extends CI_Controller
             //$this->load->model('user_model');
             //Insert to database user info if user fill all info
             if ($_REQUEST['submitnew']){
-                $this->load->model('user_model');
-                $this->user_model->add_new_user_bussiness($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname,$slug);
-                $useridobj = $this->user_model->checkusername($username);
-                $userid = $useridobj[0]->userid;
-                $cookie = array(
-                    'name'   => 'userid',
-                    'value'  => $userid,
-                    'expire' => '86400'
-                );
-                $this->input->set_cookie($cookie);
+                $this->load->model('user_model');				
+				$userid = intval($this->input->cookie('userid', TRUE));
+				if($userid){
+					$this->user_model->add_new_user_bussiness_ck($userid, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname,$slug);
+				}else{                				
+					$this->user_model->add_new_user_bussiness($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname,$slug);
+					$useridobj = $this->user_model->checkusername($username);
+					$userid = $useridobj[0]->userid;
+					$cookie = array(
+						'name'   => 'userid',
+						'value'  => $userid,
+						'expire' => '86400'
+					);
+					$this->input->set_cookie($cookie);
+				}
+				$username = $this->user_model->get_username_by_userid($userid)[0]->username;
                 redirect('/'.$username.'/manage/', 'refresh');
             }
         }

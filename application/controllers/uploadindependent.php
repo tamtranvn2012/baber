@@ -66,6 +66,7 @@ class Uploadindependent extends CI_Controller
     // Function called by the form
     public function upload_img()
     {
+		$this->load->helper('cookie');
         $submit = $_REQUEST['submitnew'];
       //  var_dump($submit);exit;
         if ($submit == 'Edit') {
@@ -115,17 +116,22 @@ class Uploadindependent extends CI_Controller
             //Insert to database user info if user fill all info
 
             if ($_REQUEST['submitnew']){
-
-                $this->load->model('user_model');
-                $this->user_model->add_new_user_independent($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname,$slug);
-                $useridobj = $this->user_model->checkusername($username);
-                $userid = $useridobj[0]->userid;
-                $cookie = array(
-                    'name'   => 'userid',
-                    'value'  => $userid,
-                    'expire' => '86400'
-                );
-                $this->input->set_cookie($cookie);
+                $this->load->model('user_model');				
+				$userid = intval($this->input->cookie('userid', TRUE));
+				if($userid){
+					$this->user_model->add_new_user_independent_ck($userid, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname,$slug);
+				}else{                				
+					$this->user_model->add_new_user_independent($username, $password, $photolink, $address, $city, $state, $zip, $phone, $instantgram, $facebook, $favorites_tool, $private, $babershopname,$slug);
+					$useridobj = $this->user_model->checkusername($username);
+					$userid = $useridobj[0]->userid;
+					$cookie = array(
+						'name'   => 'userid',
+						'value'  => $userid,
+						'expire' => '86400'
+					);
+					$this->input->set_cookie($cookie);
+				}
+				$username = $this->user_model->get_username_by_userid($userid)[0]->username;
                 redirect('/'.$username.'/manage/', 'refresh');
             }
         }
